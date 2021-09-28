@@ -9,6 +9,7 @@ It is an online store with a backoffice, a payment and email system developed wi
 - PHP 8.0
 - Composer
 - Somfony CLI
+- Nodejs et npm
 
 You can check the prerequisites with the following command (from the Symfony CLI) :
 
@@ -33,5 +34,7 @@ To start the development environment typed the following commands :
 
 ```bash
 composer install
+npm install
+npm run build
 symfony serve -d
 ```
