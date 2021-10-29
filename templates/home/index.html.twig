@@ -57,9 +57,9 @@
 	<section class="container-fluid section-products">
 		<h2 class="section-products-title">Meilleures ventes</h2>
 		<div
-			class="row mx-3">
+			class="row mx-3" id="list">
 			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4">
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
 				<article class="product-card">
 					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/7rK3P5yvB.jpg') }}" alt="PS5 kimetsu no yaiba the hinokami chronicles"></a>
 					<div class="product-body">
@@ -77,7 +77,7 @@
 				</article>
 			</div>
 			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4">
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
 				<article class="product-card">
 					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/c5RChqG75.jpg') }}" alt="PS5 Grand threft auto 5"></a>
 					<div class="product-body">
@@ -95,7 +95,7 @@
 				</article>
 			</div>
 			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4">
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
 				<article class="product-card">
 					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/t3MQ4aX2d.jpg') }}" alt="Katana de Tanjirō Kamado – Demon Slayer"></a>
 					<div class="product-body">
@@ -115,7 +115,7 @@
 				</article>
 			</div>
 			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4">
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
 				<article class="product-card">
 					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/p5SLfw65M.jpg') }}" alt="Carnet Death Note"></a>
 					<div class="product-body">
@@ -133,7 +133,7 @@
 				</article>
 			</div>
 			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4">
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
 				<article class="product-card">
 					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/8Xs25RzwW.jpg') }}" alt="PS4 Red dead redemption 2"></a>
 					<div class="product-body">
@@ -151,7 +151,7 @@
 				</article>
 			</div>
 			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4">
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
 				<article class="product-card">
 					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/cF22wUY3t.jpg') }}" alt="PS4 Minecraft"></a>
 					<div class="product-body">
@@ -172,7 +172,7 @@
 			</div>
 
 			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4">
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
 				<article class="product-card">
 					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/D87Vix2Zy.jpg') }}" alt="PS4 Minecraft"></a>
 					<div class="product-body">
@@ -193,7 +193,7 @@
 			</div>
 		</div>
 		<div class="text-center pt-3">
-			<button class="btn btn-outline-accent">Plus de produits ></button>
+			<button id="loadMore" class="btn btn-outline-accent" data-load-more-nb-element="6">Plus de produits ></button>
 		</div>
 	</section>
 	<!-- Follow us grid -->
