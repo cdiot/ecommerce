@@ -38,3 +38,11 @@ npm install
 npm run build
 symfony serve -d
 ```
+
+### Run tests
+
+To run tests typed the following commands :
+
+```bash
+php bin/phpunit --testdox
+```
