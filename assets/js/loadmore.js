@@ -1,10 +1,10 @@
 var list = document.querySelector("#list");
 var items = Array.from(list.querySelectorAll(".item"));
 var loadMore = document.getElementById("loadMore");
-maxItems = Number(loadMore.dataset.loadMoreNbElement);
-loadItems = Number(loadMore.dataset.loadMoreNbElement);
-hiddenClass = "is-hidden";
-hiddenItems = Array.from(document.querySelectorAll(".is-hidden"));
+var maxItems = Number(loadMore.dataset.loadMoreNbElement);
+var loadItems = Number(loadMore.dataset.loadMoreNbElement);
+var hiddenClass = "is-hidden";
+var hiddenItems = Array.from(document.querySelectorAll(".is-hidden"));
 
 items.forEach(function (item, index) {
   if (index > maxItems - 1) {
