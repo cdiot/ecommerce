@@ -6,6 +6,8 @@ Tags : Ecommerce, Symfony ;
 */
 
 :root {
+  --black: #2d3742;
+  --purple: #6469ff;
   --blue: #60b3c6;
 }
 .infos {
@@ -13,6 +15,9 @@ Tags : Ecommerce, Symfony ;
 }
 .guarantee {
   background-color: #1a1a1a;
+}
+.btn-outline-accent {
+  border-color: rgba(78, 84, 200, 0.35);
 }
 .opacity-50 {
   opacity: 0.5;

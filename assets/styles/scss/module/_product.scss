@@ -1,0 +1,59 @@
+/* 
+Author : Chris ;
+Theme : Ecommerce ;
+Description : Module product (method SMACSS) ; 
+Tags : Ecommerce, Symfony ;
+*/
+
+.section-products {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+.section-products .section-products-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #191919;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  background: url("../../../images/section_products_title.jpg") no-repeat center
+    top;
+  min-height: 10rem;
+  letter-spacing: 0.02em;
+}
+.product-img-top {
+  width: 100%;
+}
+.product-card {
+  word-wrap: break-word;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 177px;
+  margin-bottom: 0;
+}
+.product-body {
+  flex: 1 1 auto;
+  padding: 1.5rem 0 0;
+}
+.product-meta {
+  transition: color 0.25s ease-in-out;
+  color: #7d879c;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: 0.25rem;
+  font-weight: 400;
+}
+.product-title {
+  color: #261c1c;
+  text-transform: uppercase;
+  font-weight: 400;
+  &:hover {
+    color: var(--blue);
+  }
+}
+.product-price span {
+  color: #4e54c8;
+  font-weight: 700;
+}
