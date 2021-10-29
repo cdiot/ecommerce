@@ -18,6 +18,9 @@
 	</head>
 	<body>
 		{% include "base/_nav.html.twig" %}
+		{% if block('carousel') is defined %}
+			{% include "base/_carousel.html.twig" %}
+		{% endif %}
 		<main role="main"> {% block body %}{% endblock %}
 			</main>
 			{% include "base/_footer.html.twig" %}
