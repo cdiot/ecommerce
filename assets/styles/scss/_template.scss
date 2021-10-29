@@ -1,0 +1,27 @@
+/* 
+Author : Chris ;
+Theme : Ecommerce ;
+Description : Theme (method SMACSS) ;
+Tags : Ecommerce, Symfony ;
+*/
+
+:root {
+  --blue: #60b3c6;
+}
+.infos {
+  background-color: #222222;
+}
+.guarantee {
+  background-color: #1a1a1a;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+.hr-light {
+  color: rgba(255, 255, 255, 0.12);
+}
+.icon {
+  object-fit: contain;
+  width: 36px;
+  height: 36px;
+}
