@@ -1,0 +1,238 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil {{ parent() }}
+{% endblock %}
+
+{% block carousel %}{% endblock %}
+
+{% block body %}
+	<!-- Brands grid -->
+	<section class="container py-lg-4 my-4">
+		<h2 class="h3 text-center pb-4 fw-bold">Tous vos jeux neufs et d'occasions au meilleur prix !</h2>
+		<div
+			class="row justify-content-center align-items-center">
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/playstation-1.png') }}" alt="Icon Playstation">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/playstation-2.png') }}" alt="Logo Playstation">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/nintendo-1.png') }}" alt="Logo Nintendo">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/xbox-1.png') }}" alt="Icon Xbox">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/xbox-2.png') }}" alt="Logo Xbox">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Products grid (Best products)-->
+	<section class="container-fluid section-products">
+		<h2 class="section-products-title">Meilleures ventes</h2>
+		<div
+			class="row mx-3" id="list">
+			<!-- Product-->
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
+				<article class="product-card">
+					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/7rK3P5yvB.jpg') }}" alt="PS5 kimetsu no yaiba the hinokami chronicles"></a>
+					<div class="product-body">
+						<span class="product-meta fs-xs">Jeu neuf</span>
+						<a href="#">
+							<h3 class="product-title fs-base">PS5 kimetsu no yaiba the hinokami chronicles</h3>
+						</a>
+						<div class="d-flex">
+							<div class="product-price">
+								<span class="fs-lg">59.<small>99</small>
+								</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<!-- Product-->
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
+				<article class="product-card">
+					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/c5RChqG75.jpg') }}" alt="PS5 Grand threft auto 5"></a>
+					<div class="product-body">
+						<span class="product-meta fs-xs">Jeu neuf</span>
+						<a href="#">
+							<h3 class="product-title fs-base">PS5 Grand threft auto 5</h3>
+						</a>
+						<div class="d-flex">
+							<div class="product-price">
+								<span class="fs-lg">79.<small>99</small>
+								</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<!-- Product-->
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
+				<article class="product-card">
+					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/t3MQ4aX2d.jpg') }}" alt="Katana de Tanjirō Kamado – Demon Slayer"></a>
+					<div class="product-body">
+						<span class="product-meta fs-xs">Katana</span>
+						<a href="#">
+							<h3 class="product-title fs-base">Katana de Tanjirō Kamado – Demon Slayer</h3>
+						</a>
+						<div class="d-flex">
+							<div class="product-price">
+								<span class="fs-lg">49.<small>99</small>
+								</span>
+								<del class="fs-sm text-muted">79.<small>99</small>
+								</del>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<!-- Product-->
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
+				<article class="product-card">
+					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/p5SLfw65M.jpg') }}" alt="Carnet Death Note"></a>
+					<div class="product-body">
+						<span class="product-meta fs-xs">Goodies</span>
+						<a href="#">
+							<h3 class="product-title fs-base">Carnet Death Note</h3>
+						</a>
+						<div class="d-flex">
+							<div class="product-price">
+								<span class="fs-lg">16.<small>99</small>
+								</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<!-- Product-->
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
+				<article class="product-card">
+					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/8Xs25RzwW.jpg') }}" alt="PS4 Red dead redemption 2"></a>
+					<div class="product-body">
+						<span class="product-meta fs-xs">Jeu occasion</span>
+						<a href="#">
+							<h3 class="product-title fs-base">PS4 Red dead redemption 2</h3>
+						</a>
+						<div class="d-flex">
+							<div class="product-price">
+								<span class="fs-lg">19.<small>99</small>
+								</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<!-- Product-->
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
+				<article class="product-card">
+					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/cF22wUY3t.jpg') }}" alt="PS4 Minecraft"></a>
+					<div class="product-body">
+						<span class="product-meta fs-xs">Jeu neuf</span>
+						<a href="#">
+							<h3 class="product-title fs-base">PS4 Minecraft</h3>
+						</a>
+						<div class="d-flex">
+							<div class="product-price">
+								<span class="fs-lg">19.<small>99</small>
+								</span>
+								<del class="fs-sm text-muted">29.<small>99</small>
+								</del>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<!-- Product-->
+			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
+				<article class="product-card">
+					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/D87Vix2Zy.jpg') }}" alt="PS4 Minecraft"></a>
+					<div class="product-body">
+						<span class="product-meta fs-xs">Figurine</span>
+						<a href="#">
+							<h3 class="product-title fs-base">Funko Pop Games Of Thrones Jon Snow</h3>
+						</a>
+						<div class="d-flex">
+							<div class="product-price">
+								<span class="fs-lg">9.<small>99</small>
+								</span>
+								<del class="fs-sm text-muted">13.<small>99</small>
+								</del>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+		<div class="text-center pt-3">
+			<button id="loadMore" class="btn btn-outline-accent" data-load-more-nb-element="6">Plus de produits ></button>
+		</div>
+	</section>
+	<!-- Follow us grid -->
+	<section class="container py-lg-4 my-4">
+		<h2 class="h3 text-center pb-4 fw-bold">Nous suivre</h2>
+		<div
+			class="row justify-content-center">
+			<!-- Link-->
+			<div class="col-md-3 col-sm-4 col-6">
+				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/facebook.png') }}" alt="Icon Facebook">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-3 col-sm-4 col-6">
+				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/twitter.png') }}" alt="Icon Twitter">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-3 col-sm-4 col-6">
+				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/instagram.png') }}" alt="Icon Instagram">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-3 col-sm-4 col-6">
+				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/tiktok.png') }}" alt="Icon Tiktok">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

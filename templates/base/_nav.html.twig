@@ -1,0 +1,91 @@
+<!-- Navbar 3 Level (Light)-->
+<header>
+	<!-- Navbar -->
+	<nav
+		class="navbar navbar-expand-lg navbar-light ">
+		<!-- Container wrapper -->
+		<div
+			class="container">
+			<!-- Navbar brand -->
+			<a class="navbar-brand mt-2 mt-lg-0" href="#">Ecommerce</a>
+			<!-- Toggle button -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- Collapsible wrapper -->
+			<div
+				class="collapse navbar-collapse" id="navbarCollapse">
+				<!-- Left links -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Accueil</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Nos produits</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">A propos Ecommerce</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Livraison</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+				<!-- Left links -->
+				<!-- Right elements -->
+				<div
+					class="d-flex align-items-center">
+					<!-- Dropdown flag -->
+					<li class="dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="{{ asset('build/images/ic-france.png') }}" height="25" alt="Drapeau Francais">
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" href="#">
+									<img src="{{ asset('build/images/ic-france.png') }}" class="m-1" height="25" alt="Drapeau Francais">Français
+								</a>
+							</li>
+							<li><hr class="dropdown-divider"></li>
+							<li>
+								<a class="dropdown-item" href="#">
+									<img src="{{ asset('build/images/ic-england.png') }}" class="m-1" height="25" alt="Drapeau Anglais">Anglais</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">
+									<img src="{{ asset('build/images/ic-japan.png') }}" class="m-1" height="25" alt="Drapeau Japonais">Japonais</a>
+							</li>
+						</ul>
+					</li>
+					{#
+					<!-- Icon user -->
+					<a class="me-3" href="#">
+						<img src="{{ asset('build/images/ic-user.png') }}" height="25" alt="Icon de l'utilisateur">
+					</a>
+					
+					<!-- Icon logout -->
+					<a class="me-3" href="#">
+						<img src="{{ asset('build/images/ic-logout.png') }}" height="25" alt="Icon de déconnexion">
+					</a>
+					#}
+					<!-- Icon login -->
+					<a class="me-3" href="#">
+						<img src="{{ asset('build/images/ic-login.png') }}" height="25" alt="Icon de connexion">
+					</a>
+
+					<!-- Icon cart -->
+					<a class="me-3" href="#">
+						<span class="badge badge-pill bg-danger">1</span>
+						<img src="{{ asset('build/images/ic-shopping-cart.png') }}" height="25" alt="Icon du panier">
+					</a>
+				</div>
+				<!-- Right elements -->
+			</div>
+			<!-- Collapsible wrapper -->
+		</div>
+		<!-- Container wrapper -->
+	</nav>
+	<!-- Navbar -->
+</header>

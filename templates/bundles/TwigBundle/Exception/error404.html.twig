@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Page introuvable
+{% endblock %}
+
+{% block body %}
+	<div class="container py-5">
+		<div class="row justify-content-center">
+			<div class="col-9">
+				<h1 class="display-4">La page que vous cherchez n'a pas été trouvée.</h1>
+				<p>Vous êtes sur une page qui n'existe plus ou n'a jamais existé. Vérifiez toute erreur 
+					d'orthographe d'URL ou si le problème persiste, veuillez nous en informer via
+					<a href="#">le formulaire de contact</a>.</p>
+				<a href="{{ path('home') }}" class="btn btn-info">Revenir à l'acceuil</a>
+			</div>
+		</div>
+		<!-- Follow us grid -->
+		<section class="container py-lg-4 my-4">
+			<h2 class="h3 text-center pb-4 fw-bold">Nous suivre</h2>
+			<div
+				class="row justify-content-center">
+				<!-- Link-->
+				<div class="col-md-3 col-sm-4 col-6">
+					<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+						<a href="#">
+							<img src="{{ asset('build/images/facebook.png') }}" alt="Icon Facebook">
+						</a>
+					</div>
+				</div>
+				<!-- Link-->
+				<div class="col-md-3 col-sm-4 col-6">
+					<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+						<a href="#">
+							<img src="{{ asset('build/images/twitter.png') }}" alt="Icon Twitter">
+						</a>
+					</div>
+				</div>
+				<!-- Link-->
+				<div class="col-md-3 col-sm-4 col-6">
+					<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+						<a href="#">
+							<img src="{{ asset('build/images/instagram.png') }}" alt="Icon Instagram">
+						</a>
+					</div>
+				</div>
+				<!-- Link-->
+				<div class="col-md-3 col-sm-4 col-6">
+					<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
+						<a href="#">
+							<img src="{{ asset('build/images/tiktok.png') }}" alt="Icon Tiktok">
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+{% endblock %}

@@ -6,10 +6,10 @@ It is an online store with a backoffice, a payment and email system developed wi
 
 ### Prerequisites
 
-- PHP 8.0
-- Composer
-- Somfony CLI
-- Nodejs et npm
+*   PHP 8.0
+*   Composer
+*   Somfony CLI
+*   Nodejs et npm
 
 You can check the prerequisites with the following command (from the Symfony CLI) :
 
@@ -37,4 +37,12 @@ composer install
 npm install
 npm run build
 symfony serve -d
+```
+
+### Run tests
+
+To run tests typed the following commands :
+
+```bash
+php bin/phpunit --testdox
 ```
