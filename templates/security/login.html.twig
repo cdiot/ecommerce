@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container section">
+		<div class="row justify-content-center">
+			<h1 class="h2 section-title">Connectez-vous à votre compte</h1>
+			<div class="col-md-6 shadow rounded-3 py-3 py-sm-4 mb-2">
+				<form method="post">
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+
+					{% if app.user %}
+						<div class="mb-3">
+							Vous êtes connecté en tant que {{ app.user.username }},
+							<a href="{{ path('app_logout') }}">Se déconnecter</a>
+						</div>
+					{% endif %}
+
+					<div class="form-group row mb-3">
+						<label for="inputEmail" class="col-md-4 col-form-label text-md-right">Email</label>
+						<div class="col-md-6">
+							<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+						</div>
+					</div>
+
+					<div class="form-group row mb-3">
+						<label for="inputPassword" class="col-md-4 col-form-label text-md-right">Mot de passe</label>
+						<div class="col-md-6">
+							<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+						</div>
+					</div>
+
+					<input
+					type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					{#
+					Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+					See https://symfony.com/doc/current/security/remember_me.html
+					
+					<div class="checkbox mb-3">
+						<label>
+							<input type="checkbox" name="_remember_me"> Remember me
+						</label>
+					</div>
+					#}
+
+					<button class="btn btn-info text-light" type="submit">
+						Connexion
+					</button>
+					<hr>
+					<p>
+						<a href="#" class="text-primary">Mot de passe oublié</a>
+						? ou souhaitez-vous
+						<a href="#" class="text-primary">créer un compte ?</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Brands grid -->
+	<section class="container py-lg-4 my-4">
+		<h2 class="h3 text-center pb-4 fw-bold">Tous vos jeux neufs et d'occasions au meilleur prix !</h2>
+		<div
+			class="row justify-content-center align-items-center">
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/playstation-1.png') }}" alt="Icon Playstation">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/playstation-2.png') }}" alt="Logo Playstation">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/nintendo-1.png') }}" alt="Logo Nintendo">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/xbox-1.png') }}" alt="Icon Xbox">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/xbox-2.png') }}" alt="Logo Xbox">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

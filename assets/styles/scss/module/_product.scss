@@ -5,11 +5,11 @@ Description : Module product (method SMACSS) ;
 Tags : Ecommerce, Symfony ;
 */
 
-.section-products {
+.section {
   padding-top: 1rem;
   padding-bottom: 3rem;
 }
-.section-products .section-products-title {
+.section .section-title {
   display: flex;
   align-items: center;
   justify-content: center;
