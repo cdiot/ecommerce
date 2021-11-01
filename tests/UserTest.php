@@ -30,6 +30,8 @@ class UserTest extends TestCase
     public function testIsEmpty()
     {
         $user = new User();
+        $user->setEmail('')
+            ->setPassword('');
 
         $this->assertEmpty($user->getEmail());
         $this->assertEmpty($user->getPassword());
