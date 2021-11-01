@@ -7,9 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class ApplicationAvailabilityFunctionalTest extends WebTestCase
 {
     /**
-     * @dataProvider urlProvider
+     * @dataProvider publicUrlProvider
      */
-    public function testPageIsSuccessful($url)
+    public function testPublicPageIsSuccessful($url)
     {
         $client = self::createClient();
         $client->request('GET', $url);
@@ -17,8 +17,9 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    public function urlProvider()
+    public function publicUrlProvider()
     {
-        yield ['/'];
+        yield 'home' => ['/'];
+        yield 'app_login' => ['/connexion'];
     }
 }
