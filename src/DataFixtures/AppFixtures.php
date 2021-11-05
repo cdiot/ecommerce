@@ -24,6 +24,7 @@ class AppFixtures extends Fixture
             $user,
             '123456'
         ));
+        $user->setIsVerified(true);
 
         $manager->persist($user);
         $manager->flush();
