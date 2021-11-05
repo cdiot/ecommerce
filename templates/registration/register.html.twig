@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'inscrire {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<section class="container section">
+	<div class="row justify-content-center">
+		<h1 class="h2 section-title">Créez votre compte</h1>
+		<div class="col-md-6 shadow rounded-3 py-3 py-sm-4 mb-2">
+
+			{% for success in app.flashes('success')  %}
+				<div class="alert alert-info"> {{success}}</div>
+			{% endfor %}
+			{% for flashError in app.flashes('verify_email_error') %}
+				<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+			{% endfor %} {{ form_start(registrationForm) }} {{ form_row(registrationForm.email, {'label': 'Email'}) }} {{ form_row(registrationForm.plainPassword, {'label': 'Mot de passe'}) }} {{ form_row(registrationForm.agreeTerms, {'label': 'J\'accepte les termes'}) }}
+
+				<button class="btn btn-info text-light" type="submit">
+					Enregistrer
+				</button> {{ form_end(registrationForm) }}
+				<hr>
+				<p>Vous avez déjà un compte ?
+					<a href="{{ path('app_login') }}" class="text-primary">Connectez-vous !</a>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Brands grid -->
+	<section class="container py-lg-4 my-4">
+		<h2 class="h3 text-center pb-4 fw-bold">Tous vos jeux neufs et d'occasions au meilleur prix !</h2>
+		<div
+			class="row justify-content-center align-items-center">
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/playstation-1.png') }}" alt="Icon Playstation">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/playstation-2.png') }}" alt="Logo Playstation">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/nintendo-1.png') }}" alt="Logo Nintendo">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/xbox-1.png') }}" alt="Icon Xbox">
+					</a>
+				</div>
+			</div>
+			<!-- Link-->
+			<div class="col-md-2 col-sm-3">
+				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
+					<a href="#">
+						<img src="{{ asset('build/images/xbox-2.png') }}" alt="Logo Xbox">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
