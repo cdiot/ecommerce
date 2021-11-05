@@ -21,5 +21,6 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
     {
         yield 'home' => ['/'];
         yield 'app_login' => ['/connexion'];
+        yield 'app_register' => ['/inscription'];
     }
 }
