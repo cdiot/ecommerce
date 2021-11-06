@@ -26,9 +26,14 @@ cd your path (example : C:/wamp64/www)
 git clone https://github.com/cdiot/ecommerce.git
 ```
 
+### Environment variable required
+
+*   `DATABASE_URL`
+*   `MAILER_DSN`
+
 ### Launch the development environment
 
-Configure `DATABASE_URL` environment variable by renaming the .env file to .env.local and enter your information.
+Configure the environment variables by copying the .env file to .env.local at the root directory of your project and define the news values.
 
 To start the development environment typed the following commands :
 
@@ -39,10 +44,30 @@ npm run build
 symfony serve -d
 ```
 
+### Run datafixtures
+
+To run datafixtures typed the following commands :
+
+```bash
+symfony console doctrine:fixtures:load
+```
+
 ### Run tests
+
+Tests that interact with the database use their own separate database to not mess with the databases used.
+
+To do that, edit or create the .env.test.local file at the root directory of your project and define the new value for the environment variables.
+
+After that, create the test database and all tables using :
+
+```bash
+symfony console --env=test doctrine:database:create
+symfony console --env=test doctrine:schema:create
+symfony console --env=test doctrine:fixtures:load
+```
 
 To run tests typed the following commands :
 
 ```bash
-php bin/phpunit --testdox
+symfony php bin/phpunit --testdox
 ```
