@@ -32,7 +32,30 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
         $form = $buttonCrawlerNode->form();
 
         $form = $buttonCrawlerNode->form([
-            'email' => 'foo@test.com',
+            'email' => 'foo@gmail.com',
+            'password' => '123456'
+        ]);
+
+        $client->submit($form);
+
+        $crawler = $client->request('GET', $url);
+        $this->assertResponseIsSuccessful();
+    }
+
+    /**
+     * @dataProvider adminUrlProvider
+     */
+    public function testAdminPageIsSuccessful($url)
+    {
+        $client = static::createClient();
+        $client->catchExceptions(false);
+        $crawler = $client->request('GET', '/connexion');
+
+        $buttonCrawlerNode = $crawler->selectButton('Connexion');
+        $form = $buttonCrawlerNode->form();
+
+        $form = $buttonCrawlerNode->form([
+            'email' => 'bar@ecommerce.com',
             'password' => '123456'
         ]);
 
@@ -52,5 +75,10 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
     public function privateUrlProvider()
     {
         yield 'account' => ['/compte'];
+    }
+
+    public function adminUrlProvider()
+    {
+        yield 'admin' => ['/admin'];
     }
 }
