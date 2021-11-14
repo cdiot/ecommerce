@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -10,6 +11,8 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class AppFixtures extends Fixture
 {
     private $passwordHasher;
+
+    private $categoriesData = ['Jeu Neuf', 'Jeu Occasion', 'Katana', 'Goodies', 'Figurine'];
 
     public function __construct(UserPasswordHasherInterface $passwordHasher)
     {
@@ -40,6 +43,13 @@ class AppFixtures extends Fixture
         $admin->setIsVerified(true);
 
         $manager->persist($admin);
+
+        // Add 5 Category
+        foreach ($this->categoriesData as $categoryName) {
+            $category = new Category();
+            $category->setName($categoryName);
+            $manager->persist($category);
+        }
 
         $manager->flush();
     }
