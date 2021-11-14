@@ -66,6 +66,12 @@ symfony console --env=test doctrine:schema:create
 symfony console --env=test doctrine:fixtures:load
 ```
 
+or update the test database using :
+
+```bash
+symfony console --env=test doctrine:schema:update
+```
+
 To run tests typed the following commands :
 
 ```bash
