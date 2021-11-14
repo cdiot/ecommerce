@@ -18,11 +18,9 @@
 			<div class="col-12">
 				<P class="h3">Liste des catégories</p>
 				<ul class="list-group">
-					<li class="list-group-item">Jeu Neuf</li>
-					<li class="list-group-item">Jeu Occasion</li>
-					<li class="list-group-item">Katana</li>
-					<li class="list-group-item">Goodies</li>
-					<li class="list-group-item">Figurine</li>
+					{% for category in categories %}
+						<li class="list-group-item">{{ category.name }}</li>
+					{% endfor %}
 				</ul>
 			</div>
 		</div>
