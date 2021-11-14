@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Category;
 use App\Entity\User;
+use App\Repository\CategoryRepository;
 use App\Repository\UserRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -15,16 +16,20 @@ class DashboardController extends AbstractDashboardController
 {
     protected $userRepository;
 
-    public function __construct(UserRepository $userRepository)
+    protected $categoryRepository;
+
+    public function __construct(UserRepository $userRepository, CategoryRepository $categoryRepository)
     {
         $this->userRepository = $userRepository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
         return $this->render('bundles/EasyAdminBundle/welcome.html.twig', [
-            'countAllUser' => $this->userRepository->countAllUser()
+            'countAllUser' => $this->userRepository->countAllUser(),
+            'categories' => $this->categoryRepository->findAll()
         ]);
     }
 
