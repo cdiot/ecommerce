@@ -28,7 +28,6 @@ class CategoryTest extends TestCase
     public function testIsEmpty()
     {
         $category = new Category();
-        $category->setName('');
 
         $this->assertEmpty($category->getName());
     }
