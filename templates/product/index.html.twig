@@ -8,41 +8,41 @@
 	<section class="container-fluid">
 		<div class="row pt-5">
 			<div class="col-md-3">
-				<h2 class="h3 text-center py-4 fw-bold">Filtrer</h2>
-			</div>
-			<div class="col-md-9 section">
-				<h2 class="section-title">Liste des produits</h2>
-				<p>Il y a {{ countAllProducts['value'] }}
-					produits.</p>
-				<div class="row mx-3" id="list">
-					{% for product in products %}
-						<!-- Product-->
-						<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4 item">
-							<article class="product-card">
-								<a class="product-img-top d-block overflow-hidden" href="{{ path('product', { 'slug' : product.slug }) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}"></a>
-								<div class="product-body">
-									<span class="product-meta fs-xs">{{ product.category }}</span>
-									<a href="{{ path('product', { 'slug' : product.slug }) }}">
-										<h3 class="product-title fs-base">{{ product.name }}</h3>
-									</a>
-									<div class="d-flex">
-										<div class="product-price">
-											<span class="fs-lg">{{ (product.price / 100)|number_format(2, ',', '.') }}
-											</span>
+				<h2 class="h3 text-center py-4 fw-bold">Filtrer</h2> {{ form(form) }}
+				</div>
+				<div class="col-md-9 section">
+					<h2 class="section-title">Liste des produits</h2>
+					<p>Il y a {{ countAllProducts['value'] }}
+						produits.</p>
+					<div class="row mx-3" id="list">
+						{% for product in products %}
+							<!-- Product-->
+							<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4 item">
+								<article class="product-card">
+									<a class="product-img-top d-block overflow-hidden" href="{{ path('product', { 'slug' : product.slug }) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}"></a>
+									<div class="product-body">
+										<span class="product-meta fs-xs">{{ product.category }}</span>
+										<a href="{{ path('product', { 'slug' : product.slug }) }}">
+											<h3 class="product-title fs-base">{{ product.name }}</h3>
+										</a>
+										<div class="d-flex">
+											<div class="product-price">
+												<span class="fs-lg">{{ (product.price / 100)|number_format(2, ',', '.') }}
+												</span>
+											</div>
 										</div>
 									</div>
-								</div>
-							</article>
-						</div>
-					{% else %}
-						<p>Aucun produit</p>
-					{% endfor %}
-				</div>
-				<div class="text-center pt-3">
-					<button id="loadMore" class="btn btn-outline-accent" data-load-more-nb-element="8">Plus de produits ></button>
+								</article>
+							</div>
+						{% else %}
+							<p>Aucun produit</p>
+						{% endfor %}
+					</div>
+					<div class="text-center pt-3">
+						<button id="loadMore" class="btn btn-outline-accent" data-load-more-nb-element="8">Plus de produits ></button>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	{% include "base/_brand.html.twig" %}
-{% endblock %}
+		</section>
+		{% include "base/_brand.html.twig" %}
+	{% endblock %}

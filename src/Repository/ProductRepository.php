@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Service\Search;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -25,6 +26,30 @@ class ProductRepository extends ServiceEntityRepository
             ->select('COUNT(p.id) as value')
             ->getQuery()
             ->getOneOrNullResult();
+    }
+
+    /**
+     * Retrieve products based on user research
+     * @param Search $search
+     * @return Product[]
+     */
+    public function findBySearch(Search $search)
+    {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.category', 'c');
+        if (!empty($search->categories)) {
+            $query = $query
+                ->andWhere('c.id IN (:categories)')
+                ->setParameter('categories', $search->categories);
+        }
+        if (!empty($search->string)) {
+            $query = $query
+                ->andWhere('p.name LIKE :string')
+                ->setParameter('string', "%$search->string%");
+        }
+        return $query->getQuery()->getResult();
     }
 
     // /**
