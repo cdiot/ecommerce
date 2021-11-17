@@ -11,15 +11,15 @@
 			</div>
 			<div class="col-md-7 my-auto">
 				<span class="product-meta fs-xs">{{ product.category }}</span>
-				<h1 class="product-title h4">{{product.name}}</h1>
+				<h1 class="product-title h4">{{ product.name }}</h1>
 				<div class="d-flex">
 					<div class="product-price">
-						<span class="fs-lg">{{ (product.price / 100)|number_format(2, ',', '.') }}
+						<span class="fs-lg">{{ price(product.price) }}
 						</span>
 					</div>
 				</div>
 				<hr>
-				<p> {{product.description}}
+				<p> {{ product.description }}
 				</p>
 				<a href="#" class="btn btn-primary">Ajouter au panier</a>
 			</div>
