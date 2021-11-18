@@ -70,6 +70,8 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
         yield 'home' => ['/'];
         yield 'app_login' => ['/connexion'];
         yield 'app_register' => ['/inscription'];
+        yield 'products' => ['/nos-produits'];
+        yield 'product' => ['/produit/ps5-grand-threft-auto-5'];
     }
 
     public function privateUrlProvider()

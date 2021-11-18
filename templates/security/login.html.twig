@@ -57,52 +57,5 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Brands grid -->
-	<section class="container py-lg-4 my-4">
-		<h2 class="h3 text-center pb-4 fw-bold">Tous vos jeux neufs et d'occasions au meilleur prix !</h2>
-		<div
-			class="row justify-content-center align-items-center">
-			<!-- Link-->
-			<div class="col-md-2 col-sm-3">
-				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="#">
-						<img src="{{ asset('build/images/playstation-1.png') }}" alt="Icon Playstation">
-					</a>
-				</div>
-			</div>
-			<!-- Link-->
-			<div class="col-md-2 col-sm-3">
-				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="#">
-						<img src="{{ asset('build/images/playstation-2.png') }}" alt="Logo Playstation">
-					</a>
-				</div>
-			</div>
-			<!-- Link-->
-			<div class="col-md-2 col-sm-3">
-				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="#">
-						<img src="{{ asset('build/images/nintendo-1.png') }}" alt="Logo Nintendo">
-					</a>
-				</div>
-			</div>
-			<!-- Link-->
-			<div class="col-md-2 col-sm-3">
-				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="#">
-						<img src="{{ asset('build/images/xbox-1.png') }}" alt="Icon Xbox">
-					</a>
-				</div>
-			</div>
-			<!-- Link-->
-			<div class="col-md-2 col-sm-3">
-				<div class="rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="#">
-						<img src="{{ asset('build/images/xbox-2.png') }}" alt="Logo Xbox">
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+	{% include "base/_brand.html.twig" %}
 {% endblock %}
