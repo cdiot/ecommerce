@@ -14,37 +14,34 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
-    private $entityManager;
+    private $productRepository;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(ProductRepository $productRepository)
     {
-        $this->entityManager = $entityManager;
+        $this->productRepository = $productRepository;
     }
 
     #[Route('/nos-produits', name: 'products')]
-    public function index(Request $request): Response
+    public function index(Request $request, Search $search): Response
     {
-        $search = new Search();
         $form = $this->createForm(SearchType::class, $search);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $products = $this->entityManager->getRepository(Product::class)->findBySearch($search);
+            $products = $this->productRepository->findBySearch($search);
         } else {
-            $products = $this->entityManager->getRepository(Product::class)->findAll();
+            $products = $this->productRepository->findAll();
         }
-        $countAllProducts = $this->entityManager->getRepository(Product::class)->countAllProduct();
 
         return $this->render('product/index.html.twig', [
             'products' => $products,
-            'form' => $form->createView(),
-            'countAllProducts' => $countAllProducts
+            'form' => $form->createView()
         ]);
     }
 
     #[Route('/produit/{slug}', name: 'product')]
     public function show($slug): Response
     {
-        $product = $this->entityManager->getRepository(Product::class)->findOneBySlug($slug);
+        $product = $this->productRepository->findOneBySlug($slug);
         if (!$product) {
             return $this->redirectToRoute('products');
         }

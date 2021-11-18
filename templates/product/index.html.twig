@@ -12,7 +12,7 @@
 				</div>
 				<div class="col-md-9 section">
 					<h2 class="section-title">Liste des produits</h2>
-					<p>Il y a {{ countAllProducts['value'] }}
+					<p>Il y a {{ products|length }}
 						produits.</p>
 					<div class="row mx-3" id="list">
 						{% for product in products %}
