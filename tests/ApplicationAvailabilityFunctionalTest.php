@@ -72,11 +72,13 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
         yield 'app_register' => ['/inscription'];
         yield 'products' => ['/nos-produits'];
         yield 'product' => ['/produit/ps5-grand-threft-auto-5'];
+        yield 'cart' => ['/mon-panier'];
     }
 
     public function privateUrlProvider()
     {
         yield 'account' => ['/compte'];
+        yield 'account_password' => ['/compte/modifier-mon-mot-de-passe'];
     }
 
     public function adminUrlProvider()
