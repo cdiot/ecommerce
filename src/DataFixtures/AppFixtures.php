@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Address;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\User;
@@ -125,6 +126,21 @@ class AppFixtures extends Fixture
 
             $manager->persist($product);
         }
+
+        // Add 1 Address
+        $address = new Address();
+        $address->setUser($user)
+            ->setName('Magasin')
+            ->setfirstname('Gautier')
+            ->setLastname('Deschelles')
+            ->setCompany('Console et Jeu')
+            ->setAddress('5 Rue du Muguet Vert')
+            ->setPostal('02100')
+            ->setCity('Saint Quentin')
+            ->setCountry('France')
+            ->setPhone('0620278889');
+
+        $manager->persist($address);
 
         $manager->flush();
     }
