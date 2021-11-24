@@ -79,6 +79,9 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
     {
         yield 'account' => ['/compte'];
         yield 'account_password' => ['/compte/modifier-mon-mot-de-passe'];
+        yield 'account_address' => ['/compte/adresses'];
+        yield 'account_address_add' => ['/compte/ajouter-une-adresse'];
+        yield 'account_address_edit' => ['/compte/modifier-une-adresse/1'];
     }
 
     public function adminUrlProvider()
