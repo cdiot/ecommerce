@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Address;
+use App\Entity\Carrier;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\User;
@@ -75,6 +76,19 @@ class AppFixtures extends Fixture
         ],
     ];
 
+    private $carriersData = [
+        1 => [
+            'name' => 'Colissimo',
+            'description' => 'Livraison en 48h.',
+            'price' => 799
+        ],
+        2 => [
+            'name' => 'Chronopost',
+            'description' => 'Livraison en 24h.',
+            'price' => 1490
+        ],
+    ];
+
     public function __construct(UserPasswordHasherInterface $passwordHasher)
     {
         $this->passwordHasher = $passwordHasher;
@@ -141,6 +155,16 @@ class AppFixtures extends Fixture
             ->setPhone('0620278889');
 
         $manager->persist($address);
+
+        // Add 2 Carrier
+        foreach ($this->carriersData as $key => $value) {
+            $carrier = new Carrier();
+            $carrier->setName($value['name'])
+                ->setDescription($value['description'])
+                ->setPrice($value['price']);
+
+            $manager->persist($carrier);
+        }
 
         $manager->flush();
     }

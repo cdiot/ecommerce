@@ -25,5 +25,15 @@
 				</ul>
 			</div>
 		</div>
+		<div class="row mt-3">
+			<div class="col-12">
+				<P class="h3">Liste des transporteurs</p>
+				<ul class="list-group">
+					{% for carrier in carriers %}
+						<li class="list-group-item">{{ carrier.name }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 	</section>
 {% endblock %}

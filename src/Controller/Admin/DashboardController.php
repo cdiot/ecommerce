@@ -2,9 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Carrier;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\User;
+use App\Repository\CarrierRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
 use App\Repository\UserRepository;
@@ -21,11 +23,16 @@ class DashboardController extends AbstractDashboardController
     protected $productRepository;
 
 
-    public function __construct(UserRepository $userRepository, CategoryRepository $categoryRepository, ProductRepository $productRepository)
-    {
+    public function __construct(
+        UserRepository $userRepository,
+        CategoryRepository $categoryRepository,
+        ProductRepository $productRepository,
+        CarrierRepository $carrierRepository
+    ) {
         $this->userRepository = $userRepository;
         $this->categoryRepository = $categoryRepository;
         $this->productRepository = $productRepository;
+        $this->carrierRepository = $carrierRepository;
     }
 
     #[Route('/admin', name: 'admin')]
@@ -34,7 +41,8 @@ class DashboardController extends AbstractDashboardController
         return $this->render('bundles/EasyAdminBundle/welcome.html.twig', [
             'countAllUser' => $this->userRepository->countAllUser(),
             'categories' => $this->categoryRepository->findAll(),
-            'countAllProduct' => $this->productRepository->countAllProduct()
+            'countAllProduct' => $this->productRepository->countAllProduct(),
+            'carriers' => $this->carrierRepository->findAll()
         ]);
     }
 
@@ -50,5 +58,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-tag', Product::class);
+        yield MenuItem::linkToCrud('Transporteurs', 'fas fa-tag', Carrier::class);
     }
 }
