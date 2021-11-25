@@ -9,6 +9,7 @@ use App\Entity\Product;
 use App\Entity\User;
 use App\Repository\CarrierRepository;
 use App\Repository\CategoryRepository;
+use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
 use App\Repository\UserRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -28,12 +29,14 @@ class DashboardController extends AbstractDashboardController
         UserRepository $userRepository,
         CategoryRepository $categoryRepository,
         ProductRepository $productRepository,
-        CarrierRepository $carrierRepository
+        CarrierRepository $carrierRepository,
+        OrderRepository $orderRepository
     ) {
         $this->userRepository = $userRepository;
         $this->categoryRepository = $categoryRepository;
         $this->productRepository = $productRepository;
         $this->carrierRepository = $carrierRepository;
+        $this->orderRepository = $orderRepository;
     }
 
     #[Route('/admin', name: 'admin')]
@@ -43,7 +46,8 @@ class DashboardController extends AbstractDashboardController
             'countAllUser' => $this->userRepository->countAllUser(),
             'categories' => $this->categoryRepository->findAll(),
             'countAllProduct' => $this->productRepository->countAllProduct(),
-            'carriers' => $this->carrierRepository->findAll()
+            'carriers' => $this->carrierRepository->findAll(),
+            'countAllOrder' => $this->orderRepository->countAll()
         ]);
     }
 
