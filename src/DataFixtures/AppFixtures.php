@@ -180,6 +180,16 @@ class AppFixtures extends Fixture
 
         $manager->persist($order);
 
+        // Create 1 order details
+        $orderDetails = new OrderDetails();
+        $orderDetails->setMyOrder($order)
+            ->setProduct('PS5 Grand Threft Auto 5')
+            ->setQuantity(1)
+            ->setPrice(7999)
+            ->setTotal($orderDetails->getPrice() * $orderDetails->getQuantity());
+
+        $manager->persist($orderDetails);
+
         $manager->flush();
     }
 }
