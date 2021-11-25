@@ -5,8 +5,10 @@ namespace App\DataFixtures;
 use App\Entity\Address;
 use App\Entity\Carrier;
 use App\Entity\Category;
+use App\Entity\Order;
 use App\Entity\Product;
 use App\Entity\User;
+use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -165,6 +167,16 @@ class AppFixtures extends Fixture
 
             $manager->persist($carrier);
         }
+
+        // Add 1 Order
+        $address = new Order();
+        $address->setUser($user)
+            ->setCreatedAt(new DateTimeImmutable())
+            ->setCarrierName('Colissimo')
+            ->setCarrierPrice(799)
+            ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin');
+
+        $manager->persist($address);
 
         $manager->flush();
     }
