@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +44,25 @@ class Order
      * @ORM\Column(type="text")
      */
     private $delivery;
+
+    /**
+     * @ORM\OneToMany(targetEntity=OrderDetails::class, mappedBy="myOrder")
+     */
+    private $orderDetails;
+
+    public function __construct()
+    {
+        $this->orderDetails = new ArrayCollection();
+    }
+
+    public function getTotal()
+    {
+        $total = 0;
+        foreach ($this->getOrderDetails()->getValues() as $product) {
+            $total += ($product->getPrice() * $product->getQuantity());
+        }
+        return $total;
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +125,36 @@ class Order
     public function setDelivery(string $delivery): self
     {
         $this->delivery = $delivery;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OrderDetails[]
+     */
+    public function getOrderDetails(): Collection
+    {
+        return $this->orderDetails;
+    }
+
+    public function addOrderDetail(OrderDetails $orderDetail): self
+    {
+        if (!$this->orderDetails->contains($orderDetail)) {
+            $this->orderDetails[] = $orderDetail;
+            $orderDetail->setMyOrder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderDetail(OrderDetails $orderDetail): self
+    {
+        if ($this->orderDetails->removeElement($orderDetail)) {
+            // set the owning side to null (unless already changed)
+            if ($orderDetail->getMyOrder() === $this) {
+                $orderDetail->setMyOrder(null);
+            }
+        }
 
         return $this;
     }
