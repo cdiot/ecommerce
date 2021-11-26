@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container section pt-5">
+		<h1 class="section-title h2">Ma commande</h1>
+		<div class="row">
+			<div class="col-md-7">
+				<h2 class="h4">Choisisser vos préférences avant de passer votre commande</h2>
+				{% set formHtml %} {{ form_start(form, {action:path('order_recapitulatif')}) }}
+				<a href="{{ path('account_address_add') }}">Ajouter une nouvelle adresse</a> {{ form(form) }} {{ form_end(form) }}
+					{% endset %} {{ formHtml|replace({'[br]': '<br>'})|raw }}
+				</div>
+				<div class="col-md-5">
+					<h2 class="h4">Récapitilatif de ma commande</h2>
+					{% for key, product in cart %}
+						<div class="row bg-light p-3 mt-2">
+							<div class="col-2">
+								<a class="product-img-top d-block overflow-hidden" href="{{ path('product', { 'slug' : product.product.slug }) }}">
+									<img src="{{ asset('/uploads/' ~ product.product.illustration) }}" alt="{{ product.product.name}}">
+								</a>
+							</div>
+							<div class="col-8 my-auto">
+								<a href="{{ path('product', { 'slug' : product.product.slug }) }}">
+									<p class="product-title fs-base">{{ product.product.name }}</p>
+								</a>
+							</div>
+							<div class="col-2 my-auto">
+								x {{ product.quantity }}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		{% include "base/_brand.html.twig" %}
+	{% endblock %}
