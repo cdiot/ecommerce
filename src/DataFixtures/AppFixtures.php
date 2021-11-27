@@ -6,6 +6,7 @@ use App\Entity\Address;
 use App\Entity\Carrier;
 use App\Entity\Category;
 use App\Entity\Order;
+use App\Entity\OrderDetails;
 use App\Entity\Product;
 use App\Entity\User;
 use DateTimeImmutable;
@@ -169,14 +170,25 @@ class AppFixtures extends Fixture
         }
 
         // Add 1 Order
-        $address = new Order();
-        $address->setUser($user)
+        $order = new Order();
+        $order->setUser($user)
             ->setCreatedAt(new DateTimeImmutable())
             ->setCarrierName('Colissimo')
             ->setCarrierPrice(799)
-            ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin');
+            ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin')
+            ->setIsPaid(0);
 
-        $manager->persist($address);
+        $manager->persist($order);
+
+        // Create 1 order details
+        $orderDetails = new OrderDetails();
+        $orderDetails->setMyOrder($order)
+            ->setProduct('PS5 Grand Threft Auto 5')
+            ->setQuantity(1)
+            ->setPrice(7999)
+            ->setTotal($orderDetails->getPrice() * $orderDetails->getQuantity());
+
+        $manager->persist($orderDetails);
 
         $manager->flush();
     }

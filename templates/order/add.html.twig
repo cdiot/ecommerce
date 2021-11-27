@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Paiement de ma commande | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container section pt-5">
+		<h1 class="section-title h2">Mon récapitulatif</h1>
+		<p>Vérifier vos informations avant de payer votre commande</p>
+
+
+		<div class="row">
+			<div class="col-md-6">
+
+				<strong>Mon adresse de livraison</strong>
+				<br>
+				<div class="form-check mt-4"> {{delivery_address|raw}}
+				</div>
+
+				<strong>Mon transporteur</strong>
+				<br>
+				<div class="form-check"> {{carrier.name}}
+					<br> {{carrier.description}}
+					<br> {{ price(carrier.price) }}
+					&euro;
+				</div>
+
+
+			</div>
+
+			<div class="col-md-6">
+				<strong>Ma commande</strong>
+				<div>
+					{% set totalProducts = 0 %}
+					{% for key, product in cart %}
+						<div class="row bg-light p-3 mt-2">
+							<div class="col-2">
+								<a class="product-img-top d-block overflow-hidden" href="{{ path('product', { 'slug' : product.product.slug }) }}">
+									<img src="{{ asset('/uploads/' ~ product.product.illustration) }}" alt="{{product.product.name}}">
+								</a>
+							</div>
+							<div class="col-8 my-auto">
+								<a href="{{ path('product', { 'slug' : product.product.slug }) }}"> {{product.product.name}}</a><br>
+								x {{product.quantity}}
+							</div>
+							<div class="col-2 my-auto">
+								<p>{{ price((product.product.price * product.quantity)) }}
+									&euro;</p>
+							</div>
+						</div>
+						{% set totalProducts = totalProducts + ((product.product.price * product.quantity) / 100) %}
+					{% endfor %}
+				</div>
+				<hr>
+				<strong>Sous-total :
+				</strong> {{ price(totalProducts) }}
+				&euro;<br>
+				<strong>Livraison :
+				</strong> {{ price(carrier.price) }}
+				&euro;
+				<hr>
+				{% set total = (totalProducts + (carrier.price / 100)) | number_format(2, ',', '.')  %}
+				<strong>Total :
+				</strong> {{ total}}
+				&euro;
+				<br>
+
+				<a class="btn btn-success btn-block mt-3" id="checkout-button">Payer {{total}}
+					&euro;</a>
+
+			</div>
+		</div>
+	</section>
+	{% include "base/_brand.html.twig" %}
+{% endblock %}
