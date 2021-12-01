@@ -171,12 +171,15 @@ class AppFixtures extends Fixture
 
         // Add 1 Order
         $order = new Order();
+        $dayDate = new DateTimeImmutable();
+        $reference = $dayDate->format('dmY') . '' . uniqid();
         $order->setUser($user)
-            ->setCreatedAt(new DateTimeImmutable())
+            ->setCreatedAt($dayDate)
             ->setCarrierName('Colissimo')
             ->setCarrierPrice(799)
             ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin')
-            ->setIsPaid(0);
+            ->setIsPaid(0)
+            ->setReference($reference);
 
         $manager->persist($order);
 

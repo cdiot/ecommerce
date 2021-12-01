@@ -18,7 +18,8 @@ class OrderTest extends TestCase
             ->setCarrierName('Colissimo')
             ->setCarrierPrice(7.99)
             ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin')
-            ->setIsPaid(1);
+            ->setIsPaid(1)
+            ->setReference('30112021-5f744f4fee8a1');
 
         $this->assertSame($user, $order->getUser());
         $this->assertTrue($order->getCreatedAt() === $date);
@@ -26,6 +27,7 @@ class OrderTest extends TestCase
         $this->assertTrue($order->getCarrierPrice() === 7.99);
         $this->assertTrue($order->getDelivery() === '5 Rue du Muguet Vert 02100 Saint Quentin');
         $this->assertTrue($order->getIsPaid() == 1);
+        $this->assertFalse($order->getReference() == '30112021-5f744f4fee8a1');
     }
 
     public function testIsFalse()
@@ -39,7 +41,8 @@ class OrderTest extends TestCase
             ->setCarrierName('Chronopost')
             ->setCarrierPrice(14.99)
             ->setDelivery('7 Rue du Muguet Vert 80000 Peronne')
-            ->setIsPaid(0);
+            ->setIsPaid(0)
+            ->setReference('30122021-5f744f4fee8a1');
 
         $this->assertNotSame(new User(), $order->getUser());
         $this->assertFalse($yesterday === $date);
@@ -47,6 +50,7 @@ class OrderTest extends TestCase
         $this->assertFalse($order->getCarrierPrice() === 7.99);
         $this->assertFalse($order->getDelivery() === '5 Rue du Muguet Vert 02100 Saint Quentin');
         $this->assertFalse($order->getIsPaid() == 1);
+        $this->assertFalse($order->getReference() == '30112021-5f744f4fee8a1');
     }
 
     public function testIsEmpty()
@@ -59,5 +63,6 @@ class OrderTest extends TestCase
         $this->assertEmpty($order->getCarrierPrice());
         $this->assertEmpty($order->getDelivery());
         $this->assertEmpty($order->getIsPaid());
+        $this->assertEmpty($order->getReference());
     }
 }
