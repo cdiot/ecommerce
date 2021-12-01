@@ -16,7 +16,7 @@
 				<div class="col-md-5">
 					<h2 class="h4">Récapitilatif de ma commande</h2>
 					{% for key, product in cart %}
-						<div class="row bg-light p-3 mt-2">
+						<div class="row border rounded-3 p-3 mt-2">
 							<div class="col-2">
 								<a class="product-img-top d-block overflow-hidden" href="{{ path('product', { 'slug' : product.product.slug }) }}">
 									<img src="{{ asset('/uploads/' ~ product.product.illustration) }}" alt="{{ product.product.name}}">
