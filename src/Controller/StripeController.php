@@ -13,6 +13,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class StripeController extends AbstractController
 {
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     #[Route('/commande/create-session/{reference}', name: 'stripe_create_session')]
     public function index(OrderRepository $orderRepository, ProductRepository $productRepository, $reference): RedirectResponse
     {
@@ -63,9 +70,12 @@ class StripeController extends AbstractController
                 $products_for_stripe
             ],
             'mode' => 'payment',
-            'success_url' => $YOUR_DOMAIN . '/success.html',
+            'success_url' => $YOUR_DOMAIN . '/commande/merci/{CHECKOUT_SESSION_ID}',
             'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
         ]);
+
+        $order->setStripeSessionId($checkout_session->id);
+        $this->entityManager->flush();
 
         $response = new RedirectResponse($checkout_session->url, 303);
 
