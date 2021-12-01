@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Ma Commande {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+	<!-- Orders -->
+	<section class="container py-lg-4 my-4 section">
+		<h1 class="h2 section-title">Commande n°{{order.reference}}</h1>
+		<a href="{{ path('account_order') }}">Retour</a>
+		<hr>
+		<strong>Commande passé le :</strong> {{order.createdAt|date('d-m-Y')}}<br>
+		<strong>Référence de ma commande :</strong>
+		<small>{{order.reference}}</small><br>
+		<strong>Transporteur choisi :</strong> {{order.carrierName}}
+		<br>
+		<hr>
+		<table class="table mt-4">
+			<thead>
+				<tr>
+					<th scope="col">Produit</th>
+					<th scope="col">Quantité</th>
+					<th scope="col">Prix unitaire</th>
+					<th scope="col">Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for product in order.orderDetails %}
+					<tr>
+						<td>{{ product.product }}</td>
+						<td>x{{ product.quantity }}</td>
+						<td>{{ price(product.price) }}
+							&euro;</td>
+						<td>{{ price(product.total) }}
+							&euro;</td>
+					</tr>
+				{% endfor %}
+
+
+			</tbody>
+		</table>
+
+		<div class="text-right">
+			<strong>Sous-total :
+			</strong> {{ price(order.getTotal) }}
+			&euro;
+			<br>
+			<strong>Livraison :
+			</strong> {{ price(order.carrierPrice) }}
+			&euro;
+			<br>
+			<strong>Total :
+			</strong> {{ price(order.carrierPrice + order.getTotal) }}
+			&euro;
+		</div>
+
+	</section>
+	{% include "base/_brand.html.twig" %}
+{% endblock %}

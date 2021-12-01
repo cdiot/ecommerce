@@ -36,6 +36,11 @@ class Cart
         return $this->session->get('cart');
     }
 
+    public function remove()
+    {
+        return $this->session->remove('cart');
+    }
+
     public function delete($id)
     {
         $cart = $this->session->get('cart', []);

@@ -10,22 +10,22 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20211125121120 extends AbstractMigration
+final class Version20211201164622 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return 'Add is_paid in Order entity';
+        return 'Add stripe_session_id in Order entity';
     }
 
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE `order` ADD is_paid TINYINT(1) NOT NULL');
+        $this->addSql('ALTER TABLE `order` ADD stripe_session_id VARCHAR(255) NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE `order` DROP is_paid');
+        $this->addSql('ALTER TABLE `order` DROP stripe_session_id');
     }
 }

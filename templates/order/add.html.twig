@@ -4,6 +4,10 @@
 {% block title %}Paiement de ma commande | {{ parent() }}
 {% endblock %}
 
+{% block javascripts %}
+	<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
 {% block body %}
 	<section class="container section pt-5">
 		<h1 class="section-title h2">Mon récapitulatif</h1>
@@ -34,7 +38,7 @@
 				<div>
 					{% set totalProducts = 0 %}
 					{% for key, product in cart %}
-						<div class="row bg-light p-3 mt-2">
+						<div class="row border rounded-3 p-3 mt-2">
 							<div class="col-2">
 								<a class="product-img-top d-block overflow-hidden" href="{{ path('product', { 'slug' : product.product.slug }) }}">
 									<img src="{{ asset('/uploads/' ~ product.product.illustration) }}" alt="{{product.product.name}}">
@@ -54,7 +58,7 @@
 				</div>
 				<hr>
 				<strong>Sous-total :
-				</strong> {{ price(totalProducts) }}
+				</strong> {{ totalProducts }}
 				&euro;<br>
 				<strong>Livraison :
 				</strong> {{ price(carrier.price) }}
@@ -66,9 +70,10 @@
 				&euro;
 				<br>
 
-				<a class="btn btn-success btn-block mt-3" id="checkout-button">Payer {{total}}
-					&euro;</a>
-
+				<form action="/commande/create-session/{{ reference }}" method="POST">
+					<button type="submit" class="btn btn-success btn-block mt-3">Confirmer et Payer {{total}}
+						&euro;</button>
+				</form>
 			</div>
 		</div>
 	</section>

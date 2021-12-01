@@ -66,12 +66,14 @@ class OrderController extends AbstractController
 
             // Register my order Order()
             $order = new Order();
+            $reference = $dayDate->format('dmY') . '' . uniqid();
             $order->setUser($this->getUser())
                 ->setCreatedAt($dayDate)
                 ->setCarrierName($carrier->getName())
                 ->setCarrierPrice($carrier->getPrice())
                 ->setDelivery($delivery_address)
-                ->setIsPaid(0);
+                ->setIsPaid(0)
+                ->setReference($reference);
             $this->entityManager->persist($order);
 
             // Register my products OrderDetails()
@@ -89,7 +91,8 @@ class OrderController extends AbstractController
             return $this->render('order/add.html.twig', [
                 'cart' => $cart->getFull(),
                 'carrier' => $carrier,
-                'delivery_address' => $delivery_address
+                'delivery_address' => $delivery_address,
+                'reference' => $order->getReference()
             ]);
         }
         return $this->redirectToRoute('cart');
