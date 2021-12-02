@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Service\Cart;
 use App\Repository\OrderRepository;
+use App\Service\Mailer;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +20,7 @@ class OrderSuccessController extends AbstractController
     }
 
     #[Route('/commande/merci/{stripeSessionId}', name: 'order_success')]
-    public function index(Cart $cart, OrderRepository $orderRepository, $stripeSessionId): Response
+    public function index(Cart $cart, OrderRepository $orderRepository, Mailer $mailer, $stripeSessionId): Response
     {
         $order = $orderRepository->findOneByStripeSessionId($stripeSessionId);
 
@@ -31,6 +32,16 @@ class OrderSuccessController extends AbstractController
             $cart->remove();
             $order->setIsPaid(1);
             $this->entityManager->flush();
+
+            $mailer->send(
+                'Commande #' .  $order->getReference() . ' confirmée - Ecommerce | SITE OFFICIEL',
+                'bar@ecommerce.com',
+                $order->getUser()->getEmail(),
+                'emails/order_success.html.twig',
+                [
+                    'order' => $order,
+                ]
+            );
         }
 
         return $this->render('order_success/index.html.twig', [
