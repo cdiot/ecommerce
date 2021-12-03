@@ -36,7 +36,7 @@
 					{#
 					Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
 					See https://symfony.com/doc/current/security/remember_me.html
-					
+							
 					<div class="checkbox mb-3">
 					<label>
 						<input type="checkbox" name="_remember_me"> Remember me
@@ -49,7 +49,7 @@
 					</button>
 					<hr>
 					<p>
-						<a href="#" class="text-primary">Mot de passe oublié</a>
+						<a href="{{ path('app_forgot_password_request') }}" class="text-primary">Mot de passe oublié</a>
 						? ou souhaitez-vous
 						<a href="{{ path('app_register') }}" class="text-primary">créer un compte ?</a>
 					</p>
