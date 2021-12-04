@@ -27,7 +27,8 @@ class AppFixtures extends Fixture
             'illustration' => '7rK3P5yvB.jpg',
             'description' => 'Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles est un jeu vidéo d\'action-aventure développé par CyberConnect2 et édité par Aniplex au Japon.',
             'price' => 5999,
-            'category' => 0
+            'category' => 0,
+            'isBest' => 0
         ],
         2 => [
             'name' => 'PS5 Grand Threft Auto 5',
@@ -35,7 +36,8 @@ class AppFixtures extends Fixture
             'illustration' => '5hCsZj27K.jpg',
             'description' => 'Grand Theft Auto V est un jeu vidéo d\'action-aventure, développé par Rockstar North et édité par Rockstar Games.',
             'price' => 7999,
-            'category' => 0
+            'category' => 0,
+            'isBest' => 1
         ],
         3 => [
             'name' => 'Katana de Tanjirō Kamado – Demon Slayer',
@@ -43,7 +45,8 @@ class AppFixtures extends Fixture
             'illustration' => 't3MQ4aX2d.jpg',
             'description' => 'Superbe réplique du katana de Tanjirō Kamado personnage principale dans le manga Demon Slayer.',
             'price' => 4999,
-            'category' => 2
+            'category' => 2,
+            'isBest' => 1
         ],
         4 => [
             'name' => 'Carnet Death Note',
@@ -51,7 +54,8 @@ class AppFixtures extends Fixture
             'illustration' => 'p5SLfw65M.jpg',
             'description' => 'Superbe réplique du carnet Death Note.',
             'price' => 1699,
-            'category' => 3
+            'category' => 3,
+            'isBest' => 0
         ],
         5 => [
             'name' => 'PS4 Red dead redemption 2',
@@ -59,7 +63,8 @@ class AppFixtures extends Fixture
             'illustration' => '8Xs25RzwW.jpg',
             'description' => 'Red Dead Redemption II est un jeu vidéo d\'action-aventure et de western multiplateforme, développé par Rockstar Studios et édité par Rockstar Games.',
             'price' => 1999,
-            'category' => 1
+            'category' => 1,
+            'isBest' => 1
         ],
         6 => [
             'name' => 'PS4 Minecraft',
@@ -67,7 +72,8 @@ class AppFixtures extends Fixture
             'illustration' => 'cF22wUY3t.jpg',
             'description' => 'Minecraft est un jeu vidéo de type aventure « bac à sable » développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.',
             'price' => 1999,
-            'category' => 0
+            'category' => 0,
+            'isBest' => 1
         ],
         7 => [
             'name' => 'Funko Pop Games Of Thrones Jon Snow',
@@ -75,7 +81,8 @@ class AppFixtures extends Fixture
             'illustration' => 'D87Vix2Zy.jpg',
             'description' => 'Figurine Funko Pop! N°07 - Game Of Thrones, Dans la saga Game Of Thrones, Jon Snow est le fils illégitime d\'Eddard Stark. Son père a toujours gardé l\'identité de sa mère secrète.',
             'price' => 999,
-            'category' => 4
+            'category' => 4,
+            'isBest' => 0
         ],
     ];
 
@@ -139,7 +146,8 @@ class AppFixtures extends Fixture
                 ->setIllustration($value['illustration'])
                 ->setDescription($value['description'])
                 ->setPrice($value['price'])
-                ->setCategory($categories[$value['category']]);
+                ->setCategory($categories[$value['category']])
+                ->setIsBest($value['isBest']);
 
             $manager->persist($product);
         }
