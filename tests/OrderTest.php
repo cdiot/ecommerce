@@ -18,7 +18,7 @@ class OrderTest extends TestCase
             ->setCarrierName('Colissimo')
             ->setCarrierPrice(7.99)
             ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin')
-            ->setIsPaid(1)
+            ->setState(1)
             ->setReference('30112021-5f744f4fee8a1')
             ->setStripeSessionId('b19CLCjLvEfv2BpnBPDmi83djsl4Ofk5zVegfxhdNU3oC5XrbMPB1lKKXr');
 
@@ -27,7 +27,7 @@ class OrderTest extends TestCase
         $this->assertTrue($order->getCarrierName() === 'Colissimo');
         $this->assertTrue($order->getCarrierPrice() === 7.99);
         $this->assertTrue($order->getDelivery() === '5 Rue du Muguet Vert 02100 Saint Quentin');
-        $this->assertTrue($order->getIsPaid() == 1);
+        $this->assertTrue($order->getState() == 1);
         $this->assertTrue($order->getReference() == '30112021-5f744f4fee8a1');
         $this->assertTrue($order->getStripeSessionId() == 'b19CLCjLvEfv2BpnBPDmi83djsl4Ofk5zVegfxhdNU3oC5XrbMPB1lKKXr');
     }
@@ -43,7 +43,7 @@ class OrderTest extends TestCase
             ->setCarrierName('Chronopost')
             ->setCarrierPrice(14.99)
             ->setDelivery('7 Rue du Muguet Vert 80000 Peronne')
-            ->setIsPaid(0)
+            ->setState(0)
             ->setReference('30122021-5f744f4fee8a1')
             ->setStripeSessionId('b19CLCjLvEfv2BpnBPDmi83djsk5Ofk5zVegfxhdNU3oC5XrbMPB1lKKXr');
 
@@ -52,7 +52,7 @@ class OrderTest extends TestCase
         $this->assertFalse($order->getCarrierName() === 'Colissimo');
         $this->assertFalse($order->getCarrierPrice() === 7.99);
         $this->assertFalse($order->getDelivery() === '5 Rue du Muguet Vert 02100 Saint Quentin');
-        $this->assertFalse($order->getIsPaid() == 1);
+        $this->assertFalse($order->getState() == 1);
         $this->assertFalse($order->getReference() == '30112021-5f744f4fee8a1');
         $this->assertFalse($order->getStripeSessionId() == 'b19CLCjLvEfv2BpnBPDmi83djsl4Ofk5zVegfxhdNU3oC5XrbMPB1lKKXr');
     }
@@ -66,7 +66,7 @@ class OrderTest extends TestCase
         $this->assertEmpty($order->getCarrierName());
         $this->assertEmpty($order->getCarrierPrice());
         $this->assertEmpty($order->getDelivery());
-        $this->assertEmpty($order->getIsPaid());
+        $this->assertEmpty($order->getState());
         $this->assertEmpty($order->getReference());
         $this->assertEmpty($order->getStripeSessionId());
     }

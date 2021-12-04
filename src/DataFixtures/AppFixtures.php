@@ -178,7 +178,7 @@ class AppFixtures extends Fixture
             ->setCarrierName('Colissimo')
             ->setCarrierPrice(799)
             ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin')
-            ->setIsPaid(0)
+            ->setState(1)
             ->setReference($reference);
 
         $manager->persist($order);
