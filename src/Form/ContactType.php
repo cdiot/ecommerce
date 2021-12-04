@@ -9,6 +9,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ContactType extends AbstractType
 {
@@ -19,18 +22,31 @@ class ContactType extends AbstractType
                 'label' => 'Adresse mail',
                 'attr' => [
                     'placeholder' => 'Votre email'
+                ],
+                'constraints' => [
+                    new Email([
+                        'message' => 'Veuillez entrer un email valide.',
+                    ]),
                 ]
             ])
-            ->add('sujet', TextType::class, [
+            ->add('subject', TextType::class, [
                 'label' => 'Sujet',
                 'attr' => [
                     'placeholder' => 'Votre sujet'
+                ],
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['min' => 3]),
                 ]
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Message',
                 'attr' => [
                     'placeholder' => 'Votre message'
+                ],
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['min' => 10]),
                 ]
             ])
             ->add('submit', SubmitType::class, [
