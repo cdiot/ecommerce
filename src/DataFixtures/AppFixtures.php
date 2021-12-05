@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Address;
 use App\Entity\Carrier;
 use App\Entity\Category;
+use App\Entity\Header;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
 use App\Entity\Product;
@@ -96,6 +97,23 @@ class AppFixtures extends Fixture
             'name' => 'Chronopost',
             'description' => 'Livraison en 24h.',
             'price' => 1490
+        ],
+    ];
+
+    private $headersData = [
+        1 => [
+            'title' => 'Gros arrivage',
+            'content' => 'Accédez à un catalogue de jeux, figurines et autres goodies neufs et d\'occasions règulièrement enrichi.',
+            'btnTitle' => 'Découvrir',
+            'btnUrl' => 'https://127.0.0.1:8000/nos-produits',
+            'illustration' => 'slide_1.jpg'
+        ],
+        2 => [
+            'title' => 'Nouveautés PS5',
+            'content' => 'Découvrez Grand Theft Auto: The Trilogy – The Definitive Edition en version remasterisée.',
+            'btnTitle' => 'Achetez maintenant',
+            'btnUrl' => 'https://127.0.0.1:8000/produit/ps5-grand-threft-auto-5',
+            'illustration' => 'slide_2.jpg'
         ],
     ];
 
@@ -200,6 +218,18 @@ class AppFixtures extends Fixture
             ->setTotal($orderDetails->getPrice() * $orderDetails->getQuantity());
 
         $manager->persist($orderDetails);
+
+
+        // Create 2 Header
+        foreach ($this->headersData as $key => $value) {
+            $header = new Header();
+            $header->setTitle($value['title'])
+                ->setContent($value['content'])
+                ->setBtnTitle($value['btnTitle'])
+                ->setBtnUrl($value['btnUrl'])
+                ->setIllustration($value['illustration']);
+            $manager->persist($header);
+        }
 
         $manager->flush();
     }
