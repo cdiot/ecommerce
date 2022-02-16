@@ -19,7 +19,7 @@ class ProductTest extends TestCase
             ->setDescription('Grand Theft Auto V est un jeu vidéo d\'action-aventure, développé par Rockstar North et édité par Rockstar Games.')
             ->setPrice(79.99)
             ->setCategory($category)
-            ->setIsBest(1);
+            ->setIsBest(true);
 
         $this->assertTrue($product->getName() === 'PS5 Grand Threft Auto 5');
         $this->assertTrue($product->getSlug() === 'ps5-grand-threft-auto-5');
@@ -27,7 +27,7 @@ class ProductTest extends TestCase
         $this->assertTrue($product->getDescription() === 'Grand Theft Auto V est un jeu vidéo d\'action-aventure, développé par Rockstar North et édité par Rockstar Games.');
         $this->assertTrue($product->getPrice() === 79.99);
         $this->assertSame($category, $product->getCategory());
-        $this->assertTrue($product->getIsBest() === 1);
+        $this->assertTrue($product->getIsBest() === true);
     }
 
     public function testIsFalse()
