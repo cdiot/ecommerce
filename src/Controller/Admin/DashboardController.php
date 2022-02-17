@@ -21,23 +21,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractDashboardController
 {
-    protected $userRepository;
-    protected $categoryRepository;
-    protected $productRepository;
-
-
     public function __construct(
-        UserRepository $userRepository,
-        CategoryRepository $categoryRepository,
-        ProductRepository $productRepository,
-        CarrierRepository $carrierRepository,
-        OrderRepository $orderRepository
+        protected UserRepository $userRepository,
+        protected CategoryRepository $categoryRepository,
+        protected ProductRepository $productRepository,
+        protected CarrierRepository $carrierRepository,
+        protected OrderRepository $orderRepository
     ) {
-        $this->userRepository = $userRepository;
-        $this->categoryRepository = $categoryRepository;
-        $this->productRepository = $productRepository;
-        $this->carrierRepository = $carrierRepository;
-        $this->orderRepository = $orderRepository;
     }
 
     #[Route('/admin', name: 'admin')]

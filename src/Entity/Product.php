@@ -15,42 +15,42 @@ class Product
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $name;
+    private ?string $name = null;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $slug;
+    private ?string $slug = null;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $illustration;
+    private ?string $illustration = null;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private ?string $description = null;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $price;
+    private ?float $price = null;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
      */
-    private $category;
+    private ?Category $category = null;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isBest;
+    private ?bool $isBest = null;
 
     public function getId(): ?int
     {

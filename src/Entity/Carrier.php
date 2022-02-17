@@ -15,22 +15,22 @@ class Carrier
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $name;
+    private ?string $name = null;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private ?string $description = null;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $price;
+    private ?float $price = null;
 
     public function __toString()
     {

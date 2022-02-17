@@ -11,25 +11,15 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 class Mailer
 {
     /**
-     * @var MailerInterface
-     */
-    private $mailer;
-
-    /**
-     * @var Environment
-     */
-    private $twig;
-
-    /**
      * MailerService constructor.
      *
      * @param MailerInterface $mailer
      * @param Environment $twig
      */
-    public function __construct(MailerInterface $mailer, Environment $twig)
-    {
-        $this->mailer = $mailer;
-        $this->twig = $twig;
+    public function __construct(
+        private MailerInterface $mailer,
+        private Environment $twig
+    ) {
     }
 
     /**

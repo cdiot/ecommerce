@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -18,12 +19,12 @@ class Order
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
      */
-    private $user;
+    private ?User $user = null;
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -33,37 +34,37 @@ class Order
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $carrierName;
+    private ?string $carrierName = null;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $carrierPrice;
+    private ?float $carrierPrice = null;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $delivery;
+    private ?string $delivery = null;
 
     /**
      * @ORM\OneToMany(targetEntity=OrderDetails::class, mappedBy="myOrder")
      */
-    private $orderDetails;
+    private Collection $orderDetails;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $reference;
+    private ?string $reference = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $stripeSessionId;
+    private ?string $stripeSessionId = null;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $state;
+    private ?int $state = null;
 
     public function __construct()
     {

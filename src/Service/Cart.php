@@ -10,13 +10,11 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Cart
 {
-    private $entityManager;
-    private $session;
 
-    public function __construct(EntityManagerInterface $entityManager, SessionInterface $session)
-    {
-        $this->entityManager = $entityManager;
-        $this->session = $session;
+    public function __construct(
+        private EntityManagerInterface $entityManager,
+        private SessionInterface $session
+    ) {
     }
 
     public function add($id)
