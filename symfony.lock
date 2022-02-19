@@ -139,6 +139,9 @@
     "phpspec/prophecy": {
         "version": "1.14.0"
     },
+    "phpstan/phpdoc-parser": {
+        "version": "1.2.0"
+    },
     "phpunit/php-code-coverage": {
         "version": "9.2.7"
     },
@@ -242,9 +245,6 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
-    },
-    "stripe/stripe-php": {
-        "version": "v7.103.0"
     },
     "symfony/asset": {
         "version": "v5.3.4"
@@ -511,9 +511,6 @@
     },
     "symfony/security-csrf": {
         "version": "v5.3.4"
-    },
-    "symfony/security-guard": {
-        "version": "v5.3.7"
     },
     "symfony/security-http": {
         "version": "v5.3.8"
