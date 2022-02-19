@@ -15,57 +15,57 @@ class Address
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="addresses")
      */
-    private $user;
+    private ?User $user = null;
 
     /**
      * @ORM\Column(type="string", length=30)
      */
-    private $name;
+    private ?string $name = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $firstname;
+    private ?string $firstname = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $lastname;
+    private ?string $lastname = null;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $company;
+    private ?string $company = null;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $address;
+    private ?string $address = null;
 
     /**
      * @ORM\Column(type="string", length=30)
      */
-    private $postal;
+    private ?string $postal = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $city;
+    private ?string $city = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $country;
+    private ?string $country = null;
 
     /**
      * @ORM\Column(type="string", length=30)
      */
-    private $phone;
+    private ?string $phone = null;
 
     public function __toString(): string
     {

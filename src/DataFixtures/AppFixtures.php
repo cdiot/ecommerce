@@ -117,9 +117,8 @@ class AppFixtures extends Fixture
         ],
     ];
 
-    public function __construct(UserPasswordHasherInterface $passwordHasher)
+    public function __construct(private UserPasswordHasherInterface $passwordEncoder)
     {
-        $this->passwordHasher = $passwordHasher;
     }
 
     public function load(ObjectManager $manager): void

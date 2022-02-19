@@ -15,32 +15,32 @@ class Header
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $title;
+    private ?string $title = null;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $content;
+    private ?string $content = null;
 
     /**
      * @ORM\Column(type="string", length=30)
      */
-    private $btnTitle;
+    private ?string $btnTitle = null;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $btnUrl;
+    private ?string $btnUrl = null;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $illustration;
+    private ?string $illustration = null;
 
     public function getId(): ?int
     {

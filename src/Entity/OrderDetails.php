@@ -15,32 +15,32 @@ class OrderDetails
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
-     * @ORM\ManyToOne(targetEntity=order::class, inversedBy="orderDetails")
+     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="orderDetails")
      */
-    private $myOrder;
+    private ?Order $myOrder = null;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $product;
+    private ?string $product = null;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $quantity;
+    private ?int $quantity = null;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $price;
+    private ?float $price = null;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $total;
+    private ?float $total = null;
 
     public function __toString()
     {

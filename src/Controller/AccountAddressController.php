@@ -14,13 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AccountAddressController extends AbstractController
 {
-    private $entityManager;
-    private $addressRepository;
-
-    public function __construct(EntityManagerInterface $entityManager, AddressRepository $addressRepository)
-    {
-        $this->entityManager = $entityManager;
-        $this->addressRepository = $addressRepository;
+    public function __construct(
+        private EntityManagerInterface $entityManager,
+        private AddressRepository $addressRepository
+    ) {
     }
 
     #[Route('/compte/adresses', name: 'account_address')]

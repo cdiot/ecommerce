@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -21,38 +22,38 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id = null;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", unique=true)
      */
-    private $email;
+    #[Assert\Email]
+    private ?string $email = null;
 
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    private array $roles = [];
 
     /**
-     * @var string The hashed password
      * @ORM\Column(type="string")
      */
-    private $password;
+    private ?string $password = null;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isVerified = false;
+    private ?bool $isVerified = false;
 
     /**
      * @ORM\OneToMany(targetEntity=Address::class, mappedBy="user")
      */
-    private $addresses;
+    private Collection $addresses;
 
     /**
      * @ORM\OneToMany(targetEntity=Order::class, mappedBy="user")
      */
-    private $orders;
+    private Collection $orders;
 
     public function __construct()
     {
