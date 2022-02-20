@@ -33,7 +33,7 @@ git clone https://github.com/cdiot/ecommerce.git
 
 ### Launch the development environment
 
-Configure the environment variables by copying the .env file to .env.local at the root directory of your project and define the news values.
+Configure the environment variables by copying the .env.dist file to .env.local at the root directory of your project and define the news values.
 
 To start the development environment typed the following commands :
 
@@ -41,6 +41,8 @@ To start the development environment typed the following commands :
 composer install
 npm install
 npm run build
+symfony console doctrine:database:create
+symfony console doctrine:migrations:migrate
 symfony serve -d
 ```
 
@@ -56,20 +58,14 @@ symfony console doctrine:fixtures:load
 
 Tests that interact with the database use their own separate database to not mess with the databases used.
 
-To do that, edit or create the .env.test.local file at the root directory of your project and define the new value for the environment variables.
+To do that, create the .env.test.local file by copying the .env.dist file at the root directory of the project and define the new value for the environment variables.
 
 After that, create the test database and all tables using :
 
 ```bash
 symfony console --env=test doctrine:database:create
-symfony console --env=test doctrine:schema:create
+symfony console --env=test doctrine:migrations:migrate
 symfony console --env=test doctrine:fixtures:load
-```
-
-or update the test database using :
-
-```bash
-symfony console --env=test doctrine:schema:update
 ```
 
 To run tests typed the following commands :
