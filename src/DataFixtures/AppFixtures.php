@@ -17,219 +17,212 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
-    private $passwordHasher;
+    private array $categories = [];
+    private array $users = [];
+    private array $orders = [];
 
-    private $categoriesData = ['Jeu Neuf', 'Jeu Occasion', 'Katana', 'Goodies', 'Figurine'];
-
-    private $productsData = [
-        1 => [
-            'name' => 'PS5 kimetsu no yaiba the hinokami chronicles',
-            'slug' => 'ps5-kimetsu-no-yaiba-the-hinokami-chronicles',
-            'illustration' => '7rK3P5yvB.jpg',
-            'description' => 'Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles est un jeu vidéo d\'action-aventure développé par CyberConnect2 et édité par Aniplex au Japon.',
-            'price' => 5999,
-            'category' => 0,
-            'isBest' => 0
-        ],
-        2 => [
-            'name' => 'PS5 Grand Threft Auto 5',
-            'slug' => 'ps5-grand-threft-auto-5',
-            'illustration' => '5hCsZj27K.jpg',
-            'description' => 'Grand Theft Auto V est un jeu vidéo d\'action-aventure, développé par Rockstar North et édité par Rockstar Games.',
-            'price' => 7999,
-            'category' => 0,
-            'isBest' => 1
-        ],
-        3 => [
-            'name' => 'Katana de Tanjirō Kamado – Demon Slayer',
-            'slug' => 'katana-de-tanjirō-kamado–Demon-Slayer',
-            'illustration' => 't3MQ4aX2d.jpg',
-            'description' => 'Superbe réplique du katana de Tanjirō Kamado personnage principale dans le manga Demon Slayer.',
-            'price' => 4999,
-            'category' => 2,
-            'isBest' => 1
-        ],
-        4 => [
-            'name' => 'Carnet Death Note',
-            'slug' => 'carnet-death-note',
-            'illustration' => 'p5SLfw65M.jpg',
-            'description' => 'Superbe réplique du carnet Death Note.',
-            'price' => 1699,
-            'category' => 3,
-            'isBest' => 0
-        ],
-        5 => [
-            'name' => 'PS4 Red dead redemption 2',
-            'slug' => 'ps4-red-dead-redemption-2',
-            'illustration' => '8Xs25RzwW.jpg',
-            'description' => 'Red Dead Redemption II est un jeu vidéo d\'action-aventure et de western multiplateforme, développé par Rockstar Studios et édité par Rockstar Games.',
-            'price' => 1999,
-            'category' => 1,
-            'isBest' => 1
-        ],
-        6 => [
-            'name' => 'PS4 Minecraft',
-            'slug' => 'ps4-minecraft',
-            'illustration' => 'cF22wUY3t.jpg',
-            'description' => 'Minecraft est un jeu vidéo de type aventure « bac à sable » développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.',
-            'price' => 1999,
-            'category' => 0,
-            'isBest' => 1
-        ],
-        7 => [
-            'name' => 'Funko Pop Games Of Thrones Jon Snow',
-            'slug' => 'funko-pop-games-of-thrones-jon-snow',
-            'illustration' => 'D87Vix2Zy.jpg',
-            'description' => 'Figurine Funko Pop! N°07 - Game Of Thrones, Dans la saga Game Of Thrones, Jon Snow est le fils illégitime d\'Eddard Stark. Son père a toujours gardé l\'identité de sa mère secrète.',
-            'price' => 999,
-            'category' => 4,
-            'isBest' => 0
-        ],
-    ];
-
-    private $carriersData = [
-        1 => [
-            'name' => 'Colissimo',
-            'description' => 'Livraison en 48h.',
-            'price' => 799
-        ],
-        2 => [
-            'name' => 'Chronopost',
-            'description' => 'Livraison en 24h.',
-            'price' => 1490
-        ],
-    ];
-
-    private $headersData = [
-        1 => [
-            'title' => 'Gros arrivage',
-            'content' => 'Accédez à un catalogue de jeux, figurines et autres goodies neufs et d\'occasions règulièrement enrichi.',
-            'btnTitle' => 'Découvrir',
-            'btnUrl' => 'https://127.0.0.1:8000/nos-produits',
-            'illustration' => 'slide_1.jpg'
-        ],
-        2 => [
-            'title' => 'Nouveautés PS5',
-            'content' => 'Découvrez Grand Theft Auto: The Trilogy – The Definitive Edition en version remasterisée.',
-            'btnTitle' => 'Achetez maintenant',
-            'btnUrl' => 'https://127.0.0.1:8000/produit/ps5-grand-threft-auto-5',
-            'illustration' => 'slide_2.jpg'
-        ],
-    ];
-
-    public function __construct(private UserPasswordHasherInterface $passwordEncoder)
+    public function __construct(private UserPasswordHasherInterface $passwordHasher)
     {
     }
 
     public function load(ObjectManager $manager): void
     {
-        // Add 1 basic User
-        $user = new User();
-        $user->setEmail('foo@gmail.com');
-        $user->setPassword($this->passwordHasher->hashPassword(
-            $user,
-            '123456'
-        ));
-        $user->setIsVerified(true);
+        $this->loadUsers($manager);
+        $this->loadCategories($manager);
+        $this->loadProducts($manager);
+        $this->loadAddresses($manager);
+        $this->loadCarriers($manager);
+        $this->loadOrders($manager);
+        $this->loadOrdersDetails($manager);
+        $this->loadHeaders($manager);
+    }
 
-        $manager->persist($user);
+    private function loadUsers(ObjectManager $manager): void
+    {
+        foreach ($this->getUserData() as [$password, $email, $roles]) {
+            $user = new User();
+            $user->setPassword($this->passwordHasher->hashPassword($user, $password));
+            $user->setEmail($email);
+            $user->setRoles($roles);
+            $user->setIsVerified(true);
+            $manager->persist($user);
+            $this->users[] = $user;
+        }
+        $manager->flush();
+    }
 
-        // Add 1 administator User
-        $admin = new User();
-        $admin->setEmail('bar@ecommerce.com');
-        $admin->setRoles(["ROLE_ADMIN"]);
-        $admin->setPassword($this->passwordHasher->hashPassword(
-            $admin,
-            '123456'
-        ));
-        $admin->setIsVerified(true);
-
-        $manager->persist($admin);
-
-        // Add 5 Category
-        $categories = [];
-        foreach ($this->categoriesData as $categoryName) {
+    private function loadCategories(ObjectManager $manager): void
+    {
+        foreach ($this->getCategoryData() as $categoryName) {
             $category = new Category();
             $category->setName($categoryName);
             $manager->persist($category);
-            $categories[] = $category;
+            $this->categories[] = $category;
         }
+        $manager->flush();
+    }
 
-        // Create 7 Product
-        foreach ($this->productsData as $key => $value) {
+    private function loadProducts(ObjectManager $manager): void
+    {
+        foreach ($this->getProductData() as [$name, $slug, $illustration, $description, $price, $category, $isBest]) {
             $product = new Product();
-            $product->setName($value['name'])
-                ->setSlug($value['slug'])
-                ->setIllustration($value['illustration'])
-                ->setDescription($value['description'])
-                ->setPrice($value['price'])
-                ->setCategory($categories[$value['category']])
-                ->setIsBest($value['isBest']);
-
+            $product->setName($name)
+                ->setSlug($slug)
+                ->setIllustration($illustration)
+                ->setDescription($description)
+                ->setPrice($price)
+                ->setCategory($this->categories[$category])
+                ->setIsBest($isBest);
             $manager->persist($product);
         }
+        $manager->flush();
+    }
 
-        // Add 1 Address
-        $address = new Address();
-        $address->setUser($user)
-            ->setName('Magasin')
-            ->setfirstname('Gautier')
-            ->setLastname('Deschelles')
-            ->setCompany('Console et Jeu')
-            ->setAddress('5 Rue du Muguet Vert')
-            ->setPostal('02100')
-            ->setCity('Saint Quentin')
-            ->setCountry('France')
-            ->setPhone('0620278889');
+    private function loadAddresses(ObjectManager $manager): void
+    {
+        foreach ($this->getAddressData() as [$user, $name, $firstname, $lastname, $company, $address, $postal, $city, $country, $phone]) {
+            $address = new Address();
+            $address->setUser($this->users[$user])
+                ->setName($name)
+                ->setfirstname($firstname)
+                ->setLastname($lastname)
+                ->setCompany($company)
+                ->setAddress($address)
+                ->setPostal($postal)
+                ->setCity($city)
+                ->setCountry($country)
+                ->setPhone($phone);
+            $manager->persist($address);
+        }
+        $manager->flush();
+    }
 
-        $manager->persist($address);
-
-        // Add 2 Carrier
-        foreach ($this->carriersData as $key => $value) {
+    private function loadCarriers(ObjectManager $manager): void
+    {
+        foreach ($this->getCarrierData() as [$name, $description, $price]) {
             $carrier = new Carrier();
-            $carrier->setName($value['name'])
-                ->setDescription($value['description'])
-                ->setPrice($value['price']);
-
+            $carrier->setName($name)
+                ->setDescription($description)
+                ->setPrice($price);
             $manager->persist($carrier);
         }
+        $manager->flush();
+    }
 
-        // Add 1 Order
-        $order = new Order();
-        $dayDate = new DateTimeImmutable();
-        $reference = $dayDate->format('dmY') . '' . uniqid();
-        $order->setUser($user)
-            ->setCreatedAt($dayDate)
-            ->setCarrierName('Colissimo')
-            ->setCarrierPrice(799)
-            ->setDelivery('5 Rue du Muguet Vert 02100 Saint Quentin')
-            ->setState(1)
-            ->setReference($reference);
+    private function loadOrders(ObjectManager $manager): void
+    {
+        foreach ($this->getOrderData() as [$user, $carrierName, $carrierPrice, $delivery, $state]) {
+            $order = new Order();
+            $dayDate = new DateTimeImmutable();
+            $reference = $dayDate->format('dmY') . '' . uniqid();
+            $order->setUser($this->users[$user])
+                ->setCreatedAt($dayDate)
+                ->setCarrierName($carrierName)
+                ->setCarrierPrice($carrierPrice)
+                ->setDelivery($delivery)
+                ->setState($state)
+                ->setReference($reference);
+            $manager->persist($order);
+            $this->orders[] = $order;
+        }
+        $manager->flush();
+    }
 
-        $manager->persist($order);
+    private function loadOrdersDetails(ObjectManager $manager): void
+    {
+        foreach ($this->getOrderDetailsData() as [$myOrder, $product, $quantity, $price]) {
+            $orderDetails = new OrderDetails();
+            $orderDetails->setMyOrder($this->orders[$myOrder])
+                ->setProduct($product)
+                ->setQuantity($quantity)
+                ->setPrice($price)
+                ->setTotal($orderDetails->getPrice() * $orderDetails->getQuantity());
+            $manager->persist($orderDetails);
+        }
+        $manager->flush();
+    }
 
-        // Create 1 order details
-        $orderDetails = new OrderDetails();
-        $orderDetails->setMyOrder($order)
-            ->setProduct('PS5 Grand Threft Auto 5')
-            ->setQuantity(1)
-            ->setPrice(7999)
-            ->setTotal($orderDetails->getPrice() * $orderDetails->getQuantity());
-
-        $manager->persist($orderDetails);
-
-
-        // Create 2 Header
-        foreach ($this->headersData as $key => $value) {
+    public function loadHeaders(ObjectManager $manager): void
+    {
+        foreach ($this->getHeaderData() as [$title, $content, $btnTitle, $btnUrl, $illustration]) {
             $header = new Header();
-            $header->setTitle($value['title'])
-                ->setContent($value['content'])
-                ->setBtnTitle($value['btnTitle'])
-                ->setBtnUrl($value['btnUrl'])
-                ->setIllustration($value['illustration']);
+            $header->setTitle($title)
+                ->setContent($content)
+                ->setBtnTitle($btnTitle)
+                ->setBtnUrl($btnUrl)
+                ->setIllustration($illustration);
             $manager->persist($header);
         }
-
         $manager->flush();
+    }
+
+    private function getUserData(): array
+    {
+        return [
+            // $userData = [$password, $email, $roles];
+            ['123456', 'foo@gmail.com', ['ROLE_USER']],
+            ['123456', 'bar@gmail.com', ['ROLE_ADMIN']],
+        ];
+    }
+
+    private function getCategoryData(): array
+    {
+        return ['Jeu Neuf', 'Jeu Occasion', 'Katana', 'Goodies', 'Figurine'];
+    }
+
+    private function getProductData(): array
+    {
+        return [
+            // $productData = [$name, $slug, $illustration, $description, $price, $category, $isBest];
+            ['PS5 kimetsu no yaiba the hinokami chronicles', 'ps5-kimetsu-no-yaiba-the-hinokami-chronicles', '7rK3P5yvB.jpg', 'Demon Slayer: Kimetsu no Yaiba - The Hinokami Chronicles est un jeu vidéo d\'action-aventure développé par CyberConnect2 et édité par Aniplex au Japon.', 5999, 0, 0],
+            ['PS5 Grand Threft Auto 5', 'ps5-grand-threft-auto-5', '5hCsZj27K.jpg', 'Grand Theft Auto V est un jeu vidéo d\'action-aventure, développé par Rockstar North et édité par Rockstar Games.', 7999, 0, 1],
+            ['Katana de Tanjirō Kamado – Demon Slayer', 'katana-de-tanjirō-kamado–Demon-Slayer', 't3MQ4aX2d.jpg', 'Superbe réplique du katana de Tanjirō Kamado personnage principale dans le manga Demon Slayer.', 4999, 2, 1],
+            ['Carnet Death Note', 'carnet-death-note', 'p5SLfw65M.jpg', 'Superbe réplique du carnet Death Note.', 1699, 3, 0],
+            ['PS4 Red dead redemption 2', 'ps4-red-dead-redemption-2', '8Xs25RzwW.jpg', 'Red Dead Redemption II est un jeu vidéo d\'action-aventure et de western multiplateforme, développé par Rockstar Studios et édité par Rockstar Games.', 1999, 1, 1],
+            ['PS4 Minecraft', 'ps4-minecraft', 'cF22wUY3t.jpg', 'Minecraft est un jeu vidéo de type aventure « bac à sable » développé par le Suédois Markus Persson, alias Notch, puis par la société Mojang Studios.', 1999, 0, 1],
+            ['Funko Pop Games Of Thrones Jon Snow', 'funko-pop-games-of-thrones-jon-snow', 'D87Vix2Zy.jpg', 'Figurine Funko Pop! N°07 - Game Of Thrones, Dans la saga Game Of Thrones, Jon Snow est le fils illégitime d\'Eddard Stark. Son père a toujours gardé l\'identité de sa mère secrète.', 999, 4, 0],
+        ];
+    }
+
+    private function getAddressData(): array
+    {
+        return [
+            //[$user, $name, $firstname, $lastname, $company, $address, $postal, $city, $country, $phone]
+            [0, 'Maison', 'Gautier', 'Deschelles', 'Vide', '5 Rue du Muguet Vert', '02100', 'Saint Quentin', 'France', '0620278889']
+        ];
+    }
+
+    private function getCarrierData(): array
+    {
+        return [
+            //[$name, $description, $price]
+            ['Colissimo', 'Livraison en 48h.', 799],
+            ['Chronopost', 'Livraison en 24h.', 1490]
+        ];
+    }
+
+    private function getOrderData(): array
+    {
+        return [
+            //[$user, $carrierName, $carrierPrice, $delivery, $state]
+            [0, 'Colissimo', 799, '5 Rue du Muguet Vert 02100 Saint Quentin', 1]
+        ];
+    }
+
+    private function getOrderDetailsData(): array
+    {
+        return [
+            //[$myOrder, $product, $quantity, $price]
+            [0, 'PS5 Grand Threft Auto 5', 1, 7999]
+        ];
+    }
+
+    private function getHeaderData(): array
+    {
+        return [
+            //[$title, $content, $btnTitle, $btnUrl, $illustration]
+            ['Gros arrivage', 'Accédez à un catalogue de jeux, figurines et autres goodies neufs et d\'occasions règulièrement enrichi.', 'Découvrir', 'https://127.0.0.1:8000/nos-produits', 'slide_1.jpg'],
+            ['Nouveautés PS5', 'Découvrez Grand Theft Auto: The Trilogy – The Definitive Edition en version remasterisée.', 'Achetez maintenant', 'https://127.0.0.1:8000/produit/ps5-grand-threft-auto-5', 'slide_2.jpg'],
+        ];
     }
 }

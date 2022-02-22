@@ -5,41 +5,27 @@ namespace App\Entity;
 use App\Repository\OrderDetailsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=OrderDetailsRepository::class)
- */
+#[ORM\Entity(repositoryClass: OrderDetailsRepository::class)]
 class OrderDetails
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
     private ?int $id = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="orderDetails")
-     */
+    #[ORM\ManyToOne(targetEntity: Order::class, inversedBy: "orderDetails")]
     private ?Order $myOrder = null;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: "string", length: 50)]
     private ?string $product = null;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: "integer")]
     private ?int $quantity = null;
 
-    /**
-     * @ORM\Column(type="float")
-     */
+    #[ORM\Column(type: "float")]
     private ?float $price = null;
 
-    /**
-     * @ORM\Column(type="float")
-     */
+    #[ORM\Column(type: "float")]
     private ?float $total = null;
 
     public function __toString()

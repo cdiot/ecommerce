@@ -5,66 +5,42 @@ namespace App\Entity;
 use App\Repository\AddressRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=AddressRepository::class)
- */
+#[ORM\Entity(repositoryClass: AddressRepository::class)]
 class Address
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
     private ?int $id = null;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="addresses")
-     */
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: "addresses")]
     private ?User $user = null;
 
-    /**
-     * @ORM\Column(type="string", length=30)
-     */
+    #[ORM\Column(type: "string", length: 30)]
     private ?string $name = null;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: "string", length: 50)]
     private ?string $firstname = null;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: "string", length: 50)]
     private ?string $lastname = null;
 
-    /**
-     * @ORM\Column(type="string", length=50, nullable=true)
-     */
+    #[ORM\Column(type: "string", length: 50, nullable: true)]
     private ?string $company = null;
 
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
+    #[ORM\Column(type: "string", length: 100)]
     private ?string $address = null;
 
-    /**
-     * @ORM\Column(type="string", length=30)
-     */
+    #[ORM\Column(type: "string", length: 30)]
     private ?string $postal = null;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: "string", length: 50)]
     private ?string $city = null;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
+    #[ORM\Column(type: "string", length: 50)]
     private ?string $country = null;
 
-    /**
-     * @ORM\Column(type="string", length=30)
-     */
+    #[ORM\Column(type: "string", length: 30)]
     private ?string $phone = null;
 
     public function __toString(): string

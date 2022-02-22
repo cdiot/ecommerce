@@ -11,48 +11,32 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
- */
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: "email", message: "There is already an account with this email")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
     private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", unique=true)
-     */
+    #[ORM\Column(type: "string", unique: true)]
     #[Assert\Email]
     private ?string $email = null;
 
-    /**
-     * @ORM\Column(type="json")
-     */
+    #[ORM\Column(type: "json")]
     private array $roles = [];
 
-    /**
-     * @ORM\Column(type="string")
-     */
+    #[ORM\Column(type: "string")]
     private ?string $password = null;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
+    #[ORM\Column(type: "boolean")]
     private ?bool $isVerified = false;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Address::class, mappedBy="user")
-     */
+    #[ORM\OneToMany(targetEntity: Address::class, mappedBy: "user")]
     private Collection $addresses;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="user")
-     */
+    #[ORM\OneToMany(targetEntity: Order::class, mappedBy: "user")]
     private Collection $orders;
 
     public function __construct()

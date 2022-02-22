@@ -1,4 +1,4 @@
-/* 
+/*
 Author : Chris ;
 Theme : Ecommerce ;
 Description : Module widget (method SMACSS) ;
@@ -10,13 +10,16 @@ Tags : Ecommerce, Symfony ;
   font-size: 1rem;
   font-weight: 400;
 }
+
 .widget-list {
   margin: 0;
   padding: 0;
 }
+
 .widget-list-item {
   margin-bottom: 0.3rem;
 }
+
 .widget .widget-list-link {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.65);
