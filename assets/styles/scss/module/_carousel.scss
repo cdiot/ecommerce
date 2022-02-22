@@ -1,4 +1,4 @@
-/* 
+/*
 Author : Chris ;
 Theme : Ecommerce ;
 Description : Module carousel (method SMACSS) ; 
@@ -8,6 +8,7 @@ Tags : Ecommerce, Symfony ;
 .carousel-inner > .carousel-item > img {
   height: 349px;
 }
+
 .bg-carousel {
   background: url("../../../images/bg-carousel.jpg") no-repeat center;
   background-size: cover;
