@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class ApplicationAvailabilityFunctionalTest extends WebTestCase
 {
@@ -55,7 +54,7 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
         $form = $buttonCrawlerNode->form();
 
         $form = $buttonCrawlerNode->form([
-            'email' => 'bar@ecommerce.com',
+            'email' => 'bar@gmail.com',
             'password' => '123456'
         ]);
 
