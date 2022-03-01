@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class OrderSuccessController extends AbstractController
 {
@@ -17,8 +18,13 @@ class OrderSuccessController extends AbstractController
     }
 
     #[Route('/commande/merci/{stripeSessionId}', name: 'order_success')]
-    public function index(Cart $cart, OrderRepository $orderRepository, Mailer $mailer, $stripeSessionId): Response
-    {
+    public function index(
+        Cart $cart,
+        OrderRepository $orderRepository,
+        Mailer $mailer,
+        $stripeSessionId,
+        TranslatorInterface $translator
+    ): Response {
         $order = $orderRepository->findOneByStripeSessionId($stripeSessionId);
 
         if (!$order || $order->getUser() != $this->getUser()) {
@@ -31,7 +37,7 @@ class OrderSuccessController extends AbstractController
             $this->entityManager->flush();
 
             $mailer->send(
-                'Commande #' .  $order->getReference() . ' confirmée - Ecommerce | SITE OFFICIEL',
+                $translator->trans('email.subject.order_success', ['reference' => $order->getReference()]),
                 'bar@ecommerce.com',
                 $order->getUser()->getEmail(),
                 'emails/order_success.html.twig',

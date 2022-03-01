@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Gérer une adresse {{ parent() }}
+	{% trans %}title.manage_address{% endtrans %} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
 	<!-- Address -->
 	<section class="container py-lg-4 my-4 section">
-		<h1 class="h2 section-title">Gérer une adresse</h1>
+		<h1 class="h2 section-title">{% trans %}title.manage_address{% endtrans %}</h1>
 		<div class="row justify-content-center">
 			<p>
-				<a href="{{ path('account_address') }}">Retour  à mon compte</a>
+				<a href="{{ path('account_address') }}">{% trans %}menu.back_to_account{% endtrans %}</a>
 			</p> {{ form_start(form) }}
 			<div class="row">
 				<div class="col-md-12">{{ form_row(form.name) }}</div>

@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="http_error_404.title">
+                <source>http_error_404.title</source>
+                <target>The page you are looking for was not found.</target>
+            </trans-unit>
+            <trans-unit id="http_error_404.description">
+                <source>http_error_404.description</source>
+                <target><![CDATA[You are on a page that no longer exists or never existed. Check for any errors 
+                URL spelling error or if the problem persists, please let us know via 
+                <a href="{link}">the contact form</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="title.base">
+                <source>title.base</source>
+                <target> - Ecommerce | OFFICIAL SITE</target>
+            </trans-unit>
+            <trans-unit id="title.homepage">
+                <source>title.homepage</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="title.account">
+                <source>title.account</source>
+                <target>Your account</target>
+            </trans-unit>
+            <trans-unit id="title.access_backoffice">
+                <source>title.access_backoffice</source>
+                <target>Access backoffice</target>
+            </trans-unit>
+            <trans-unit id="title.change_password">
+                <source>title.change_password</source>
+                <target>Change password</target>
+            </trans-unit>
+            <trans-unit id="title.addresses">
+                <source>title.addresses</source>
+                <target>Your addresses</target>
+            </trans-unit>
+            <trans-unit id="title.manage_address">
+                <source>title.manage_address</source>
+                <target>Manage address</target>
+            </trans-unit>
+            <trans-unit id="title.orders">
+                <source>title.orders</source>
+                <target>Your orders</target>
+            </trans-unit>
+            <trans-unit id="title.details_order">
+                <source>title.details_order</source>
+                <target>Details of order</target>
+            </trans-unit>
+            <trans-unit id="title.dashboard">
+                <source>title.dashboard</source>
+                <target>Dashboard</target>
+            </trans-unit>
+            <trans-unit id="title.404">
+                <source>title.404</source>
+                <target>Page not found</target>
+            </trans-unit>
+            <trans-unit id="title.cart">
+                <source>title.cart</source>
+                <target>Cart</target>
+            </trans-unit>
+            <trans-unit id="title.contact_us">
+                <source>title.contact_us</source>
+                <target>Contact us</target>
+            </trans-unit>
+             <trans-unit id="title.template_contact">
+                <source>title.template_contact</source>
+                <target>New message</target>
+            </trans-unit>
+            <trans-unit id="title.template_order_cancel">
+                <source>title.template_order_cancel</source>
+                <target>Payment failure</target>
+            </trans-unit>
+            <trans-unit id="title.template_order_success">
+                <source>title.template_order_success</source>
+                <target>Thank you for your purchase !</target>
+            </trans-unit>
+            <trans-unit id="title.order_cancel">
+                <source>title.order_cancel</source>
+                <target>Payment error</target>
+            </trans-unit>
+            <trans-unit id="title.order_success">
+                <source>title.order_success</source>
+                <target>Order confirmation</target>
+            </trans-unit>
+            <trans-unit id="title.our_product">
+                <source>title.our_product</source>
+                <target>Our products</target>
+            </trans-unit>
+            <trans-unit id="title.list_product">
+                <source>title.list_product</source>
+                <target>Products List</target>
+            </trans-unit>
+            <trans-unit id="title.payment">
+                <source>title.payment</source>
+                <target>Payment of my order</target>
+            </trans-unit>
+            <trans-unit id="title.summary">
+                <source>title.summary</source>
+                <target>My summary</target>
+            </trans-unit>
+            <trans-unit id="title.validate_order">
+                <source>title.validate_order</source>
+                <target>Validate my order</target>
+            </trans-unit>
+            <trans-unit id="title.command">
+                <source>title.command</source>
+                <target>My command</target>
+            </trans-unit>
+            <trans-unit id="title.welcome">
+                <source>title.welcome</source>
+                <target><![CDATA[Welcome to {name}]]></target>
+            </trans-unit>
+            <trans-unit id="title.register">
+                <source>title.register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="title.create_account">
+                <source>title.create_account</source>
+                <target>Create your account</target>
+            </trans-unit>
+            <trans-unit id="title.connection">
+                <source>title.connection</source>
+                <target>Connection</target>
+            </trans-unit>
+            <trans-unit id="title.log_in">
+                <source>title.log_in</source>
+                <target>Sign into your account</target>
+            </trans-unit>
+            <trans-unit id="title.reset_password">
+                <source>title.reset_password</source>
+                <target>Reset your password</target>
+            </trans-unit>
+            <trans-unit id="title.reset_email_send">
+                <source>title.reset_email_send</source>
+                <target>Reset email sent</target>
+            </trans-unit>
+            <trans-unit id="subtitle.brands">
+                <source>subtitle.brands</source>
+                <target>All your new and used games at the best price!</target>
+            </trans-unit>
+            <trans-unit id="subtitle.privacy">
+                <source>subtitle.privacy</source>
+                <target>Privacy</target>
+            </trans-unit>
+            <trans-unit id="subtitle.info">
+                <source>subtitle.info</source>
+                <target>Help and Information</target>
+            </trans-unit>
+            <trans-unit id="subtitle.follow_us">
+                <source>subtitle.follow_us</source>
+                <target>Follow us</target>
+            </trans-unit>
+            <trans-unit id="subtitle.subscribe_newsletter">
+                <source>subtitle.subscribe_newsletter</source>
+                <target>Stay informed</target>
+            </trans-unit>
+            <trans-unit id="subtitle.list_categories">
+                <source>subtitle.list_categories</source>
+                <target>List of categories</target>
+            </trans-unit>
+            <trans-unit id="subtitle.list_carriers">
+                <source>subtitle.list_carriers</source>
+                <target>List of carriers</target>
+            </trans-unit>
+            <trans-unit id="subtitle.contact_info">
+                <source>subtitle.contact_info</source>
+                <target>Information</target>
+            </trans-unit>
+            <trans-unit id="subtitle.social_networks">
+                <source>subtitle.social_networks</source>
+                <target>Our Social Networks</target>
+            </trans-unit>
+            <trans-unit id="subtitle.best_product">
+                <source>subtitle.best_product</source>
+                <target>Best Product</target>
+            </trans-unit>
+            <trans-unit id="subtitle.filter">
+                <source>subtitle.filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="subtitle.summary_order">
+                <source>subtitle.summary_order</source>
+                <target>Summary of my order</target>
+            </trans-unit>
+            <trans-unit id="content.subscribe_newsletter">
+                <source>content.subscribe_newsletter</source>
+                <target>*Subscribe to our newsletter to receive early discount offers, updates and new product information.</target>
+            </trans-unit>
+            <trans-unit id="content.contact_info">
+                <source>content.contact_info</source>
+                <target><![CDATA[{name}<br>France]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_order_cancel">
+                <source>content.template_order_cancel</source>
+                <target><![CDATA[Hello {user_email}, We inform you, by this email, to have noted that your payment is
+				failed for your order no.<strong>{reference}</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="content.social_networks">
+                <source>content.social_networks</source>
+                <target>If you have any questions, do not hesitate to contact us through our social networks.</target>
+            </trans-unit>
+            <trans-unit id="content.order_cancel">
+                <source>content.order_cancel</source>
+                <target><![CDATA[Hello,<br/><br/>It looks like your payment has failed for your order no.<strong>{reference}</strong><br/>
+			An error confirmation has just been sent to you by email at the address<strong>{user_email}</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_order_success">
+                <source>content.template_order_success</source>
+                <target><![CDATA[Hello {user_email}, We prepare your order. You will receive a notification when it is sent!
+                You will receive the tracking link for your order in the next email as well as the name of the pick-up point if you have chosen pick-up point delivery.
+                <br>To track your order, go to your <a href="{link}">account</a>]]></target>
+            </trans-unit>
+            <trans-unit id="content.order_success">
+                <source>content.order_success</source>
+                <target><![CDATA[Hello,<br/><br/>Thank you for your order no.<strong>{reference}</strong><br/>
+			A confirmation has just been sent to you by email at the address<strong>{user_email}</strong>.
+			<hr>Your order will be delivered by <strong>{carrierName}</strong>to the following address :
+			<br/> {delivery}<hr>To track your order, go to your
+			<a href="{link}">account</a>]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_registration">
+                <source>content.template_registration</source>
+                <target><![CDATA[The {name} team would like to thank you for the trust you have shown us.
+				Your new account has been successfully initialized. To activate your account and definitively validate your registration,
+				please confirm your email address by clicking on the following link:
+                <br><br><a href="{link}">Confirm my email</a>. This link will expire in]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_reset_password">
+                <source>content.template_reset_password</source>
+                <target><![CDATA[<h1>Hello!</h1><p>To reset your password, please visit the following link</p>]]></target>
+            </trans-unit>
+            <trans-unit id="content.our_team">
+                <source>content.our_team</source>
+                <target><![CDATA[Your {name} team.]]></target>
+            </trans-unit>
+            <trans-unit id="content.expire_link">
+                <source>content.expire_link</source>
+                <target>This link will expire in</target>
+            </trans-unit>
+            <trans-unit id="menu.back_to_account">
+                <source>menu.back_to_account</source>
+                <target>Back to your account</target>
+            </trans-unit>
+            <trans-unit id="menu.back_to_order">
+                <source>menu.back_to_orders</source>
+                <target>Back to your orders</target>
+            </trans-unit>
+            <trans-unit id="menu.back_to_home">
+                <source>menu.back_to_home</source>
+                <target>Back to home</target>
+            </trans-unit>
+            <trans-unit id="menu.privacy">
+                <source>menu.privacy</source>
+                <target>Privacy Policy</target>
+            </trans-unit>
+            <trans-unit id="menu.terms_of_sales">
+                <source>menu.terms_of_sales</source>
+                <target>Terms of Sales</target>
+            </trans-unit>
+            <trans-unit id="menu.legal_notice">
+                <source>menu.legal_notice</source>
+                <target>Legal Notice</target>
+            </trans-unit>
+            <trans-unit id="menu.homepage">
+                <source>menu.homepage</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="menu.products">
+                <source>menu.products</source>
+                <target>Our products</target>
+            </trans-unit>
+            <trans-unit id="menu.about">
+                <source>menu.about</source>
+                <target><![CDATA[About {name}]]></target>
+            </trans-unit>
+            <trans-unit id="menu.delivery">
+                <source>menu.delivery</source>
+                <target>Delivery</target>
+            </trans-unit>
+            <trans-unit id="menu.faq">
+                <source>menu.faq</source>
+                <target>FAQs</target>
+            </trans-unit>
+            <trans-unit id="menu.contact">
+                <source>menu.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="action.subscribe_newsletter">
+                <source>action.subscribe_newsletter</source>
+                <target>Subscribe*</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="action.remove">
+                <source>action.remove</source>
+                <target>Remove</target>
+            </trans-unit>
+            <trans-unit id="action.add_address">
+                <source>action.add_address</source>
+                <target>Add address</target>
+            </trans-unit>
+            <trans-unit id="action.show_order">
+                <source>action.show_order</source>
+                <target>See order details</target>
+            </trans-unit>
+            <trans-unit id="action.validate_cart">
+                <source>action.validate_cart</source>
+                <target>Validate my cart</target>
+            </trans-unit>
+            <trans-unit id="action.loadmore">
+                <source>action.loadmore</source>
+                <target>More products ></target>
+            </trans-unit>
+            <trans-unit id="action.retry_payment">
+                <source>action.retry_payment</source>
+                <target>Retry payment</target>
+            </trans-unit>
+            <trans-unit id="action.add_to_cart">
+                <source>action.add_to_cart</source>
+                <target>Add to Cart</target>
+            </trans-unit>
+            <trans-unit id="action.confirm_and_pay">
+                <source>action.confirm_and_pay</source>
+                <target>Confirm and Pay</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="action.login">
+                <source>action.login</source>
+                <target>Connection</target>
+            </trans-unit>
+            <trans-unit id="action.about">
+                <source>action.about</source>
+                <target><![CDATA[About {name}]]></target>
+            </trans-unit>
+            <trans-unit id="action.go_to_login">
+                <source>action.go_to_login</source>
+                <target><![CDATA[Already have an account ?
+					<a href="{link}" class="text-primary">Log in!</a>]]></target>
+            </trans-unit>
+            <trans-unit id="action.go_to_forgot_password">
+                <source>action.go_to_forgot_password</source>
+                <target><![CDATA[<a href="{link}" class="text-primary">Forgot your password ?</a>]]></target>
+            </trans-unit>
+            <trans-unit id="action.go_to_register">
+                <source>action.go_to_register</source>
+                <target><![CDATA[or do you want <a href="{link}" class="text-primary">create an account ?</a>]]></target>
+            </trans-unit>
+            <trans-unit id="action.reset_password">
+                <source>action.reset_password</source>
+                <target>Reset password</target>
+            </trans-unit>
+            <trans-unit id="action.send_reset_password">
+                <source>action.send_reset_password</source>
+                <target>Send password reset email</target>
+            </trans-unit>
+            <trans-unit id="action.retry_reset_password">
+                <source>action.retry_reset_password</source>
+                <target><![CDATA[If you do not receive an email, please check your spam folder or
+					<a href="{link}">try again</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="label.email">
+                <source>label.email</source>
+                <target>Email address</target>
+            </trans-unit>
+            <trans-unit id="placeholder.email">
+                <source>placeholder.email</source>
+                <target>your@email.com</target>
+            </trans-unit>
+            <trans-unit id="label.password">
+                <source>label.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>What name would you like to give to your address?</target>
+            </trans-unit>
+            <trans-unit id="label.firstname">
+                <source>label.firstname</source>
+                <target>Firstname</target>
+            </trans-unit>
+            <trans-unit id="label.lastname">
+                <source>label.lastname</source>
+                <target>Lastname</target>
+            </trans-unit>
+            <trans-unit id="label.company">
+                <source>label.company</source>
+                <target>Society</target>
+            </trans-unit>
+            <trans-unit id="placeholder.company">
+                <source>placeholder.company</source>
+                <target>Your company name (optional)</target>
+            </trans-unit>
+            <trans-unit id="label.address">
+                <source>label.address</source>
+                <target>Address</target>
+            </trans-unit>
+            <trans-unit id="label.postal">
+                <source>label.postal</source>
+                <target>Postal code</target>
+            </trans-unit>
+            <trans-unit id="label.city">
+                <source>label.city</source>
+                <target>City</target>
+            </trans-unit>
+            <trans-unit id="label.country">
+                <source>label.country</source>
+                <target>Country</target>
+            </trans-unit>
+            <trans-unit id="label.phone">
+                <source>label.phone</source>
+                <target>Phone number</target>
+            </trans-unit>
+            <trans-unit id="label.validate">
+                <source>label.validate</source>
+                <target>Validate</target>
+            </trans-unit>
+            <trans-unit id="label.update">
+                <source>label.update</source>
+                <target>Update</target>
+            </trans-unit>
+            <trans-unit id="label.current_password">
+                <source>label.current_password</source>
+                <target>Current Password</target>
+            </trans-unit>
+            <trans-unit id="label.new_password">
+                <source>label.new_password</source>
+                <target>New Password</target>
+            </trans-unit>
+            <trans-unit id="label.repeat_password">
+                <source>label.repeat_password</source>
+                <target>Confirm new password</target>
+            </trans-unit>
+            <trans-unit id="invalid_message.repeat_password">
+                <source>invalid_message.repeat_password</source>
+                <target>The password and the confirmation must be identical.</target>
+            </trans-unit>
+            <trans-unit id="label.subject">
+                <source>label.subject</source>
+                <target>Subject</target>
+            </trans-unit>
+            <trans-unit id="label.message">
+                <source>label.message</source>
+                <target>Message</target>
+            </trans-unit>
+            <trans-unit id="placeholder.message">
+                <source>placeholder.message</source>
+                <target>How can we help ?</target>
+            </trans-unit>
+            <trans-unit id="label.send">
+                <source>label.send</source>
+                <target>Send</target>
+            </trans-unit>
+            <trans-unit id="label.research">
+                <source>label.research</source>
+                <target>Research...</target>
+            </trans-unit>
+            <trans-unit id="label.filter">
+                <source>label.filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="label.choose_delivery">
+                <source>label.choose_delivery</source>
+                <target>Choose your delivery address</target>
+            </trans-unit>
+            <trans-unit id="label.choose_carrier">
+                <source>label.choose_carrier</source>
+                <target>Choose your carrier</target>
+            </trans-unit>
+            <trans-unit id="label.validate_order">
+                <source>label.validate_order</source>
+                <target>Validate my order</target>
+            </trans-unit>
+            <trans-unit id="table.product">
+                <source>table.product</source>
+                <target>Product(s)</target>
+            </trans-unit>
+            <trans-unit id="table.amount">
+                <source>table.amount</source>
+                <target>Amount</target>
+            </trans-unit>
+            <trans-unit id="table.unit_price">
+                <source>table.unit_price</source>
+                <target>Unit price</target>
+            </trans-unit>
+            <trans-unit id="table.total">
+                <source>table.total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="table.reference">
+                <source>table.reference</source>
+                <target>Reference</target>
+            </trans-unit>
+            <trans-unit id="table.state">
+                <source>table.state</source>
+                <target>State</target>
+            </trans-unit>
+            <trans-unit id="table.date">
+                <source>table.date</source>
+                <target>Order made on</target>
+            </trans-unit>
+            <trans-unit id="table.price">
+                <source>table.price</source>
+                <target>Price</target>
+            </trans-unit>
+            <trans-unit id="account.welcome">
+                <source>account.welcome</source>
+                <target><![CDATA[Welcome {user} in your account.]]></target>
+            </trans-unit>
+            <trans-unit id="order.state">
+                <source>order.state</source>
+                <target>Order status</target>
+            </trans-unit>
+            <trans-unit id="order.date">
+                <source>order.date</source>
+                <target>Ordered on</target>
+            </trans-unit>
+            <trans-unit id="order.reference">
+                <source>order.reference</source>
+                <target>Order number</target>
+            </trans-unit>
+            <trans-unit id="order.carrier_name">
+                <source>order.carrier_name</source>
+                <target>Delivery method</target>
+            </trans-unit>
+            <trans-unit id="order.subtotal">
+                <source>order.subtotal</source>
+                <target>Products</target>
+            </trans-unit>
+            <trans-unit id="order.carrier_price">
+                <source>order.carrier_price</source>
+                <target>Delivery</target>
+            </trans-unit>
+            <trans-unit id="order.total">
+                <source>order.total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="order.total_vat">
+                <source>order.total_vat</source>
+                <target>Total amount including VAT</target>
+            </trans-unit>
+            <trans-unit id="order.carrier">
+                <source>order.carrier</source>
+                <target>Chosen carrier</target>
+            </trans-unit>
+            <trans-unit id="order.delivery_address">
+                <source>order.delivery_address</source>
+                <target>My delivery address</target>
+            </trans-unit>
+            <trans-unit id="order.my_carrier">
+                <source>order.my_carrier</source>
+                <target>My carrier</target>
+            </trans-unit>
+            <trans-unit id="order.command">
+                <source>order.command</source>
+                <target>My command</target>
+            </trans-unit>
+
+            <trans-unit id="order_state.paid">
+                <source>order_state.paid</source>
+                <target>Accepted payment</target>
+            </trans-unit>
+            <trans-unit id="order_state.preparation">
+                <source>order_state.preparation</source>
+                <target>On-going preparation</target>
+            </trans-unit>
+            <trans-unit id="order_state.delivery">
+                <source>order_state.delivery</source>
+                <target>Out for delivery</target>
+            </trans-unit>
+            <trans-unit id="guarantee.delivery_title">
+                <source>guarantee.delivery_title</source>
+                <target>Express delivery</target>
+            </trans-unit>
+            <trans-unit id="guarantee.delivery_content">
+                <source>guarantee.delivery_content</source>
+                <target>Order taken care of as soon as payment is made.</target>
+            </trans-unit>
+            <trans-unit id="guarantee.payment_title">
+                <source>guarantee.payment_title</source>
+                <target>Secure payment</target>
+            </trans-unit>
+            <trans-unit id="guarantee.payment_content">
+                <source>guarantee.payment_content</source>
+                <target>Payment by fully secure credit card.</target>
+            </trans-unit>
+            <trans-unit id="guarantee.support_title">
+                <source>guarantee.support_title</source>
+                <target>24/7 Customer Support</target>
+            </trans-unit>
+            <trans-unit id="guarantee.support_content">
+                <source>guarantee.support_content</source>
+                <target>Responsive customer support available 24/7.</target>
+            </trans-unit>
+            <trans-unit id="dashboard.users">
+                <source>dashboard.users</source>
+                <target><![CDATA[{count} Users]]></target>
+            </trans-unit>
+            <trans-unit id="dashboard.products">
+                <source>dashboard.products</source>
+                <target><![CDATA[{count} Products]]></target>
+            </trans-unit>
+            <trans-unit id="dashboard.orders">
+                <source>dashboard.orders</source>
+                <target><![CDATA[{count} Orders]]></target>
+            </trans-unit>
+            <trans-unit id="cart.number_product">
+                <source>cart.number_product</source>
+                <target><![CDATA[Number of product  {length}]]></target>
+            </trans-unit>
+            <trans-unit id="cart.total_price">
+                <source>cart.total_price</source>
+                <target><![CDATA[Total price including VAT  {price}]]></target>
+            </trans-unit>
+            <trans-unit id="product.count">
+                <source>product.count</source>
+                <target><![CDATA[There is {count} products.]]></target>
+            </trans-unit>
+            <trans-unit id="help.verify_before_paying">
+                <source>help.verify_before_paying</source>
+                <target>Verify your information before paying for your order.</target>
+            </trans-unit>
+            <trans-unit id="help.choose_preference_order">
+                <source>help.choose_preference_order</source>
+                <target>Choose your preferences before placing your order.</target>
+            </trans-unit>
+            <trans-unit id="help.already_login">
+                <source>help.already_login</source>
+                <target><![CDATA[You are logged in as {username}, <a href="{link}">Sign out</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="help.enter_reset_password">
+                <source>help.enter_reset_password</source>
+                <target>Enter your email address and we'll send you a link to reset your password.</target>
+            </trans-unit>
+            <trans-unit id="notification.password_updated">
+                <source>notification.password_updated</source>
+                <target>Your password has been successfully updated.</target>
+            </trans-unit>
+            <trans-unit id="notification.password_incorrect">
+                <source>notification.password_incorrect</source>
+                <target>Your current password is incorrect.</target>
+            </trans-unit>
+            <trans-unit id="notification.team_respond">
+                <source>notification.team_respond</source>
+                <target>Our team will respond to you as soon as possible.</target>
+            </trans-unit>
+            <trans-unit id="notification.email_send">
+                <source>notification.email_send</source>
+                <target>A confirmation email has been sent to you.</target>
+            </trans-unit>
+            <trans-unit id="notification.email_verified">
+                <source>notification.email_verified</source>
+                <target>Your email address has been verified.</target>
+            </trans-unit>
+            <trans-unit id="notification.reset_password_error">
+                <source>notification.reset_password_error</source>
+                <target><![CDATA[There was a problem validating your reset request - {reason}]]></target>
+            </trans-unit>
+            <trans-unit id="notification.no_address">
+                <source>notification.no_address</source>
+                <target><![CDATA[You have not yet added any addresses in your customer account, to add one please
+					<a href="{link}">click here</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="notification.no_order">
+                <source>notification.no_order</source>
+                <target>You haven't placed any orders on our online store yet.</target>
+            </trans-unit>
+            <trans-unit id="notification.empty_cart">
+                <source>notification.empty_cart</source>
+                <target>Your cart is empty.</target>
+            </trans-unit>
+            <trans-unit id="notification.empty_best_product">
+                <source>notification.empty_best_product</source>
+                <target>Our product selection is empty.</target>
+            </trans-unit>
+            <trans-unit id="notification.empty_product">
+                <source>notification.empty_product</source>
+                <target>No product.</target>
+            </trans-unit>
+            <trans-unit id="exception.no_reset_token">
+                <source>exception.no_reset_token</source>
+                <target>No password reset token found in URL or session.</target>
+            </trans-unit>
+            <trans-unit id="email.subject.order_cancel">
+                <source>email.subject.order_cancel</source>
+                <target><![CDATA[Order #{reference} canceled - Ecommerce | OFFICIAL SITE]]></target>
+            </trans-unit>
+            <trans-unit id="email.subject.order_success">
+                <source>email.subject.order_success</source>
+                <target><![CDATA[Order #{reference} confirmed - Ecommerce | OFFICIAL SITE]]></target>
+            </trans-unit>
+            <trans-unit id="email.subject.reset_password">
+                <source>email.subject.reset_password</source>
+                <target>Your password reset request</target>
+            </trans-unit>
+            <trans-unit id="email.subject.registration">
+                <source>email.subject.registration</source>
+                <target>Please confirm your email</target>
+            </trans-unit>
+            <trans-unit id="email.from.registration">
+                <source>email.from.registration</source>
+                <target><![CDATA[{name} registration]]></target>
+            </trans-unit>
+            <trans-unit id="email.from.reset_password">
+                <source>email.from.reset_password</source>
+                <target><![CDATA[{name} reset password]]></target>
+            </trans-unit>
+            <trans-unit id="resetToken.content">
+                <source>resetToken.content</source>
+                <target>If there is an account matching your email, an email has just been sent containing a link 
+                you can use to reset your password. This link will expire in</target>
+            </trans-unit>
+            <trans-unit id="paginator.previous">
+                <source>paginator.previous</source>
+                <target>Previous</target>
+            </trans-unit>
+            <trans-unit id="paginator.next">
+                <source>paginator.next</source>
+                <target>Next</target>
+            </trans-unit>
+            <trans-unit id="language.english">
+                <source>language.english</source>
+                <target>English</target>
+            </trans-unit>
+            <trans-unit id="language.french">
+                <source>language.french</source>
+                <target>French</target>
+            </trans-unit>
+            <trans-unit id="copyright">
+                <source>copyright</source>
+                <target>All rights reserved. Realized by</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

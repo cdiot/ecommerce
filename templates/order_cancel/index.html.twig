@@ -1,19 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Erreur de paiement {{ parent() }}
+{% block title %} {{ 'title.order_cancel'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<section class="container section pt-5">
-		<h1 class="section-title h2">Erreur de paiement</h1>
-		<p>
-			Bonjour,<br/><br/>
-			Il semblerait que votre paiement est échoué pour votre commande n°<strong> {{ order.reference }}
-			</strong><br/>
-			Une confirmation d'erreur vient de vous être envoyée par email à l'adresse
-			<strong>{{ order.user.email }}</strong>.
+		<h1 class="section-title h2">{{ 'title.order_cancel'|trans }}</h1>
+		<p>{{ 'content.order_cancel'|trans({'reference': order.reference, 'user_email': order.user.email })|raw }}
 			<hr>
-			<a href="{{ path('order') }}" class="btn btn-success">Réessayer le payement</a>
+			<a href="{{ path('order') }}" class="btn btn-success">{{ 'action.retry_payment'|trans }}</a>
 		</p>
 	</section>
 	{% include "base/_brand.html.twig" %}

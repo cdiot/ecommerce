@@ -1,26 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Mes Commandes {{ parent() }}
+{% block title %} {{ 'title.orders'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<!-- Orders -->
 	<section class="container py-lg-4 my-4 section">
-		<h1 class="h2 section-title">Mes Commandes</h1>
-		<a href="{{ path('account') }}">Retour à mon compte</a>
+		<h1 class="h2 section-title">{{ 'title.orders'|trans }}</h1>
+		<a href="{{ path('account') }}">{{ 'menu.back_to_account'|trans }}</a>
 		{% if orders|length == 0 %}
 			<hr>
-			<p class="text-center">Vous n'avez pas encore passé de commandes sur notre boutique en ligne.</p>
+			<p class="text-center">{{ 'notification.no_order'|trans }}</p>
 		{% else %}
 			<table class="table mt-4">
 				<thead>
 					<tr>
-						<th scope="col">Référence</th>
-						<th scope="col">Etat</th>
-						<th scope="col">Passée le</th>
-						<th scope="col">Produit(s)</th>
-						<th scope="col">Total</th>
+						<th scope="col">{{ 'table.reference'|trans }}</th>
+						<th scope="col">{{ 'table.state'|trans }}</th>
+						<th scope="col">{{ 'table.date'|trans }}</th>
+						<th scope="col">{{ 'table.product'|trans }}</th>
+						<th scope="col">{{ 'table.total'|trans }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -30,19 +29,16 @@
 								<span class="badge bg-secondary">{{ order.reference }}</span>
 							</td>
 							<td>
-								{% if order.state == 1 %}
-									Paiement accepté
-								{% elseif order.state == 2 %}
-									Préparation en cours
-								{% elseif order.state == 3 %}
-									Livraison en cours
+								{% if order.state == 1 %} {{ 'order_state.paid'|trans }}
+								{% elseif order.state == 2 %} {{ 'order_state.preparation'|trans }}
+								{% elseif order.state == 3 %} {{ 'order_state.delivery'|trans }}
 								{% endif %}
 							</td>
 							<th>{{ order.createdAt|date('d/m/Y') }}</th>
 							<td>{{ order.orderDetails|length }}</td>
 							<td>{{ price(order.carrierPrice + order.getTotal) }}</td>
 							<td class="text-right">
-								<a href="{{ path('account_order_show', {'reference': order.reference }) }}">Voir ma commande</a>
+								<a href="{{ path('account_order_show', {'reference': order.reference }) }}">{{ 'action.show_order'|trans }}</a>
 							</td>
 						</tr>
 					{% endfor %}

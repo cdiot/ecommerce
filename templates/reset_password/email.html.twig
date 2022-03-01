@@ -1,9 +1,7 @@
-<h1>Bonjour!</h1>
-
-<p>Pour réinitialiser votre mot de passe, veuillez visiter le lien suivant</p>
+{{ 'content.template_reset_password'|trans|raw }}
 
 <a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
 
-<p>Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+<p>{{ 'content.expire_link'|trans }} {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 
-<p>Cordialement!</p>
+<p>{{ 'content.our_team'|trans({'name': 'Ecommerce' }) }}</p>

@@ -19,102 +19,78 @@ class AddressType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Quel nom souhaitez-vous donner à votre adresse ?',
-                'attr' => [
-                    'placeholder' => 'Nommez votre adresse'
-                ],
+                'label' => 'label.name',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez nommer votre adresse',
+                        'message' => 'constraints.blank_name',
                     ])
                 ]
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Votre prénom',
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre prénom'
-                ],
+                'label' => 'label.firstname',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez indiquer votre prénom',
+                        'message' => 'constraints.blank_firstname',
                     ])
                 ]
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Votre nom',
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre nom'
-                ],
+                'label' => 'label.lastname',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez indiquer votre nom',
+                        'message' => 'constraints.blank_lastname',
                     ])
                 ]
             ])
             ->add('company', TextType::class, [
-                'label' => 'Votre Société ?',
+                'label' => 'label.company',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => '(facultatif) Veuillez saisir le nom de votre société'
+                    'placeholder' => 'placeholder.company'
                 ]
             ])
             ->add('address', TextType::class, [
-                'label' => 'Votre adresse',
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre addresse'
-                ],
+                'label' => 'label.address',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez indiquer votre addresse',
+                        'message' => 'constraints.blank_address',
                     ])
                 ]
             ])
             ->add('postal', TextType::class, [
-                'label' => 'Votre code postale',
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre code postale'
-                ],
+                'label' => 'label.postal',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez indiquer votre code postale',
+                        'message' => 'constraints.blank_postal',
                     ])
                 ]
             ])
             ->add('city', TextType::class, [
-                'label' => 'Votre ville',
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre ville'
-                ],
+                'label' => 'label.city',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez indiquer votre ville',
+                        'message' => 'constraints.blank_city',
                     ])
                 ]
             ])
             ->add('country', CountryType::class, [
-                'label' => 'Votre pays',
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre pays'
-                ],
+                'label' => 'label.country',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez indiquer votre pays',
+                        'message' => 'constraints.blank_country',
                     ])
                 ]
             ])
             ->add('phone', TelType::class, [
-                'label' => 'Votre téléphone',
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre téléphone'
-                ],
+                'label' => 'label.phone',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez indiquer votre téléphone',
+                        'message' => 'constraints.blank_phone',
                     ])
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Valider'
+                'label' => 'label.validate'
             ]);
     }
 

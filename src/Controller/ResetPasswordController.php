@@ -16,6 +16,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\ResetPassword\Controller\ResetPasswordControllerTrait;
 use SymfonyCasts\Bundle\ResetPassword\Exception\ResetPasswordExceptionInterface;
 use SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface;
@@ -27,7 +28,8 @@ class ResetPasswordController extends AbstractController
 
     public function __construct(
         private ResetPasswordHelperInterface $resetPasswordHelper,
-        private EntityManagerInterface $entityManager
+        private EntityManagerInterface $entityManager,
+        private TranslatorInterface $translator
     ) {
     }
 
@@ -85,16 +87,13 @@ class ResetPasswordController extends AbstractController
 
         $token = $this->getTokenFromSession();
         if (null === $token) {
-            throw $this->createNotFoundException('Aucun jeton de réinitialisation de mot de passe trouvé dans l\'URL ou dans la session.');
+            throw $this->createNotFoundException($this->translator->trans('exception.no_reset_token'));
         }
 
         try {
             $user = $this->resetPasswordHelper->validateTokenAndFetchUser($token);
         } catch (ResetPasswordExceptionInterface $e) {
-            $this->addFlash('reset_password_error', sprintf(
-                'Un problème est survenu lors de la validation de votre demande de réinitialisation - %s',
-                $e->getReason()
-            ));
+            $this->addFlash('reset_password_error', $this->translator->trans('notificaction.reset_password_error', ['reason' => $e->getReason()]));
 
             return $this->redirectToRoute('app_forgot_password_request');
         }
@@ -128,7 +127,7 @@ class ResetPasswordController extends AbstractController
     }
 
     private function processSendingPasswordResetEmail(string $emailFormData, MailerInterface $mailer): RedirectResponse
-    {   //, UserRepository $userRepository
+    {
         $user = $this->entityManager->getRepository(User::class)->findOneBy([
             'email' => $emailFormData,
         ]);
@@ -154,9 +153,9 @@ class ResetPasswordController extends AbstractController
         }
 
         $email = (new TemplatedEmail())
-            ->from(new Address('bar@ecommerce.com', 'Ecommerce'))
+            ->from(new Address('bar@ecommerce.com', 'email.from.reset_password', ['name' => 'Ecommerce']))
             ->to($user->getEmail())
-            ->subject('Votre demande de réinitialisation de mot de passe')
+            ->subject($this->translator->trans('email.subject.reset_password'))
             ->htmlTemplate('reset_password/email.html.twig')
             ->context([
                 'resetToken' => $resetToken,

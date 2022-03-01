@@ -8,11 +8,12 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class OrderCancelController extends AbstractController
 {
     #[Route('/commande/erreur/{stripeSessionId}', name: 'order_cancel')]
-    public function index(OrderRepository $orderRepository, Mailer $mailer, $stripeSessionId): Response
+    public function index(OrderRepository $orderRepository, Mailer $mailer, $stripeSessionId, TranslatorInterface $translator): Response
     {
         $order = $orderRepository->findOneByStripeSessionId($stripeSessionId);
 
@@ -21,7 +22,7 @@ class OrderCancelController extends AbstractController
         }
 
         $mailer->send(
-            'Erreur commande #' .  $order->getReference() . ' - Ecommerce | SITE OFFICIEL',
+            $translator->trans('email.subject.order_cancel', ['reference' => $order->getReference()]),
             'bar@ecommerce.com',
             $order->getUser()->getEmail(),
             'emails/order_cancel.html.twig',

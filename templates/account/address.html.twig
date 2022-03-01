@@ -1,20 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Mes Adresses {{ parent() }}
+{% block title %} {{ 'title.addresses'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<!-- Address -->
 	<section class="container py-lg-4 my-4 section">
-		<h1 class="h2 section-title">Mes Adresses</h1>
+		<h1 class="h2 section-title">{{ 'title.addresses'|trans }}</h1>
 		<div class="row justify-content-center">
 			<p>
-				<a href="{{ path('account') }}">Retour à mon compte</a>
+				<a href="{{ path('account') }}">{{ 'menu.back_to_account'|trans }}</a>
 			</p>
 			{% if app.user.addresses|length == 0 %}
-				<p class="text-center">Vous n'avez pas encore ajouté d'adresses dans votre compte client, pour en ajouter une veuillez
-					<a href="{{ path('account_address_add') }}">cliquer ici</a>.</p>
+				<p class="text-center">{{ 'notification.no_address'|trans({'link': path('account_address_add')})|raw }}</p>
 			{% else %}
 				{% for address in app.user.addresses %}
 					<!-- Card-->
@@ -25,9 +23,9 @@
 								- {{ address.city }}
 								- {{ address.country }}</p>
 							<p>
-								<a href="{{ path('account_address_edit', {'id': address.id }) }}">Modifier</a>
+								<a href="{{ path('account_address_edit', {'id': address.id }) }}">{{ 'action.edit'|trans }}</a>
 								|
-								<a href="{{ path('account_address_delete', {'id': address.id }) }}">Supprimer</a>
+								<a href="{{ path('account_address_delete', {'id': address.id }) }}">{{ 'action.remove'|trans }}</a>
 							</p>
 						</div>
 					</div>
@@ -36,9 +34,7 @@
 			<!-- Link-->
 			<div class="col-md-3 col-sm-4 col-6">
 				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="{{ path('account_address_add') }}">
-						Ajouter une adresse
-					</a>
+					<a href="{{ path('account_address_add') }}">{{ 'action.add_address'|trans }}</a>
 				</div>
 			</div>
 		</div>

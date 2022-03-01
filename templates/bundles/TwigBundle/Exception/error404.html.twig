@@ -1,23 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Page introuvable
+{% block title %} {{ 'title.404'|trans }}
 {% endblock %}
 
 {% block body %}
 	<div class="container py-5">
 		<div class="row justify-content-center">
 			<div class="col-9">
-				<h1 class="display-4">La page que vous cherchez n'a pas été trouvée.</h1>
-				<p>Vous êtes sur une page qui n'existe plus ou n'a jamais existé. Vérifiez toute erreur 
-					d'orthographe d'URL ou si le problème persiste, veuillez nous en informer via
-					<a href="#">le formulaire de contact</a>.</p>
-				<a href="{{ path('home') }}" class="btn btn-info">Revenir à l'acceuil</a>
+				<h1 class="display-4">{{ 'http_error_404.title'|trans }}</h1>
+				<p>{{ 'http_error_404.description'|trans({'link': path('contact')}) }}</p>
+				<a href="{{ path('home') }}" class="btn btn-info">{{ 'menu.back_to_home'|trans }}</a>
 			</div>
 		</div>
 		<!-- Follow us grid -->
 		<section class="container py-lg-4 my-4">
-			<h2 class="h3 text-center pb-4 fw-bold">Nous suivre</h2>
+			<h2 class="h3 text-center pb-4 fw-bold">{{ 'subtitle.follow_us'|trans }}</h2>
 			<div
 				class="row justify-content-center">
 				<!-- Link-->

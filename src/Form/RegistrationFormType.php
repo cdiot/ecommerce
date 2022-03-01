@@ -22,7 +22,7 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'constraints' => [
                     new Email([
-                        'message' => 'Veuillez entrer un email valide.',
+                        'message' => 'constraints.type_email',
                     ]),
                 ],
             ])
@@ -30,7 +30,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'Vous devez accepter nos conditions.',
+                        'message' => 'constraints.true_agree_terms',
                     ]),
                 ],
             ])
@@ -41,11 +41,11 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe',
+                        'message' => 'constraints.blank_password',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit être d\'au moins {{ limit }} caractères',
+                        'minMessage' => 'constraints.length_password',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

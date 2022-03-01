@@ -18,35 +18,26 @@ class ChangePasswordType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'disabled' => true,
-                'label' => 'Mon Email'
+                'label' => 'label.email'
             ])
             ->add('old_password', PasswordType::class, [
-                'label' => 'Mon mot de passe actuel',
-                'mapped' => false,
-                'attr' => [
-                    'placeholder' => 'Veuillez saisir votre mot de passe actuel'
-                ]
+                'label' => 'label.current_password',
+                'mapped' => false
             ])
             ->add('new_password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'mapped' => false,
-                'invalid_message' => 'Le mot de passe et la confirmation doivent etre identique.',
+                'invalid_message' => 'invalid_message.repeat_password',
                 'required' => true,
                 'first_options' => [
-                    'label' => 'Mon nouveau mot de passe',
-                    'attr' => [
-                        'placeholder' => 'Veuillez saisir votre nouveau mot de passe'
-                    ]
+                    'label' => 'label.new_password'
                 ],
                 'second_options' => [
-                    'label' => 'Confirmez mon nouveau mot de passe',
-                    'attr' => [
-                        'placeholder' => 'Veuillez confirmer votre nouveau mot de passe'
-                    ]
+                    'label' => 'label.repeat_password'
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => "Mettre à jour"
+                'label' => "label.update"
             ]);
     }
 

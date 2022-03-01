@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}Paiement de ma commande | {{ parent() }}
+{% block title %} {{ 'title.payment'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block javascripts %}
@@ -10,19 +10,19 @@
 
 {% block body %}
 	<section class="container section pt-5">
-		<h1 class="section-title h2">Mon récapitulatif</h1>
-		<p>Vérifier vos informations avant de payer votre commande</p>
+		<h1 class="section-title h2">{{ 'title.summary'|trans }}</h1>
+		<p>{{ 'help.verify_before_paying'|trans }}</p>
 
 
 		<div class="row">
 			<div class="col-md-6">
 
-				<strong>Mon adresse de livraison</strong>
+				<strong>{{ 'order.delivery_address'|trans }}</strong>
 				<br>
 				<div class="form-check mt-4"> {{delivery_address|raw}}
 				</div>
 
-				<strong>Mon transporteur</strong>
+				<strong>{{ 'order.my_carrier'|trans }}</strong>
 				<br>
 				<div class="form-check"> {{carrier.name}}
 					<br> {{carrier.description}}
@@ -34,7 +34,7 @@
 			</div>
 
 			<div class="col-md-6">
-				<strong>Ma commande</strong>
+				<strong>{{ 'order.command'|trans }}</strong>
 				<div>
 					{% set totalProducts = 0 %}
 					{% for key, product in cart %}
@@ -57,21 +57,21 @@
 					{% endfor %}
 				</div>
 				<hr>
-				<strong>Sous-total :
+				<strong>{{ 'order.subtotal'|trans }}
 				</strong> {{ totalProducts }}
 				&euro;<br>
-				<strong>Livraison :
+				<strong>{{ 'order.carrier_price'|trans }}
 				</strong> {{ price(carrier.price) }}
 				&euro;
 				<hr>
 				{% set total = (totalProducts + (carrier.price / 100)) | number_format(2, ',', '.')  %}
-				<strong>Total :
+				<strong>{{ 'order.total'|trans }}
 				</strong> {{ total}}
 				&euro;
 				<br>
 
 				<form action="/commande/create-session/{{ reference }}" method="POST">
-					<button type="submit" class="btn btn-success btn-block mt-3">Confirmer et Payer {{total}}
+					<button type="submit" class="btn btn-success btn-block mt-3">{{ 'action.confirm_and_pay'|trans }} {{total}}
 						&euro;</button>
 				</form>
 			</div>
