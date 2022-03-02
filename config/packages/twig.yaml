@@ -5,6 +5,7 @@ twig:
   globals:
     # Obtain it from the .env file:
     company_name: "%env(COMPANY_NAME)%"
+    locales: "%app.locales%"
 
 when@test:
   twig:

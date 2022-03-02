@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
         <body>
             <trans-unit id="http_error_404.title">
                 <source>http_error_404.title</source>
@@ -723,14 +723,6 @@
             <trans-unit id="paginator.next">
                 <source>paginator.next</source>
                 <target>Suivant</target>
-            </trans-unit>
-            <trans-unit id="language.english">
-                <source>language.english</source>
-                <target>Anglais</target>
-            </trans-unit>
-            <trans-unit id="language.french">
-                <source>language.french</source>
-                <target>Francais</target>
             </trans-unit>
             <trans-unit id="copyright">
                 <source>copyright</source>

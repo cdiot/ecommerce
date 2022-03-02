@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app.request.locale }}">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
 			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
-		and uncomment the following Encore helpers to start using Symfony UX #}
+				and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %} {{ encore_entry_link_tags('app') }}
 		{% endblock %}
 

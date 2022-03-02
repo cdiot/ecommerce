@@ -40,20 +40,19 @@
 					<!-- Dropdown flag -->
 					<li class="dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<img src="{{ asset('build/images/ic-france.png') }}" height="25" alt="Drapeau Francais">
+							<img src="{{ asset('build/images/ic-' ~ app.request.locale ~ '.png') }}" height="25" alt="{{ app.request.locale }}">
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li>
-								<a class="dropdown-item" href="#">
-									<img src="{{ asset('build/images/ic-france.png') }}" class="m-1" height="25" alt="Drapeau Francais">{{ 'language.french'|trans }}
-								</a>
-							</li>
-							<li><hr class="dropdown-divider"></li>
-							<li>
-								<a class="dropdown-item" href="#">
-									<img src="{{ asset('build/images/ic-england.png') }}" class="m-1" height="25" alt="Drapeau Anglais">{{ 'language.english'|trans }}
-								</a>
-							</li>
+							{% for locale in locales %}
+								{% if locale != app.request.locale %}
+									<li>
+										<a class="dropdown-item" href="{{ path('change_locale', {'locale': locale}) }}">
+											<img src="{{ asset('build/images/ic-' ~ locale ~ '.png') }}" class="m-1" height="25" alt="{{ locale }}">{{ locale }}
+										</a>
+									</li>
+									<li><hr class="dropdown-divider"></li>
+								{% endif %}
+							{% endfor %}
 						</ul>
 					</li>
 					{% if app.user %}

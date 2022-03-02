@@ -724,14 +724,6 @@
                 <source>paginator.next</source>
                 <target>Next</target>
             </trans-unit>
-            <trans-unit id="language.english">
-                <source>language.english</source>
-                <target>English</target>
-            </trans-unit>
-            <trans-unit id="language.french">
-                <source>language.french</source>
-                <target>French</target>
-            </trans-unit>
             <trans-unit id="copyright">
                 <source>copyright</source>
                 <target>All rights reserved. Realized by</target>
