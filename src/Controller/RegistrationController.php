@@ -50,7 +50,7 @@ class RegistrationController extends AbstractController
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
-                    ->from(new Address('contact@ecommerce.com', $translator->trans('email.from.registration', ['name' => 'Ecommerce'])))
+                    ->from(new Address('contact@ecommerce.com', $translator->trans('email.from.registration', ['name' => $this->getParameter('app.company_name')])))
                     ->to($user->getEmail())
                     ->subject($translator->trans('email.subject.registration'))
                     ->htmlTemplate('registration/confirmation_email.html.twig')

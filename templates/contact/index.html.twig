@@ -9,7 +9,7 @@
 			<h1 class="section-title h2">{{ 'title.contact_us'|trans }}</h1>
 			<div class="col-md-4">
 				<h2 class="h3 py-4 fw-bold">{{ 'subtitle.contact_info'|trans }}</h2>
-				<p>{{ 'content.contact_info'|trans({'name': 'Ecommerce' })|raw }}</p>
+				<p>{{ 'content.contact_info'|trans({'name': company_name })|raw }}</p>
 			</div>
 			<div class="col-md-8 shadow rounded-3 py-3 py-sm-4 mb-2">
 				{% for message in app.flashes('notice') %}

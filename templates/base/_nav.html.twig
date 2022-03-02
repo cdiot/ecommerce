@@ -7,7 +7,7 @@
 		<div
 			class="container">
 			<!-- Navbar brand -->
-			<a class="navbar-brand mt-2 mt-lg-0" href="#">Ecommerce</a>
+			<a class="navbar-brand mt-2 mt-lg-0" href="#">{{  company_name }}</a>
 			<!-- Toggle button -->
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 				<span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
 						<a class="nav-link" href="{{ path('products') }}">{{ 'menu.products'|trans }}</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">{{ 'menu.about'|trans({'name': 'Ecommerce'}) }}</a>
+						<a class="nav-link" href="#">{{ 'menu.about'|trans({'name': company_name }) }}</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">{{ 'menu.delivery'|trans }}</a>

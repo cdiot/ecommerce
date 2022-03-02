@@ -30,6 +30,7 @@ git clone https://github.com/cdiot/ecommerce.git
 
 *   `DATABASE_URL`
 *   `MAILER_DSN`
+*   `COMPANY_NAME`
 
 ### Launch the development environment
 

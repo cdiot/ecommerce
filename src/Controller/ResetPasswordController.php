@@ -153,7 +153,7 @@ class ResetPasswordController extends AbstractController
         }
 
         $email = (new TemplatedEmail())
-            ->from(new Address('bar@ecommerce.com', 'email.from.reset_password', ['name' => 'Ecommerce']))
+            ->from(new Address('bar@ecommerce.com', 'email.from.reset_password', ['name' => $this->getParameter('app.company_name')]))
             ->to($user->getEmail())
             ->subject($this->translator->trans('email.subject.reset_password'))
             ->htmlTemplate('reset_password/email.html.twig')
