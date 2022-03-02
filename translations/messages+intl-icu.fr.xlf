@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="http_error_404.title">
+                <source>http_error_404.title</source>
+                <target>La page que vous recherchez n'a pas été trouvée.</target>
+            </trans-unit>
+            <trans-unit id="http_error_404.description">
+                <source>http_error_404.description</source>
+                <target><![CDATA[Vous êtes sur une page qui n'existe plus ou n'a jamais existé. Vérifiez les éventuelles erreurs
+                d'orthographe de l'URL ou si le problème persiste, veuillez nous en informer via
+                <a href="{link}">le formulaire de contact</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="title.base">
+                <source>title.base</source>
+                <target> - Ecommerce | SITE OFFICIEL</target>
+            </trans-unit>
+            <trans-unit id="title.homepage">
+                <source>title.homepage</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="title.account">
+                <source>title.account</source>
+                <target>Votre compte</target>
+            </trans-unit>
+            <trans-unit id="title.access_backoffice">
+                <source>title.access_backoffice</source>
+                <target>Accéder au back-office</target>
+            </trans-unit>
+            <trans-unit id="title.change_password">
+                <source>title.change_password</source>
+                <target>Modifier le mot de passe</target>
+            </trans-unit>
+            <trans-unit id="title.addresses">
+                <source>title.addresses</source>
+                <target>Vos adresses</target>
+            </trans-unit>
+            <trans-unit id="title.manage_address">
+                <source>title.manage_address</source>
+                <target>Gérer l'adresse</target>
+            </trans-unit>
+            <trans-unit id="title.orders">
+                <source>title.orders</source>
+                <target>Vos commandes</target>
+            </trans-unit>
+            <trans-unit id="title.details_order">
+                <source>title.details_order</source>
+                <target>Détails de la commande</target>
+            </trans-unit>
+            <trans-unit id="title.dashboard">
+                <source>title.dashboard</source>
+                <target>Tableau de bord</target>
+            </trans-unit>
+            <trans-unit id="title.404">
+                <source>title.404</source>
+                <target>Page non trouvée</target>
+            </trans-unit>
+            <trans-unit id="title.cart">
+                <source>title.cart</source>
+                <target>Panier</target>
+            </trans-unit>
+            <trans-unit id="title.contact_us">
+                <source>title.contact_us</source>
+                <target>Contactez-nous</target>
+            </trans-unit>
+             <trans-unit id="title.template_contact">
+                <source>title.template_contact</source>
+                <target>Nouveau message</target>
+            </trans-unit>
+            <trans-unit id="title.template_order_cancel">
+                <source>title.template_order_cancel</source>
+                <target>Échec de paiement</target>
+            </trans-unit>
+            <trans-unit id="title.template_order_success">
+                <source>title.template_order_success</source>
+                <target>Merci pour votre achat !</target>
+            </trans-unit>
+            <trans-unit id="title.order_cancel">
+                <source>title.order_cancel</source>
+                <target>Erreur de paiement</target>
+            </trans-unit>
+            <trans-unit id="title.order_success">
+                <source>title.order_success</source>
+                <target>Confirmation de commande</target>
+            </trans-unit>
+            <trans-unit id="title.our_product">
+                <source>title.our_product</source>
+                <target>Nos produits</target>
+            </trans-unit>
+            <trans-unit id="title.list_product">
+                <source>title.list_product</source>
+                <target>Liste de produits</target>
+            </trans-unit>
+            <trans-unit id="title.payment">
+                <source>title.payment</source>
+                <target>Paiement de ma commande</target>
+            </trans-unit>
+            <trans-unit id="title.summary">
+                <source>title.summary</source>
+                <target>Mon récapitulatif</target>
+            </trans-unit>
+            <trans-unit id="title.validate_order">
+                <source>title.validate_order</source>
+                <target>Validate my order</target>
+            </trans-unit>
+            <trans-unit id="title.command">
+                <source>title.command</source>
+                <target>Ma commande</target>
+            </trans-unit>
+            <trans-unit id="title.welcome">
+                <source>title.welcome</source>
+                <target><![CDATA[Bienvenue à {name}]]></target>
+            </trans-unit>
+            <trans-unit id="title.register">
+                <source>title.register</source>
+                <target>S'inscrire</target>
+            </trans-unit>
+            <trans-unit id="title.create_account">
+                <source>title.create_account</source>
+                <target>Créez votre compte</target>
+            </trans-unit>
+            <trans-unit id="title.connection">
+                <source>title.connection</source>
+                <target>Connexion</target>
+            </trans-unit>
+            <trans-unit id="title.log_in">
+                <source>title.log_in</source>
+                <target>Connectez-vous à votre compte</target>
+            </trans-unit>
+            <trans-unit id="title.reset_password">
+                <source>title.reset_password</source>
+                <target>Réinitialisez votre mot de passe</target>
+            </trans-unit>
+            <trans-unit id="title.reset_email_send">
+                <source>title.reset_email_send</source>
+                <target>Réinitialiser l'e-mail envoyé</target>
+            </trans-unit>
+            <trans-unit id="subtitle.brands">
+                <source>subtitle.brands</source>
+                <target>Tous vos jeux neufs et d'occasion au meilleur prix !</target>
+            </trans-unit>
+            <trans-unit id="subtitle.privacy">
+                <source>subtitle.privacy</source>
+                <target>Confidentialité</target>
+            </trans-unit>
+            <trans-unit id="subtitle.info">
+                <source>subtitle.info</source>
+                <target>Aide et Informations</target>
+            </trans-unit>
+            <trans-unit id="subtitle.follow_us">
+                <source>subtitle.follow_us</source>
+                <target>Nous Suivre</target>
+            </trans-unit>
+            <trans-unit id="subtitle.subscribe_newsletter">
+                <source>subtitle.subscribe_newsletter</source>
+                <target>Rester informé</target>
+            </trans-unit>
+            <trans-unit id="subtitle.list_categories">
+                <source>subtitle.list_categories</source>
+                <target>Liste des catégories</target>
+            </trans-unit>
+            <trans-unit id="subtitle.list_carriers">
+                <source>subtitle.list_carriers</source>
+                <target>Liste des transporteurs</target>
+            </trans-unit>
+            <trans-unit id="subtitle.contact_info">
+                <source>subtitle.contact_info</source>
+                <target>Informations</target>
+            </trans-unit>
+            <trans-unit id="subtitle.social_networks">
+                <source>subtitle.social_networks</source>
+                <target>Nos réseaux sociaux</target>
+            </trans-unit>
+            <trans-unit id="subtitle.best_product">
+                <source>subtitle.best_product</source>
+                <target>Meilleur produit</target>
+            </trans-unit>
+            <trans-unit id="subtitle.filter">
+                <source>subtitle.filter</source>
+                <target>Filtrer</target>
+            </trans-unit>
+            <trans-unit id="subtitle.summary_order">
+                <source>subtitle.summary_order</source>
+                <target>Récapitulatif de ma commande</target>
+            </trans-unit>
+            <trans-unit id="content.subscribe_newsletter">
+                <source>content.subscribe_newsletter</source>
+                <target>*Abonnez-vous à notre newsletter pour recevoir des offres de remise anticipée, des mises à jour et des informations sur les nouveaux produits.</target>
+            </trans-unit>
+            <trans-unit id="content.contact_info">
+                <source>content.contact_info</source>
+                <target><![CDATA[{name}<br>France]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_order_cancel">
+                <source>content.template_order_cancel</source>
+                <target><![CDATA[Bonjour {user_email}, Nous vous informons, par cet email, d'avoir constaté que votre paiement est
+                échoué pour votre commande no.<strong>{reference}</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="content.social_networks">
+                <source>content.social_networks</source>
+                <target>Si vous avez des questions, n'hésitez pas à nous contacter via nos réseaux sociaux.</target>
+            </trans-unit>
+            <trans-unit id="content.order_cancel">
+                <source>content.order_cancel</source>
+                <target><![CDATA[Bonjour,<br/><br/>Il semble que votre paiement ait échoué pour votre commande no.<strong>{reference}</strong><br/>
+			Une confirmation d'erreur vient de vous être envoyée par email à l'adresse<strong>{user_email}</strong>.]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_order_success">
+                <source>content.template_order_success</source>
+                <target><![CDATA[Bonjour {user_email}, Nous préparons votre commande. Vous recevrez une notification lors de son envoi !
+                Vous recevrez le lien de suivi de votre commande dans le prochain mail ainsi que le nom du point relais si vous avez choisi la livraison en point relais.
+                <br>Pour suivre votre commande, rendez-vous sur votre <a href="{link}">compte</a>]]></target>
+            </trans-unit>
+            <trans-unit id="content.order_success">
+                <source>content.order_success</source>
+                <target><![CDATA[Bonjour,<br/><br/>Nous vous remercions de votre commande no.<strong>{reference}</strong><br/>
+			Une confirmation vient de vous être envoyée par mail à l'adresse<strong>{user_email}</strong>.
+			<hr>Votre commande sera livrée par<strong>{carrierName}</strong>à l'adresse suivante :
+			<br/> {delivery}<hr>Pour suivre votre commande, rendez-vous sur votre
+			<a href="{link}">compte</a>]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_registration">
+                <source>content.template_registration</source>
+                <target><![CDATA[L'équipe de {name} tient à vous remercier pour la confiance que vous nous témoignez.
+                Votre nouveau compte a été initialisé avec succès. Pour activer votre compte et valider définitivement votre inscription,
+                merci de confirmer votre adresse mail en cliquant sur le lien suivant :
+                <br><br><a href="{link}">Confirmer mon e-mail</a>. Ce lien expirera dans]]></target>
+            </trans-unit>
+            <trans-unit id="content.template_reset_password">
+                <source>content.template_reset_password</source>
+                <target><![CDATA[<h1>Bonjour!</h1><p>Pour réinitialiser votre mot de passe, veuillez visiter le lien suivant</p>]]></target>
+            </trans-unit>
+            <trans-unit id="content.our_team">
+                <source>content.our_team</source>
+                <target><![CDATA[Votre équipe {name}.]]></target>
+            </trans-unit>
+            <trans-unit id="content.expire_link">
+                <source>content.expire_link</source>
+                <target>Ce lien expirera dans</target>
+            </trans-unit>
+            <trans-unit id="menu.back_to_account">
+                <source>menu.back_to_account</source>
+                <target>Retour à votre compte</target>
+            </trans-unit>
+            <trans-unit id="menu.back_to_order">
+                <source>menu.back_to_orders</source>
+                <target>Retour à vos commandes</target>
+            </trans-unit>
+            <trans-unit id="menu.back_to_home">
+                <source>menu.back_to_home</source>
+                <target>Retour à la page d'accueil</target>
+            </trans-unit>
+            <trans-unit id="menu.privacy">
+                <source>menu.privacy</source>
+                <target>Politique de confidentialité</target>
+            </trans-unit>
+            <trans-unit id="menu.terms_of_sales">
+                <source>menu.terms_of_sales</source>
+                <target>Conditions de vente</target>
+            </trans-unit>
+            <trans-unit id="menu.legal_notice">
+                <source>menu.legal_notice</source>
+                <target>Mention légale</target>
+            </trans-unit>
+            <trans-unit id="menu.homepage">
+                <source>menu.homepage</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="menu.products">
+                <source>menu.products</source>
+                <target>Nos produits</target>
+            </trans-unit>
+            <trans-unit id="menu.about">
+                <source>menu.about</source>
+                <target><![CDATA[À propos {name}]]></target>
+            </trans-unit>
+            <trans-unit id="menu.delivery">
+                <source>menu.delivery</source>
+                <target>Livraison</target>
+            </trans-unit>
+            <trans-unit id="menu.faq">
+                <source>menu.faq</source>
+                <target>FAQs</target>
+            </trans-unit>
+            <trans-unit id="menu.contact">
+                <source>menu.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="action.subscribe_newsletter">
+                <source>action.subscribe_newsletter</source>
+                <target>S'abonner*</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Modifier</target>
+            </trans-unit>
+            <trans-unit id="action.remove">
+                <source>action.remove</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="action.add_address">
+                <source>action.add_address</source>
+                <target>Ajouter une adresse</target>
+            </trans-unit>
+            <trans-unit id="action.show_order">
+                <source>action.show_order</source>
+                <target>Voir les détails de la commande</target>
+            </trans-unit>
+            <trans-unit id="action.validate_cart">
+                <source>action.validate_cart</source>
+                <target>Valider mon panier</target>
+            </trans-unit>
+            <trans-unit id="action.loadmore">
+                <source>action.loadmore</source>
+                <target>Plus de produits ></target>
+            </trans-unit>
+            <trans-unit id="action.retry_payment">
+                <source>action.retry_payment</source>
+                <target>Réessayer le paiement</target>
+            </trans-unit>
+            <trans-unit id="action.add_to_cart">
+                <source>action.add_to_cart</source>
+                <target>Ajouter au panier</target>
+            </trans-unit>
+            <trans-unit id="action.confirm_and_pay">
+                <source>action.confirm_and_pay</source>
+                <target>Confirmer et Payer</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Enregister</target>
+            </trans-unit>
+            <trans-unit id="action.login">
+                <source>action.login</source>
+                <target>Connexion</target>
+            </trans-unit>
+            <trans-unit id="action.about">
+                <source>action.about</source>
+                <target><![CDATA[À propos {name}]]></target>
+            </trans-unit>
+            <trans-unit id="action.go_to_login">
+                <source>action.go_to_login</source>
+                <target><![CDATA[Vous avez déjà un compte ?
+					<a href="{link}" class="text-primary">Connexion!</a>]]></target>
+            </trans-unit>
+            <trans-unit id="action.go_to_forgot_password">
+                <source>action.go_to_forgot_password</source>
+                <target><![CDATA[<a href="{link}" class="text-primary">Mot de passe oublié ?</a>]]></target>
+            </trans-unit>
+            <trans-unit id="action.go_to_register">
+                <source>action.go_to_register</source>
+                <target><![CDATA[ou voulez-vous <a href="{link}" class="text-primary">créer un compte ?</a>]]></target>
+            </trans-unit>
+            <trans-unit id="action.reset_password">
+                <source>action.reset_password</source>
+                <target>Réinitialiser le mot de passe</target>
+            </trans-unit>
+            <trans-unit id="action.send_reset_password">
+                <source>action.send_reset_password</source>
+                <target>Envoyer un e-mail de réinitialisation du mot de passe</target>
+            </trans-unit>
+            <trans-unit id="action.retry_reset_password">
+                <source>action.retry_reset_password</source>
+                <target><![CDATA[Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ou
+					<a href="{link}">réessayer</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="label.email">
+                <source>label.email</source>
+                <target>Adresse e-mail</target>
+            </trans-unit>
+            <trans-unit id="placeholder.email">
+                <source>placeholder.email</source>
+                <target>votre@email.com</target>
+            </trans-unit>
+            <trans-unit id="label.password">
+                <source>label.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>Quel nom souhaitez-vous donner à votre adresse ?</target>
+            </trans-unit>
+            <trans-unit id="label.firstname">
+                <source>label.firstname</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="label.lastname">
+                <source>label.lastname</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="label.company">
+                <source>label.company</source>
+                <target>Société</target>
+            </trans-unit>
+            <trans-unit id="placeholder.company">
+                <source>placeholder.company</source>
+                <target>Nom de votre entreprise (facultatif)</target>
+            </trans-unit>
+            <trans-unit id="label.address">
+                <source>label.address</source>
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="label.postal">
+                <source>label.postal</source>
+                <target>Code Postal</target>
+            </trans-unit>
+            <trans-unit id="label.city">
+                <source>label.city</source>
+                <target>Ville</target>
+            </trans-unit>
+            <trans-unit id="label.country">
+                <source>label.country</source>
+                <target>Pays</target>
+            </trans-unit>
+            <trans-unit id="label.phone">
+                <source>label.phone</source>
+                <target>Numéro de téléphone</target>
+            </trans-unit>
+            <trans-unit id="label.validate">
+                <source>label.validate</source>
+                <target>Valider</target>
+            </trans-unit>
+            <trans-unit id="label.update">
+                <source>label.update</source>
+                <target>Mettre à jour</target>
+            </trans-unit>
+            <trans-unit id="label.current_password">
+                <source>label.current_password</source>
+                <target>Mot de passe actuel</target>
+            </trans-unit>
+            <trans-unit id="label.new_password">
+                <source>label.new_password</source>
+                <target>Nouveau mot de passe</target>
+            </trans-unit>
+            <trans-unit id="label.repeat_password">
+                <source>label.repeat_password</source>
+                <target>Confirmer le nouveau mot de passe</target>
+            </trans-unit>
+            <trans-unit id="invalid_message.repeat_password">
+                <source>invalid_message.repeat_password</source>
+                <target>Le mot de passe et la confirmation doivent être identiques.</target>
+            </trans-unit>
+            <trans-unit id="label.subject">
+                <source>label.subject</source>
+                <target>Sujet</target>
+            </trans-unit>
+            <trans-unit id="label.message">
+                <source>label.message</source>
+                <target>Message</target>
+            </trans-unit>
+            <trans-unit id="placeholder.message">
+                <source>placeholder.message</source>
+                <target>Comment pouvons nous aider ?</target>
+            </trans-unit>
+            <trans-unit id="label.send">
+                <source>label.send</source>
+                <target>Envoyer</target>
+            </trans-unit>
+            <trans-unit id="label.research">
+                <source>label.research</source>
+                <target>Rechercher...</target>
+            </trans-unit>
+            <trans-unit id="label.filter">
+                <source>label.filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="label.choose_delivery">
+                <source>label.choose_delivery</source>
+                <target>Choisissez votre adresse de livraison</target>
+            </trans-unit>
+            <trans-unit id="label.choose_carrier">
+                <source>label.choose_carrier</source>
+                <target>Choisissez votre transporteur</target>
+            </trans-unit>
+            <trans-unit id="label.validate_order">
+                <source>label.validate_order</source>
+                <target>Valider ma commande</target>
+            </trans-unit>
+            <trans-unit id="table.product">
+                <source>table.product</source>
+                <target>Produit(s)</target>
+            </trans-unit>
+            <trans-unit id="table.amount">
+                <source>table.amount</source>
+                <target>Quantité</target>
+            </trans-unit>
+            <trans-unit id="table.unit_price">
+                <source>table.unit_price</source>
+                <target>Prix unitaire</target>
+            </trans-unit>
+            <trans-unit id="table.total">
+                <source>table.total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="table.reference">
+                <source>table.reference</source>
+                <target>Reference</target>
+            </trans-unit>
+            <trans-unit id="table.state">
+                <source>table.state</source>
+                <target>État</target>
+            </trans-unit>
+            <trans-unit id="table.date">
+                <source>table.date</source>
+                <target>Commande passée le</target>
+            </trans-unit>
+            <trans-unit id="table.price">
+                <source>table.price</source>
+                <target>Prix</target>
+            </trans-unit>
+            <trans-unit id="account.welcome">
+                <source>account.welcome</source>
+                <target><![CDATA[Bienvenue {user} sur ton compte.]]></target>
+            </trans-unit>
+            <trans-unit id="order.state">
+                <source>order.state</source>
+                <target>Statut de la commande</target>
+            </trans-unit>
+            <trans-unit id="order.date">
+                <source>order.date</source>
+                <target>Commandé le</target>
+            </trans-unit>
+            <trans-unit id="order.reference">
+                <source>order.reference</source>
+                <target>Numéro de commande</target>
+            </trans-unit>
+            <trans-unit id="order.carrier_name">
+                <source>order.carrier_name</source>
+                <target>Méthode de livraison</target>
+            </trans-unit>
+            <trans-unit id="order.subtotal">
+                <source>order.subtotal</source>
+                <target>Des produits</target>
+            </trans-unit>
+            <trans-unit id="order.carrier_price">
+                <source>order.carrier_price</source>
+                <target>Livraison</target>
+            </trans-unit>
+            <trans-unit id="order.total">
+                <source>order.total</source>
+                <target>Total</target>
+            </trans-unit>
+            <trans-unit id="order.total_vat">
+                <source>order.total_vat</source>
+                <target>Montant total TTC</target>
+            </trans-unit>
+            <trans-unit id="order.carrier">
+                <source>order.carrier</source>
+                <target>Transporteur choisi</target>
+            </trans-unit>
+            <trans-unit id="order.delivery_address">
+                <source>order.delivery_address</source>
+                <target>Mon adresse de livraison</target>
+            </trans-unit>
+            <trans-unit id="order.my_carrier">
+                <source>order.my_carrier</source>
+                <target>Ma carrière</target>
+            </trans-unit>
+            <trans-unit id="order.command">
+                <source>order.command</source>
+                <target>Ma commande</target>
+            </trans-unit>
+
+            <trans-unit id="order_state.paid">
+                <source>order_state.paid</source>
+                <target>Paiement accepté</target>
+            </trans-unit>
+            <trans-unit id="order_state.preparation">
+                <source>order_state.preparation</source>
+                <target>Préparation en cours</target>
+            </trans-unit>
+            <trans-unit id="order_state.delivery">
+                <source>order_state.delivery</source>
+                <target>En cours de livraison</target>
+            </trans-unit>
+            <trans-unit id="guarantee.delivery_title">
+                <source>guarantee.delivery_title</source>
+                <target>livraison express</target>
+            </trans-unit>
+            <trans-unit id="guarantee.delivery_content">
+                <source>guarantee.delivery_content</source>
+                <target>Commande prise en charge dès le paiement effectué.</target>
+            </trans-unit>
+            <trans-unit id="guarantee.payment_title">
+                <source>guarantee.payment_title</source>
+                <target>paiement sécurisé</target>
+            </trans-unit>
+            <trans-unit id="guarantee.payment_content">
+                <source>guarantee.payment_content</source>
+                <target>Paiement par carte bancaire entièrement sécurisé.</target>
+            </trans-unit>
+            <trans-unit id="guarantee.support_title">
+                <source>guarantee.support_title</source>
+                <target>Assistance client 24h/24 et 7j/7</target>
+            </trans-unit>
+            <trans-unit id="guarantee.support_content">
+                <source>guarantee.support_content</source>
+                <target>Support client réactif disponible 24h/24 et 7j/7.</target>
+            </trans-unit>
+            <trans-unit id="dashboard.users">
+                <source>dashboard.users</source>
+                <target><![CDATA[{count} Utilisateurs]]></target>
+            </trans-unit>
+            <trans-unit id="dashboard.products">
+                <source>dashboard.products</source>
+                <target><![CDATA[{count} Produits]]></target>
+            </trans-unit>
+            <trans-unit id="dashboard.orders">
+                <source>dashboard.orders</source>
+                <target><![CDATA[{count} Commandes]]></target>
+            </trans-unit>
+            <trans-unit id="cart.number_product">
+                <source>cart.number_product</source>
+                <target><![CDATA[Nombre de produit  {length}]]></target>
+            </trans-unit>
+            <trans-unit id="cart.total_price">
+                <source>cart.total_price</source>
+                <target><![CDATA[Prix total TTC {price}]]></target>
+            </trans-unit>
+            <trans-unit id="product.count">
+                <source>product.count</source>
+                <target><![CDATA[There is {count} products.]]></target>
+            </trans-unit>
+            <trans-unit id="help.verify_before_paying">
+                <source>help.verify_before_paying</source>
+                <target>Vérifiez vos informations avant de payer votre commande.</target>
+            </trans-unit>
+            <trans-unit id="help.choose_preference_order">
+                <source>help.choose_preference_order</source>
+                <target>Choisissez vos préférences avant de passer votre commande.</target>
+            </trans-unit>
+            <trans-unit id="help.already_login">
+                <source>help.already_login</source>
+                <target><![CDATA[Vous êtes connecté en tant que {username}, <a href="{link}">Déconnexion</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="help.enter_reset_password">
+                <source>help.enter_reset_password</source>
+                <target>Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.</target>
+            </trans-unit>
+            <trans-unit id="notification.password_updated">
+                <source>notification.password_updated</source>
+                <target>Votre mot de passe a été modifié avec succès.</target>
+            </trans-unit>
+            <trans-unit id="notification.password_incorrect">
+                <source>notification.password_incorrect</source>
+                <target>Votre mot de passe actuel est incorrect.</target>
+            </trans-unit>
+            <trans-unit id="notification.team_respond">
+                <source>notification.team_respond</source>
+                <target>Notre équipe vous répondra dans les plus brefs délais.</target>
+            </trans-unit>
+            <trans-unit id="notification.email_send">
+                <source>notification.email_send</source>
+                <target>Un email de confirmation vous a été envoyé.</target>
+            </trans-unit>
+            <trans-unit id="notification.email_verified">
+                <source>notification.email_verified</source>
+                <target>Votre adresse e-mail a été vérifiée.</target>
+            </trans-unit>
+            <trans-unit id="notification.reset_password_error">
+                <source>notification.reset_password_error</source>
+                <target><![CDATA[Un problème est survenu lors de la validation de votre demande de réinitialisation - {reason}]]></target>
+            </trans-unit>
+            <trans-unit id="notification.no_address">
+                <source>notification.no_address</source>
+                <target><![CDATA[Vous n'avez pas encore ajouté d'adresses dans votre compte client, pour en ajouter une merci
+					<a href="{link}">cliquez ici</a>.]]></target>
+            </trans-unit>
+            <trans-unit id="notification.no_order">
+                <source>notification.no_order</source>
+                <target>Vous n'avez pas encore passé de commande sur notre boutique en ligne.</target>
+            </trans-unit>
+            <trans-unit id="notification.empty_cart">
+                <source>notification.empty_cart</source>
+                <target>Votre panier est vide.</target>
+            </trans-unit>
+            <trans-unit id="notification.empty_best_product">
+                <source>notification.empty_best_product</source>
+                <target>Notre sélection de produits est vide.</target>
+            </trans-unit>
+            <trans-unit id="notification.empty_product">
+                <source>notification.empty_product</source>
+                <target>Aucun produit.</target>
+            </trans-unit>
+            <trans-unit id="exception.no_reset_token">
+                <source>exception.no_reset_token</source>
+                <target>Aucun jeton de réinitialisation de mot de passe trouvé dans l'URL ou la session.</target>
+            </trans-unit>
+            <trans-unit id="email.subject.order_cancel">
+                <source>email.subject.order_cancel</source>
+                <target><![CDATA[Commande #{reference} annulé - Ecommerce | SITE OFFICIEL]]></target>
+            </trans-unit>
+            <trans-unit id="email.subject.order_success">
+                <source>email.subject.order_success</source>
+                <target><![CDATA[Commande #{reference} confirmé - Ecommerce | SITE OFFICIEL]]></target>
+            </trans-unit>
+            <trans-unit id="email.subject.reset_password">
+                <source>email.subject.reset_password</source>
+                <target>Votre demande de réinitialisation de mot de passe</target>
+            </trans-unit>
+            <trans-unit id="email.subject.registration">
+                <source>email.subject.registration</source>
+                <target>Veuillez confirmer votre email</target>
+            </trans-unit>
+            <trans-unit id="email.from.registration">
+                <source>email.from.registration</source>
+                <target><![CDATA[{name} inscription]]></target>
+            </trans-unit>
+            <trans-unit id="email.from.reset_password">
+                <source>email.from.reset_password</source>
+                <target><![CDATA[{name} réinitialiser le mot de passe]]></target>
+            </trans-unit>
+            <trans-unit id="resetToken.content">
+                <source>resetToken.content</source>
+                <target>S'il existe un compte correspondant à votre email, un email vient d'être envoyé contenant un lien
+                vous pouvez utiliser pour réinitialiser votre mot de passe. Ce lien expirera dans</target>
+            </trans-unit>
+            <trans-unit id="paginator.previous">
+                <source>paginator.previous</source>
+                <target>Précédent</target>
+            </trans-unit>
+            <trans-unit id="paginator.next">
+                <source>paginator.next</source>
+                <target>Suivant</target>
+            </trans-unit>
+            <trans-unit id="language.english">
+                <source>language.english</source>
+                <target>Anglais</target>
+            </trans-unit>
+            <trans-unit id="language.french">
+                <source>language.french</source>
+                <target>Francais</target>
+            </trans-unit>
+            <trans-unit id="copyright">
+                <source>copyright</source>
+                <target>Tous les droits sont réservés. Réalisé par</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
