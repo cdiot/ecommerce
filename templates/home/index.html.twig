@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil {{ parent() }}
+{% block title %} {{ 'title.homepage'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block carousel %}{% endblock %}
@@ -9,27 +9,8 @@
 	{% include "base/_brand.html.twig" %}
 	<!-- Products grid (Best products)-->
 	<section class="container-fluid section">
-		<h2 class="section-title">Meilleures ventes</h2>
-		<div
-			class="row mx-3" id="list">
-			<!-- Product-->
-			<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
-				<article class="product-card">
-					<a class="product-img-top d-block overflow-hidden" href="#"><img src="{{ asset('uploads/7rK3P5yvB.jpg') }}" alt="PS5 kimetsu no yaiba the hinokami chronicles"></a>
-					<div class="product-body">
-						<span class="product-meta fs-xs">Jeu neuf</span>
-						<a href="#">
-							<h3 class="product-title fs-base">PS5 kimetsu no yaiba the hinokami chronicles</h3>
-						</a>
-						<div class="d-flex">
-							<div class="product-price">
-								<span class="fs-lg">59.<small>99</small>
-								</span>
-							</div>
-						</div>
-					</div>
-				</article>
-			</div>
+		<h2 class="section-title">{{ 'subtitle.best_product'|trans }}</h2>
+		<div class="row mx-3" id="list">
 			{% for product in bestProducts %}
 				<!-- Product-->
 				<div class="col-lg-2 col-md-3 col-sm-6 px-2 mb-4 item">
@@ -49,15 +30,15 @@
 					</article>
 				</div>
 			{% else %}
-				<p>Notre selection de produits est vide.</p>
+				<p>{{ 'notification.empty_best_product'|trans }}</p>
 			{% endfor %}
 			<div class="text-center pt-3">
-				<button id="loadMore" class="btn btn-outline-accent" data-load-more-nb-element="6">Plus de produits ></button>
+				<button id="loadMore" class="btn btn-outline-accent" data-load-more-nb-element="6">{{ 'action.loadmore'|trans }}</button>
 			</div>
 		</section>
 		<!-- Follow us grid -->
 		<section class="container py-lg-4 my-4">
-			<h2 class="h3 text-center pb-4 fw-bold">Nous suivre</h2>
+			<h2 class="h3 text-center pb-4 fw-bold">{{ 'subtitle.follow_us'|trans }}</h2>
 			<div
 				class="row justify-content-center">
 				<!-- Link-->

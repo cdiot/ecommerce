@@ -1,12 +1,5 @@
-<h1>Bienvenue chez Ecommerce</h1>
+<h1>{{ 'title.welcome'|trans({'name': company_name }) }}</h1>
 
-<p>
-	L'équipe de Ecommerce tient à vous remercier de la confiance que vous nous témoignez. Votre nouveau compte a bien été initialisé. Pour activer votre compte et valider définitivement votre inscription, veuillez confirmer votre adresse e-mail en cliquant sur le lien suivant :
-	<br><br>
-	<a href="{{ signedUrl }}">Confirmer mon e-mail</a>.
-		Ce lien expirera dans {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
-</p>
+<p>{{ 'content.template_registration'|trans({'name': company_name, 'link': signedUrl })|raw }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.</p>
 
-<p>
-	Votre équipe Ecommerce.
-</p>
+<p>{{ 'content.our_team'|trans({'name': company_name }) }}</p>

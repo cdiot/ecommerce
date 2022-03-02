@@ -3,38 +3,38 @@
 	<div class="container">
 		<div class="row pb-2">
 			<div class="widget col-md-3 col-sm-6 pb-2 mb-4">
-				<h3 class="widget-title text-light">Confidentialité</h3>
+				<h3 class="widget-title text-light">{{ 'subtitle.privacy'|trans }}</h3>
 				<ul class="widget-list">
 					<li class="widget-list-item">
-						<a class="widget-list-link" href="#">Politique de confidentialité</a>
+						<a class="widget-list-link" href="#">{{ 'menu.privacy'|trans }}</a>
 					</li>
 					<li class="widget-list-item">
-						<a class="widget-list-link" href="#">Conditions générales de vente</a>
+						<a class="widget-list-link" href="#">{{ 'menu.terms_of_sales'|trans }}</a>
 					</li>
 					<li class="widget-list-item">
-						<a class="widget-list-link" href="#">Mentions légales</a>
+						<a class="widget-list-link" href="#">{{ 'menu.legal_notice'|trans }}</a>
 					</li>
 				</ul>
 			</div>
 			<div class="widget col-md-3 col-sm-6 pb-2 mb-4">
-				<h3 class="widget-title text-light">Aide et Informations</h3>
+				<h3 class="widget-title text-light">{{ 'subtitle.info'|trans }}</h3>
 				<ul class="widget-list">
 					<li class="widget-list-item">
-						<a class="widget-list-link" href="#">A propos Ecommerce</a>
+						<a class="widget-list-link" href="#">{{ 'menu.about'|trans({'name': company_name }) }}</a>
 					</li>
 					<li class="widget-list-item">
-						<a class="widget-list-link" href="#">Livraison</a>
+						<a class="widget-list-link" href="#">{{ 'menu.delivery'|trans }}</a>
 					</li>
 					<li class="widget-list-item">
-						<a class="widget-list-link" href="#">FAQ</a>
+						<a class="widget-list-link" href="#">{{ 'menu.faq'|trans }}</a>
 					</li>
 					<li class="widget-list-item">
-						<a class="widget-list-link" href="#">Contact</a>
+						<a class="widget-list-link" href="#">{{ 'menu.contact'|trans }}</a>
 					</li>
 				</ul>
 			</div>
 			<div class="widget col-md-3 col-sm-6 pb-2 mb-4">
-				<h3 class="widget-title text-light">Nous Suivre</h3>
+				<h3 class="widget-title text-light">{{ 'subtitle.follow_us'|trans }}</h3>
 				<ul class="widget-list">
 					<li class="widget-list-item">
 						<a class="widget-list-link" href="#">Facebook</a>
@@ -51,13 +51,13 @@
 				</ul>
 			</div>
 			<div class="col-md-3 col-sm-6 pb-2 mb-4">
-				<h3 class="widget-title text-light">Rester informé</h3>
+				<h3 class="widget-title text-light">{{ 'subtitle.subscribe_newsletter'|trans }}</h3>
 				<form class="subscription-form validate" action="#" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
 					<div class="input-group flex-nowrap">
-						<input class="form-control rounded-start" type="email" name="EMAIL" placeholder="Votre e-mail" required="">
-						<button class="btn btn-primary" type="submit" name="subscribe">S'abonner*</button>
+						<input class="form-control rounded-start" type="email" name="EMAIL" placeholder="e-mail" required="">
+						<button class="btn btn-primary" type="submit" name="subscribe">{{ 'action.subscribe_newsletter'|trans }}</button>
 					</div>
-					<div class="form-text text-light opacity-50">*Abonnez-vous à notre newsletter pour recevoir des offres de réduction anticipées, des mises à jour et des informations sur les nouveaux produits.</div>
+					<div class="form-text text-light opacity-50">{{ 'content.subscribe_newsletter'|trans }}</div>
 				</form>
 			</div>
 		</div>
@@ -69,8 +69,8 @@
 					<div class="d-flex">
 						<img class="icon" src="{{ asset('build/images/ic-rocket.png') }}" alt="Icon fusée">
 						<div class="ps-2">
-							<h3 class="fs-sm text-light mb-1">Livraison Express</h3>
-							<p class="mb-0 fs-xs text-light opacity-50">Commande prise en charge dès le paiement effectué.</p>
+							<h3 class="fs-sm text-light mb-1">{{ 'guarantee.delivery_title'|trans }}</h3>
+							<p class="mb-0 fs-xs text-light opacity-50">{{ 'guarantee.delivery_content'|trans }}</p>
 						</div>
 					</div>
 				</div>
@@ -78,8 +78,8 @@
 					<div class="d-flex">
 						<img class="icon" src="{{ asset('build/images/ic-card.png') }}" alt="Icon carte bancaire">
 						<div class="ps-2">
-							<h3 class="fs-sm text-light mb-1">Paiement Sécurisé</h3>
-							<p class="mb-0 fs-xs text-light opacity-50">Paiement par carte bancaire entièrement sécurisés.</p>
+							<h3 class="fs-sm text-light mb-1">{{ 'guarantee.payment_title'|trans }}</h3>
+							<p class="mb-0 fs-xs text-light opacity-50">{{ 'guarantee.payment_content'|trans }}</p>
 						</div>
 					</div>
 				</div>
@@ -87,15 +87,15 @@
 					<div class="d-flex">
 						<img class="icon" src="{{ asset('build/images/ic-headset.png') }}" alt="Icon casque">
 						<div class="ps-2">
-							<h3 class="fs-sm text-light mb-1">Support Client 24/7</h3>
-							<p class="mb-0 fs-xs text-light opacity-50">Support client réactif disponible 24h/24 et 7j/7.</p>
+							<h3 class="fs-sm text-light mb-1">{{ 'guarantee.support_title'|trans }}</h3>
+							<p class="mb-0 fs-xs text-light opacity-50">{{ 'guarantee.support_content'|trans }}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<hr class="hr-light mb-4">
-			<div class="pb-4 fs-xs text-light opacity-50">© Tous droits réservés. Réalisé par
-				<a class="text-light" href="#">Ecommerce</a>
+			<div class="pb-4 fs-xs text-light opacity-50">&copy; {{ 'copyright'|trans }}
+				<a class="text-light" href="#">{{  company_name }}</a>
 			</div>
 		</div>
 	</div>

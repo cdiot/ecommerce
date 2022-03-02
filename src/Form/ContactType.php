@@ -19,38 +19,39 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Adresse mail',
+                'label' => 'label.email',
                 'attr' => [
-                    'placeholder' => 'Votre email'
+                    'placeholder' => 'placeholder.email'
                 ],
                 'constraints' => [
                     new Email([
-                        'message' => 'Veuillez entrer un email valide.',
+                        'message' => 'constraints.type_email',
                     ]),
                 ]
             ])
             ->add('subject', TextType::class, [
-                'label' => 'Sujet',
-                'attr' => [
-                    'placeholder' => 'Votre sujet'
-                ],
+                'label' => 'label.subject',
                 'constraints' => [
-                    new NotBlank(),
+                    new NotBlank([
+                        'message' => 'constraints.blank_subject',
+                    ]),
                     new Length(['min' => 3]),
                 ]
             ])
             ->add('content', TextareaType::class, [
-                'label' => 'Message',
+                'label' => 'label.message',
                 'attr' => [
-                    'placeholder' => 'Votre message'
+                    'placeholder' => 'placeholder.message'
                 ],
                 'constraints' => [
-                    new NotBlank(),
+                    new NotBlank([
+                        'message' => 'constraints.blank_message',
+                    ]),
                     new Length(['min' => 10]),
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer',
+                'label' => 'label.send',
                 'attr' => [
                     'class' => 'btn btn-success btn-block'
                 ]

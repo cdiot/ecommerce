@@ -1,6 +1,11 @@
 twig:
   default_path: "%kernel.project_dir%/templates"
   form_themes: ["bootstrap_5_layout.html.twig"]
+  # Register your global variables under the globals key:
+  globals:
+    # Obtain it from the .env file:
+    company_name: "%env(COMPANY_NAME)%"
+    locales: "%app.locales%"
 
 when@test:
   twig:

@@ -1,29 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contactez-nous {{ parent() }}
+{% block title %} {{ 'title.contact_us'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<section class="container section">
 		<div class="row justify-content-center">
-			<h1 class="section-title h2">Contactez-nous</h1>
+			<h1 class="section-title h2">{{ 'title.contact_us'|trans }}</h1>
 			<div class="col-md-4">
-				<h2 class="h3 py-4 fw-bold">Informations</h2>
-				<p>Ecommerce
-					<br>
-					207 Avenue de dampierre
-					<br>
-					59300
-					<br>
-					Valenciennes
-					<br>
-					France</p>
-				<hr>
-				<p>Appelez-nous :<br>
-					03 00 00 00 00</p>
-				<hr>
-				<p>Envoyez-nous un e-mail :<br>
-					contact@ecommerce.fr</p>
+				<h2 class="h3 py-4 fw-bold">{{ 'subtitle.contact_info'|trans }}</h2>
+				<p>{{ 'content.contact_info'|trans({'name': company_name })|raw }}</p>
 			</div>
 			<div class="col-md-8 shadow rounded-3 py-3 py-sm-4 mb-2">
 				{% for message in app.flashes('notice') %}

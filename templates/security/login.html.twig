@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion {{ parent() }}
+{% block title %} {{ 'title.connection'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<section class="container section">
 		<div class="row justify-content-center">
-			<h1 class="h2 section-title">Connectez-vous à votre compte</h1>
+			<h1 class="h2 section-title">{{ 'title.log_in'|trans }}</h1>
 			<div class="col-md-6 shadow rounded-3 py-3 py-sm-4 mb-2">
 				<form method="post">
 					{% if error %}
@@ -14,19 +14,17 @@
 					{% endif %}
 
 					{% if app.user %}
-						<div class="mb-3">
-							Vous êtes connecté en tant que {{ app.user.username }},
-							<a href="{{ path('app_logout') }}">Se déconnecter</a>
+						<div class="mb-3">{{ 'help.already_login'|trans({'username': app.user.username, 'link': path('app_logout') })|raw }}
 						</div>
 					{% endif %}
 
 					<div class="mb-3">
-						<label for="inputEmail" class="form-label">Email</label>
+						<label for="inputEmail" class="form-label">{{ 'label.email'|trans }}</label>
 						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
 					</div>
 
 					<div class="mb-3">
-						<label for="inputPassword" class="form-label">Mot de passe</label>
+						<label for="inputPassword" class="form-label">{{ 'label.password'|trans }}</label>
 						<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 					</div>
 
@@ -36,22 +34,18 @@
 					{#
 					Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
 					See https://symfony.com/doc/current/security/remember_me.html
-							
+					
 					<div class="checkbox mb-3">
 					<label>
-						<input type="checkbox" name="_remember_me"> Remember me
+					<input type="checkbox" name="_remember_me"> Remember me
 					</label>
 					</div>
 					#}
 
-					<button class="btn btn-info text-light" type="submit">
-						Connexion
+					<button class="btn btn-info text-light" type="submit"> {{ 'action.login'|trans }}
 					</button>
 					<hr>
-					<p>
-						<a href="{{ path('app_forgot_password_request') }}" class="text-primary">Mot de passe oublié</a>
-						? ou souhaitez-vous
-						<a href="{{ path('app_register') }}" class="text-primary">créer un compte ?</a>
+					<p>{{ 'action.go_to_forgot_password'|trans({'link': path('app_forgot_password_request') })|raw }} {{ 'action.go_to_register'|trans({'link': path('app_register') })|raw }}
 					</p>
 				</form>
 			</div>

@@ -1,38 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Ma Commande {{ parent() }}
+{% block title %} {{ 'title.details_order'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
 	<!-- Orders -->
 	<section class="container py-lg-4 my-4 section">
-		<h1 class="h2 section-title">Commande n°{{order.reference}}</h1>
-		<a href="{{ path('account_order') }}">Retour</a>
+		<h1 class="h2 section-title">{{ 'title.details_order'|trans }}</h1>
+		<a href="{{ path('account_order') }}">{{ 'menu.back_to_orders'|trans }}</a>
 		<hr>
-		<strong>Etat de la commande :
-		</strong>
-		{% if order.state == 1 %}
-			Payée
-		{% elseif order.state == 2 %}
-			Préparation en cours
-		{% elseif order.state == 3 %}
-			Livraison en cours
-		{% endif %}<br>
-		<strong>Commande passé le :</strong> {{order.createdAt|date('d-m-Y')}}<br>
-		<strong>Référence de ma commande :</strong>
+		<strong>{{ 'order.reference'|trans }}</strong>
 		<small>{{order.reference}}</small><br>
-		<strong>Transporteur choisi :</strong> {{order.carrierName}}
+		<strong>{{ 'order.state'|trans }}</strong>
+		{% if order.state == 1 %} {{ 'order_state.paid'|trans }}
+		{% elseif order.state == 2 %} {{ 'order_state.preparation'|trans }}
+		{% elseif order.state == 3 %} {{ 'order_state.delivery'|trans }}
+		{% endif %}<br>
+		<strong>{{ 'order.date'|trans }}</strong> {{order.createdAt|date('d-m-Y')}}<br>
+		<strong>{{ 'order.carrier_name'|trans }}</strong> {{order.carrierName}}
 		<br>
 		<hr>
 		<table class="table mt-4">
 			<thead>
 				<tr>
-					<th scope="col">Produit</th>
-					<th scope="col">Quantité</th>
-					<th scope="col">Prix unitaire</th>
-					<th scope="col">Total</th>
+					<th scope="col">{{ 'table.product'|trans }}</th>
+					<th scope="col">{{ 'table.amount'|trans }}</th>
+					<th scope="col">{{ 'table.unit_price'|trans }}</th>
+					<th scope="col">{{ 'table.total'|trans }}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,15 +47,15 @@
 		</table>
 
 		<div class="text-right">
-			<strong>Sous-total :
+			<strong>{{ 'order.subtotal'|trans }}
 			</strong> {{ price(order.getTotal) }}
 			&euro;
 			<br>
-			<strong>Livraison :
+			<strong>{{ 'order.carrier_price'|trans }}
 			</strong> {{ price(order.carrierPrice) }}
 			&euro;
 			<br>
-			<strong>Total :
+			<strong>{{ 'order.total_vat'|trans }}
 			</strong> {{ price(order.carrierPrice + order.getTotal) }}
 			&euro;
 		</div>

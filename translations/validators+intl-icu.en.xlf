@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="constraints.type_email">
+                <source>constraints.type_email</source>
+                <target>Please enter a valid email.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_email">
+                <source>constraints.blank_email</source>
+                <target>Please enter your email.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_password">
+                <source>constraints.blank_password</source>
+                <target>Please enter your password.</target>
+            </trans-unit>
+            <trans-unit id="constraints.length_password">
+                <source>constraints.length_password</source>
+                <target>Your password must be at least {{ limit }} characters.</target>
+            </trans-unit>
+            <trans-unit id="constraints.true_agree_terms">
+                <source>constraints.true_agree_terms</source>
+                <target>You must agree to our terms.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_name">
+                <source>constraints.blank_name</source>
+                <target>Please enter your name.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_firstname">
+                <source>constraints.blank_firstname</source>
+                <target>Please enter your firstname.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_lastname">
+                <source>constraints.blank_lastname</source>
+                <target>Please enter your lastname.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_address">
+                <source>constraints.blank_address</source>
+                <target>Please enter your address.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_postal">
+                <source>constraints.blank_postal</source>
+                <target>Please enter your postal code.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_city">
+                <source>constraints.blank_city</source>
+                <target>Please enter your city.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_country">
+                <source>constraints.blank_country</source>
+                <target>Please enter your country.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_phone">
+                <source>constraints.blank_phone</source>
+                <target>Please enter your phone number.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_new_password">
+                <source>constraints.blank_new_password</source>
+                <target>Please enter your new Password.</target>
+            </trans-unit>
+            <trans-unit id="constraints.length_new_password">
+                <source>constraints.length_new_password</source>
+                <target>Your password must be at least {{ limit }} characters.</target>
+            </trans-unit>
+            <trans-unit id="label.repeat_password">
+                <source>label.repeat_password</source>
+                <target>Confirm new password.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_subject">
+                <source>constraints.blank_subject</source>
+                <target>Please enter your subject.</target>
+            </trans-unit>
+            <trans-unit id="constraints.blank_message">
+                <source>constraints.blank_message</source>
+                <target>Please enter your message.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

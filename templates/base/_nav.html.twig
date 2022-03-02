@@ -7,7 +7,7 @@
 		<div
 			class="container">
 			<!-- Navbar brand -->
-			<a class="navbar-brand mt-2 mt-lg-0" href="#">Ecommerce</a>
+			<a class="navbar-brand mt-2 mt-lg-0" href="#">{{  company_name }}</a>
 			<!-- Toggle button -->
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 				<span class="navbar-toggler-icon"></span>
@@ -18,19 +18,19 @@
 				<!-- Left links -->
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item active">
-						<a class="nav-link" href="{{ path('home') }}">Accueil</a>
+						<a class="nav-link" href="{{ path('home') }}">{{ 'menu.homepage'|trans }}</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('products') }}">Nos produits</a>
+						<a class="nav-link" href="{{ path('products') }}">{{ 'menu.products'|trans }}</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">A propos Ecommerce</a>
+						<a class="nav-link" href="#">{{ 'menu.about'|trans({'name': company_name }) }}</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Livraison</a>
+						<a class="nav-link" href="#">{{ 'menu.delivery'|trans }}</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('contact') }}">Contact</a>
+						<a class="nav-link" href="{{ path('contact') }}">{{ 'menu.contact'|trans }}</a>
 					</li>
 				</ul>
 				<!-- Left links -->
@@ -40,23 +40,19 @@
 					<!-- Dropdown flag -->
 					<li class="dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<img src="{{ asset('build/images/ic-france.png') }}" height="25" alt="Drapeau Francais">
+							<img src="{{ asset('build/images/ic-' ~ app.request.locale ~ '.png') }}" height="25" alt="{{ app.request.locale }}">
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li>
-								<a class="dropdown-item" href="#">
-									<img src="{{ asset('build/images/ic-france.png') }}" class="m-1" height="25" alt="Drapeau Francais">Français
-								</a>
-							</li>
-							<li><hr class="dropdown-divider"></li>
-							<li>
-								<a class="dropdown-item" href="#">
-									<img src="{{ asset('build/images/ic-england.png') }}" class="m-1" height="25" alt="Drapeau Anglais">Anglais</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="#">
-									<img src="{{ asset('build/images/ic-japan.png') }}" class="m-1" height="25" alt="Drapeau Japonais">Japonais</a>
-							</li>
+							{% for locale in locales %}
+								{% if locale != app.request.locale %}
+									<li>
+										<a class="dropdown-item" href="{{ path('change_locale', {'locale': locale}) }}">
+											<img src="{{ asset('build/images/ic-' ~ locale ~ '.png') }}" class="m-1" height="25" alt="{{ locale }}">{{ locale }}
+										</a>
+									</li>
+									<li><hr class="dropdown-divider"></li>
+								{% endif %}
+							{% endfor %}
 						</ul>
 					</li>
 					{% if app.user %}

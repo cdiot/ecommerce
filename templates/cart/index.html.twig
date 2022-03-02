@@ -1,21 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier {{ parent() }}
+{% block title %} {{ 'title.cart'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
 	<section class="container section pt-5">
-		<h1 class="section-title h2">Panier</h1>
+		<h1 class="section-title h2">{{ 'title.cart'|trans }}</h1>
 		{% if cart|length > 0 %}
 			<table class="table border rounded-3 mt-3">
 				<thead>
 					<tr>
-						<th scope="col">Produit</th>
+						<th scope="col">{{ 'table.product'|trans }}</th>
 						<th scope="col"></th>
-						<th scope="col">Quantité</th>
-						<th scope="col">Prix</th>
-						<th scope="col">Total</th>
+						<th scope="col">{{ 'table.amount'|trans }}</th>
+						<th scope="col">{{ 'table.price'|trans }}</th>
+						<th scope="col">{{ 'table.total'|trans }}</th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
@@ -45,13 +45,12 @@
 				</tbody>
 			</table>
 			<div class="text-right mb-5 d-grid gap-2">
-				<b>Nombre de produit : {{ cart|length }}</b><br>
-				<b>Prix total TTC : {{ price(total) }}
-					&euro;</b><br>
-				<a href="{{ path('order') }}" class="btn btn-success btn-block mt-3">Valider mon panier</a>
+				<b>{{ 'cart.number_product'|trans({'length': cart|length}) }}</b><br>
+				<b>{{ 'cart.total_price'|trans({'price': price(total) }) }}&euro;</b><br>
+				<a href="{{ path('order') }}" class="btn btn-success btn-block mt-3">{{ 'action.validate_cart'|trans }}</a>
 			</div>
 		{% else %}
-			<p>Votre panier est vide.</p>
+			<p>{{ 'notification.empty_cart'|trans }}</p>
 		{% endif %}
 	</section>
 	{% include "base/_brand.html.twig" %}

@@ -1,49 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon compte {{ parent() }}
+{% block title %} {{ 'title.account'|trans }} {{ parent() }}
 {% endblock %}
 
 {% block body %}
 
 	<!-- Account -->
 	<section class="container py-lg-4 my-4 section">
-		<h1 class="h2 section-title">Mon compte</h1>
-		<p class="mb-3">Bienvenue {{ app.user.email }}
-			dans votre compte.
-			<br>C'est dans cette espace que vous allez pouvoir gérer toutes vos informations personnelles.</p>
+		<h1 class="h2 section-title">{{ 'title.account'|trans }}</h1>
+		<p class="mb-3">{{ 'account.welcome'|trans({'user': app.user.email}) }}</p>
 		<div class="row justify-content-center">
 			{% if is_granted("ROLE_ADMIN") %}
 				<!-- Link-->
 				<div class="col-md-3 col-sm-4 col-6">
 					<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
-						<a href="{{ path('admin') }}">
-							Accéder au backoffice
-						</a>
+						<a href="{{ path('admin') }}">{{ 'title.access_backoffice'|trans }}</a>
 					</div>
 				</div>
 			{% endif %}
 			<!-- Link-->
 			<div class="col-md-3 col-sm-4 col-6">
 				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="{{ path('account_password') }}">
-						Modifier mon mot de passe
-					</a>
+					<a href="{{ path('account_password') }}">{{ 'title.change_password'|trans }}</a>
 				</div>
 			</div>
 			<!-- Link-->
 			<div class="col-md-3 col-sm-4 col-6">
 				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="{{ path('account_address') }}">
-						Gérer mes adresses
-					</a>
+					<a href="{{ path('account_address') }}">{{ 'title.addresses'|trans }}</a>
 				</div>
 			</div>
 			<!-- Link-->
 			<div class="col-md-3 col-sm-4 col-6">
 				<div class="bg-white shadow-sm rounded-3 text-center py-3 py-sm-4 mb-2">
-					<a href="{{ path('account_order') }}">
-						Mes commandes
-					</a>
+					<a href="{{ path('account_order') }}">{{ 'title.orders'|trans }}</a>
 				</div>
 			</div>
 		</div>

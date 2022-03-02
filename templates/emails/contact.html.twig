@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app.request.locale }}">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Nouveau message - Ecommerce | SITE OFFICIEL</title>
+		<title>{{ 'title.template_contact'|trans }}</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
-		and uncomment the following Encore helpers to start using Symfony UX #}
+						and uncomment the following Encore helpers to start using Symfony UX #}
 	</head>
 	<body>
 		<section>
-			<h1>Nouveau message</h1>
+			<h1>{{ 'title.template_contact'|trans }}</h1>
 			<p>{{ content }}</p>
 		</section>
 	</body>
