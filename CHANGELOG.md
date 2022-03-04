@@ -1,7 +1,11 @@
-# CHANGELOG
+# Changelog
 
-The `changelog` is a file which contains a curated, chronologically ordered list of notable changes for each `release` of the project.
+All notable changes to this project will be documented in this file.
 
-## [1.0]
+## [Unreleased](https://github.com/cdiot/ecommerce) - yyyy-mm-dd
 
-*   Site design
+Here we write upgrading notes for brands. It's a team effort to make them as straightforward as possible.
+
+### Added
+
+-   Site design by [chris](https://github.com/cdiot).
