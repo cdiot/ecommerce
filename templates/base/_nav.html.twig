@@ -39,20 +39,20 @@
 					class="d-flex align-items-center">
 					<!-- Dropdown flag -->
 					<li class="dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown-language" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<img src="{{ asset('build/images/ic-' ~ app.request.locale ~ '.png') }}" height="25" alt="{{ app.request.locale }}">
 						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							{% for locale in locales %}
-								{% if locale != app.request.locale %}
-									<li>
-										<a class="dropdown-item" href="{{ path('change_locale', {'locale': locale}) }}">
-											<img src="{{ asset('build/images/ic-' ~ locale ~ '.png') }}" class="m-1" height="25" alt="{{ locale }}">{{ locale }}
-										</a>
-									</li>
-									<li><hr class="dropdown-divider"></li>
-								{% endif %}
-							{% endfor %}
+						<ul class="dropdown-menu" aria-labelledby="dropdown-language">
+							<li>
+								<a class="dropdown-item" href="{{ path(app.request.get('_route'), {_locale: 'en'}) }}">
+									<img src="{{ asset('build/images/ic-en.png') }}" class="m-1" height="25" alt="English">English
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="{{ path(app.request.get('_route'), {_locale: 'fr'}) }}">
+									<img src="{{ asset('build/images/ic-fr.png') }}" class="m-1" height="25" alt="Francais">Francais
+								</a>
+							</li>
 						</ul>
 					</li>
 					{% if app.user %}
