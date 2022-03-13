@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+#[Route('/{_locale<%app.locales%>}')]
 class ContactController extends AbstractController
 {
     #[Route('/nous-contacter', name: 'contact')]
