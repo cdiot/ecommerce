@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/{_locale<%app.locales%>}')]
 class ProductController extends AbstractController
 {
     public function __construct(private ProductRepository $productRepository)
