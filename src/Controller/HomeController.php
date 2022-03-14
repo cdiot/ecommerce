@@ -10,13 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/')]
-    public function indexNoLocale(): Response
-    {
-        return $this->redirectToRoute('home', ['_locale' => 'en']);
-    }
-
-    #[Route('/{_locale<%app.locales%>}', name: 'home')]
+    #[Route(path: [
+        'en' => '/',
+        'fr' => '/'
+    ], name: 'home')]
     public function index(ProductRepository $productRepository, HeaderRepository $headerRepository): Response
     {
         $bestProducts = $productRepository->findByIsBest(true);

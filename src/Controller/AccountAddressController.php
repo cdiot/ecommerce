@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/{_locale<%app.locales%>}')]
 class AccountAddressController extends AbstractController
 {
     public function __construct(
@@ -21,13 +20,19 @@ class AccountAddressController extends AbstractController
     ) {
     }
 
-    #[Route('/compte/adresses', name: 'account_address')]
+    #[Route(path: [
+        'en' => '/account/addresses',
+        'fr' => '/compte/adresses'
+    ], name: 'account_address')]
     public function index(): Response
     {
         return $this->render('account/address.html.twig');
     }
 
-    #[Route('/compte/ajouter-une-adresse', name: 'account_address_add')]
+    #[Route(path: [
+        'en' => '/account/add-an-address',
+        'fr' => '/compte/ajouter-une-adresse'
+    ], name: 'account_address_add')]
     public function add(Cart $cart, Request $request): Response
     {
         $address = new Address();
@@ -48,7 +53,10 @@ class AccountAddressController extends AbstractController
         ]);
     }
 
-    #[Route('/compte/modifier-une-adresse/{id}', name: 'account_address_edit')]
+    #[Route(path: [
+        'en' => '/account/modify-an-address/{id}',
+        'fr' => '/compte/modifier-une-adresse/{id}'
+    ], name: 'account_address_edit')]
     public function edit(Request $request, $id): Response
     {
         $address = $this->addressRepository->findOneById($id);
@@ -66,7 +74,10 @@ class AccountAddressController extends AbstractController
         ]);
     }
 
-    #[Route('/compte/supprimer-une-adresse/{id}', name: 'account_address_delete')]
+    #[Route(path: [
+        'en' => '/account/delete-an-address/{id}',
+        'fr' => '/compte/supprimer-une-adresse/{id}'
+    ], name: 'account_address_delete')]
     public function delete($id): Response
     {
         $address = $this->addressRepository->findOneById($id);

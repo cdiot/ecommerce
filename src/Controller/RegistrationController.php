@@ -16,14 +16,16 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
-#[Route('/{_locale<%app.locales%>}')]
 class RegistrationController extends AbstractController
 {
     public function __construct(private EmailVerifier $emailVerifier)
     {
     }
 
-    #[Route('/inscription', name: 'app_register')]
+    #[Route(path: [
+        'en' => '/registration',
+        'fr' => '/inscription'
+    ], name: 'app_register')]
     public function register(
         Request $request,
         UserPasswordHasherInterface $userPasswordHasherInterface,
@@ -67,7 +69,10 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    #[Route('/verify/email', name: 'app_verify_email')]
+    #[Route(path: [
+        'en' => '/verify/email',
+        'fr' => '/verifier/email'
+    ], name: 'app_verify_email')]
     public function verifyUserEmail(
         Request $request,
         TranslatorInterface $translator

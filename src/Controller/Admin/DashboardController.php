@@ -30,7 +30,10 @@ class DashboardController extends AbstractDashboardController
     ) {
     }
 
-    #[Route('/{_locale<%app.locales%>}/admin', name: 'admin')]
+    #[Route(path: [
+        'en' => '/admin',
+        'fr' => '/admin'
+    ], name: 'admin')]
     public function index(): Response
     {
         return $this->render('bundles/EasyAdminBundle/welcome.html.twig', [

@@ -12,14 +12,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/{_locale<%app.locales%>}')]
 class ProductController extends AbstractController
 {
     public function __construct(private ProductRepository $productRepository)
     {
     }
 
-    #[Route('/nos-produits', name: 'products')]
+    #[Route(path: [
+        'en' => '/our-products',
+        'fr' => '/nos-produits'
+    ], name: 'products')]
     public function index(Request $request, Search $search): Response
     {
         $form = $this->createForm(SearchType::class, $search);
@@ -36,7 +38,10 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/produit/{slug}', name: 'product')]
+    #[Route(path: [
+        'en' => '/product/{slug}',
+        'fr' => '/produit/{slug}'
+    ], name: 'product')]
     public function show($slug, ProductRepository $productRepository): Response
     {
         $product = $this->productRepository->findOneBySlug($slug);

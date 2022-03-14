@@ -11,14 +11,16 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-#[Route('/{_locale<%app.locales%>}')]
 class OrderSuccessController extends AbstractController
 {
     public function __construct(private EntityManagerInterface $entityManager)
     {
     }
 
-    #[Route('/commande/merci/{stripeSessionId}', name: 'order_success')]
+    #[Route(path: [
+        'en' => '/order/thank-you/{stripeSessionId}',
+        'fr' => '/commande/merci/{stripeSessionId}'
+    ], name: 'order_success')]
     public function index(
         Cart $cart,
         OrderRepository $orderRepository,

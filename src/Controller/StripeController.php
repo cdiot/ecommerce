@@ -11,14 +11,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/{_locale<%app.locales%>}')]
 class StripeController extends AbstractController
 {
     public function __construct(private EntityManagerInterface $entityManager)
     {
     }
 
-    #[Route('/commande/create-session/{reference}', name: 'stripe_create_session')]
+    #[Route(path: [
+        'en' => '/order/create-session/{reference}',
+        'fr' => '/commande/creer-session/{reference}'
+    ], name: 'stripe_create_session')]
     public function index(OrderRepository $orderRepository, ProductRepository $productRepository, $reference): RedirectResponse
     {
         $products_for_stripe = [];

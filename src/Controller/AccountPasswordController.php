@@ -11,14 +11,16 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-#[Route('/{_locale<%app.locales%>}')]
 class AccountPasswordController extends AbstractController
 {
     public function __construct(private EntityManagerInterface $entityManager)
     {
     }
 
-    #[Route('/compte/modifier-mon-mot-de-passe', name: 'account_password')]
+    #[Route(path: [
+        'en' => '/account/change-my-password',
+        'fr' => '/compte/modifier-mon-mot-de-passe'
+    ], name: 'account_password')]
     public function index(HttpFoundationRequest $request, UserPasswordHasherInterface $hasher, TranslatorInterface $translator): Response
     {
         $user = $this->getUser();
