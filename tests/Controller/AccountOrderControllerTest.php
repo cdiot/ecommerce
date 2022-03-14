@@ -18,7 +18,7 @@ class AccountOrderControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
         // user is now logged in, so you can test protected resources
-        $client->request('GET', '/compte/mes-commandes');
+        $client->request('GET', '/account/my-orders');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Your orders');
     }

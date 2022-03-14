@@ -9,7 +9,7 @@ class RegistrationControllerTest extends WebTestCase
     public function testShouldDisplayRegister(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/inscription');
+        $crawler = $client->request('GET', '/registration');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Create your account');
@@ -18,7 +18,7 @@ class RegistrationControllerTest extends WebTestCase
     public function testShouldSubmitRegisterForm()
     {
         $client = static::createClient();
-        $client->request('GET', '/inscription');
+        $client->request('GET', '/registration');
         $client->submitForm('Save', [
             'registration_form[email]' => 'foo123@gmail.com',
             'registration_form[plainPassword]' => '123456',

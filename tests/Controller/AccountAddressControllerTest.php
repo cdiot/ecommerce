@@ -18,7 +18,7 @@ class AccountAddressControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
         // user is now logged in, so you can test protected resources
-        $client->request('GET', '/compte/adresses');
+        $client->request('GET', '/account/addresses');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Your addresses');
     }
@@ -32,7 +32,7 @@ class AccountAddressControllerTest extends WebTestCase
         $testUser = $userRepository->findOneByEmail('foo@gmail.com');
 
         $client->loginUser($testUser);
-        $client->request('GET', '/compte/ajouter-une-adresse');
+        $client->request('GET', '/account/add-an-address');
         $client->submitForm('Validate', [
             'address[name]' => 'King',
             'address[firstname]' => 'Louis',
@@ -59,7 +59,7 @@ class AccountAddressControllerTest extends WebTestCase
 
         $client->loginUser($testUser);
         // user is now logged in, so you can test protected resources
-        $crawler = $client->request('GET', '/compte/modifier-une-adresse/2');
+        $crawler = $client->request('GET', '/account/modify-an-address/2');
         // select the button
         $buttonCrawlerNode = $crawler->selectButton('Validate');
 
@@ -96,7 +96,7 @@ class AccountAddressControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
         // user is now logged in, so you can test protected resources
-        $client->request('GET', '/compte/supprimer-une-adresse/2');
+        $client->request('GET', '/account/delete-an-address/2');
         $this->assertResponseRedirects();
         $crawler = $client->followRedirect();
         $this->assertResponseIsSuccessful();
