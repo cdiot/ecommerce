@@ -8,10 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/{_locale<%app.locales%>}')]
 class AccountOrderController extends AbstractController
 {
-    #[Route('/compte/mes-commandes', name: 'account_order')]
+    #[Route(path: [
+        'en' => '/account/my-orders',
+        'fr' => '/compte/mes-commandes'
+    ], name: 'account_order')]
     public function index(OrderRepository $orderRepository): Response
     {
         $orders = $orderRepository->findSuccessOrders($this->getUser());
@@ -21,7 +23,10 @@ class AccountOrderController extends AbstractController
         ]);
     }
 
-    #[Route('/compte/mes-commandes/{reference}', name: 'account_order_show')]
+    #[Route(path: [
+        'en' => '/account/my-orders/{reference}',
+        'fr' => '/compte/mes-commandes/{reference}'
+    ], name: 'account_order_show')]
     public function show(OrderRepository $orderRepository, $reference): Response
     {
         $order = $orderRepository->findOneByReference($reference);

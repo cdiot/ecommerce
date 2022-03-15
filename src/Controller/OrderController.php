@@ -12,14 +12,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/{_locale<%app.locales%>}')]
 class OrderController extends AbstractController
 {
     public function __construct(private EntityManagerInterface $entityManager)
     {
     }
 
-    #[Route('/commande', name: 'order')]
+    #[Route(path: [
+        'en' => '/order',
+        'fr' => '/commande'
+    ], name: 'order')]
     public function index(Cart $cart, Request $request): Response
     {
         if (!$this->getUser()->getAddresses()->getValues()) {
@@ -38,7 +40,10 @@ class OrderController extends AbstractController
         ]);
     }
 
-    #[Route('/commande/recapitulatif', name: 'order_recapitulatif', methods: 'POST')]
+    #[Route(path: [
+        'en' => '/order/summary',
+        'fr' => '/commande/recapitulatif '
+    ], name: 'order_recapitulatif', methods: 'POST')]
     public function add(Cart $cart, Request $request)
     {
         $form = $this->createForm(OrderType::class, null, [

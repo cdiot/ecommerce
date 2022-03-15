@@ -18,7 +18,7 @@ class AccountControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
         // user is now logged in, so you can test protected resources
-        $client->request('GET', '/compte');
+        $client->request('GET', '/account');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Your account');
     }

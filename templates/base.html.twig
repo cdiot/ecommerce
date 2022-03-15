@@ -7,8 +7,12 @@
 			{% block title %} {{ 'title.base'|trans }}
 			{% endblock %}
 		</title>
+		<link rel="»alternate" » hreflang="»en" » href="»https://127.0.0.1:8000/" »/>
+		<link rel="»alternate" » hreflang="»fr" » href="»https://127.0.0.1:8000/fr/" »/>
+		<link
+		rel="»alternate" » href="»https://127.0.0.1:8000/" » hreflang="»x-default" »/>
 		{# Run `composer require symfony/webpack-encore-bundle`
-				and uncomment the following Encore helpers to start using Symfony UX #}
+		and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %} {{ encore_entry_link_tags('app') }}
 		{% endblock %}
 

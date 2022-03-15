@@ -10,7 +10,7 @@ class SecurityControllerTest extends WebTestCase
     public function testShouldDisplayLogin(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/connexion');
+        $crawler = $client->request('GET', '/connection');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Sign into your account');
@@ -45,7 +45,7 @@ class SecurityControllerTest extends WebTestCase
 
         $client->loginUser($testUser);
 
-        $client->request('GET', '/deconnexion');
+        $client->request('GET', '/logout');
 
         $this->assertResponseRedirects();
         $crawler = $client->followRedirect();

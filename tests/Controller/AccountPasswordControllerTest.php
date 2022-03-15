@@ -18,7 +18,7 @@ class AccountPasswordControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
         // user is now logged in, so you can test protected resources
-        $client->request('GET', '/compte/modifier-mon-mot-de-passe');
+        $client->request('GET', '/account/change-my-password');
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Change password');
     }

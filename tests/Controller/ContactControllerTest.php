@@ -9,7 +9,7 @@ class ContactControllerTest extends WebTestCase
     public function testShouldDisplayContactForm(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/nous-contacter');
+        $crawler = $client->request('GET', '/contact-us');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Contact us');
@@ -18,7 +18,7 @@ class ContactControllerTest extends WebTestCase
     public function testShouldSubmitContactForm()
     {
         $client = static::createClient();
-        $client->request('GET', '/nous-contacter');
+        $client->request('GET', '/contact-us');
 
         $client->submitForm('Send', [
             'contact[email]' => 'foo@gmail.com',

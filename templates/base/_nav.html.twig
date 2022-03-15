@@ -44,12 +44,12 @@
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdown-language">
 							<li>
-								<a class="dropdown-item" href="{{ path(app.request.get('_route'), {_locale: 'en'}) }}">
+								<a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params', [])|merge({_locale: 'en'})) }}">
 									<img src="{{ asset('build/images/ic-en.png') }}" class="m-1" height="25" alt="English">English
 								</a>
 							</li>
 							<li>
-								<a class="dropdown-item" href="{{ path(app.request.get('_route'), {_locale: 'fr'}) }}">
+								<a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params', [])|merge({_locale: 'fr'})) }}">
 									<img src="{{ asset('build/images/ic-fr.png') }}" class="m-1" height="25" alt="Francais">Francais
 								</a>
 							</li>
